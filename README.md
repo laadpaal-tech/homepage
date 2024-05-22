@@ -1,4 +1,9 @@
-# vite-starter-react-bun
+# laadpaal.tech homepage
+
+This is the source code for the laadpaal.tech homepage. Initialized with [vite-starter-react-bun](https://github.com/marcinczenko/vite-starter-react-bun) starter template.
+
+
+## vite-starter-react-bun
 
 Starter for [vitejs](https://vitejs.dev) with React and:
 
