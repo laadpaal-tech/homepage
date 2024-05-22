@@ -11,7 +11,8 @@ export default {
         'roboto-mono': "'Roboto Mono', serif"
       },
       colors: {
-        'theme-yellow': '#FAAF32'
+        'theme-yellow': '#FAAF32',
+        'theme-light-yellow': '#FFEFD4'
       }
     }
   },
