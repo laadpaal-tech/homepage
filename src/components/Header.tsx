@@ -1,8 +1,9 @@
 import Logo from '~/assets/logo-white.svg?react'
 import MenuIcon from '~/assets/menu-icon.svg?react'
-import CalendarIcon from '~/assets/calendar-icon.svg?react'
 import Arrow from '~/assets/arrow-2.svg?react'
 import ReadMoreIcon from '~/assets/read-more-icon.svg?react'
+
+import { MakeAppointmentButton } from './MakeAppointmentButton'
 
 const MenuButton = () => (
   <div className='absolute left-0 top-0 bg-slate-100'>
@@ -10,17 +11,6 @@ const MenuButton = () => (
       <MenuIcon width='52px' height='52px' />
     </button>
   </div>
-)
-
-const MakeAppointmentButton = () => (
-  <button className='bg-theme-yellow @sm:rounded-[38px] flex items-center rounded-[28px] px-4 py-3'>
-    <div className='@sm:w-[52px] w-[40px]'>
-      <CalendarIcon width='100%' />
-    </div>
-    <span className='@sm:text-[22px] ml-3 inline-block text-[18px] font-bold'>
-      Maak een afspraak
-    </span>
-  </button>
 )
 
 const ReadMoreButton = () => (
@@ -57,7 +47,7 @@ const Header = () => (
       <Arrow className='@5xl:block hidden' width='160px' />
     </div>
     <div className='@5xl:self-end @5xl:mr-16'>
-      <MakeAppointmentButton />
+      <MakeAppointmentButton variant='yellow' />
     </div>
     <div className='@5xl:h-0 h-16' />
     <div className='mb-8'>

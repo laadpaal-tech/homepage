@@ -1,6 +1,7 @@
 import { Layout } from '~/components/Layout'
 import { Header } from '~/components/Header'
 import { Steps } from '~/components/Steps'
+import { AboutMe } from './components/AboutMe'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       </div>
       <Header />
       <Steps />
+      <AboutMe />
     </Layout>
   )
 }
