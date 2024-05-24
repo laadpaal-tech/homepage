@@ -1,6 +1,6 @@
-import { useRef } from 'react'
+import { ReactNode, useRef } from 'react'
 
-const Carousel = () => {
+const Carousel = ({ children }: { children: ReactNode }) => {
   const el = useRef<HTMLDivElement>(null)
 
   const onNext = () => {
@@ -37,17 +37,9 @@ const Carousel = () => {
       </button>
       <div
         ref={el}
-        className='flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth'
+        className='flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth *:w-full *:flex-shrink-0 *:snap-center'
       >
-        <div className='flex h-[200px] w-full flex-shrink-0 snap-center items-center justify-center bg-lime-700'>
-          Item 1
-        </div>
-        <div className='flex h-[200px] w-full flex-shrink-0 snap-center items-center justify-center bg-slate-500'>
-          Item 2
-        </div>
-        <div className='flex h-[200px] w-full flex-shrink-0 snap-center items-center justify-center bg-orange-600'>
-          Item 3
-        </div>
+        {children}
       </div>
       <div className='flex justify-around'>
         <button onClick={() => goTo(0)}>1</button>
@@ -58,4 +50,10 @@ const Carousel = () => {
   )
 }
 
-export { Carousel }
+const CarouselItem = ({ children }: { children: ReactNode }) => (
+  <div className='flex min-h-[200px] w-full items-center justify-center'>
+    {children}
+  </div>
+)
+
+export { Carousel, CarouselItem }
