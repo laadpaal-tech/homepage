@@ -12,7 +12,9 @@ export default {
       },
       colors: {
         'theme-yellow': '#FAAF32',
-        'theme-light-yellow': '#FFEFD4'
+        'theme-light-yellow': '#FFEFD4',
+        'theme-blue': '#426180',
+        'theme-dark-blue': '#25496D'
       }
     }
   },

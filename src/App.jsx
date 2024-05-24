@@ -1,6 +1,7 @@
 import { Layout } from '~/components/Layout'
 import { Header } from '~/components/Header'
 import { Steps } from '~/components/Steps'
+import { Services } from './components/Services'
 import { AboutMe } from './components/AboutMe'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
       </div>
       <Header />
       <Steps />
+      <Services />
       <AboutMe />
     </Layout>
   )
