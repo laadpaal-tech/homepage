@@ -22,6 +22,11 @@ const Services = () => (
           Item 3
         </div>
       </CarouselItem>
+      <CarouselItem>
+        <div className='flex h-full w-full items-center justify-center bg-cyan-900'>
+          Item 4
+        </div>
+      </CarouselItem>
     </Carousel>
     <div className='mt-8'>
       <MakeAppointmentButton variant='yellow' />

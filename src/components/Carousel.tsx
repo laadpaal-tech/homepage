@@ -1,7 +1,16 @@
-import { ReactNode, useRef } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
+
+const NavigationDot = ({ active }: { active: boolean }) => (
+  <div
+    className={`h-[16px] w-[16px] rounded-full ${active ? 'bg-theme-yellow opacity-100' : 'bg-white opacity-50'}`}
+  ></div>
+)
 
 const Carousel = ({ children }: { children: ReactNode }) => {
   const el = useRef<HTMLDivElement>(null)
+  const numOfItems = React.Children.count(children)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
 
   const onNext = () => {
     console.log('onNext', el.current?.clientWidth)
@@ -12,11 +21,29 @@ const Carousel = ({ children }: { children: ReactNode }) => {
     el.current?.scrollBy(-1 * el.current?.clientWidth, 0)
   }
 
+  const onScroll = () => {
+    if (scrollTimeout.current) {
+      clearTimeout(scrollTimeout.current)
+    }
+    scrollTimeout.current = setTimeout(() => {
+      if (el.current) {
+        const index = Math.round(el.current.scrollLeft / el.current.clientWidth)
+        if (index !== currentIndex) {
+          setCurrentIndex(index)
+        }
+      }
+    }, 100)
+  }
+
   const goTo = (index: number) => {
     if (el.current) {
+      const currentPosition = el.current.scrollLeft
       const newPosition = index * el.current.clientWidth
       console.log('scrollWidth=', el.current.scrollWidth)
-      if (el.current.scrollWidth !== newPosition) {
+      if (
+        newPosition < currentPosition - 1 ||
+        newPosition > currentPosition + 1
+      ) {
         el.current?.scrollTo({
           left: newPosition,
           behavior: 'smooth'
@@ -24,8 +51,17 @@ const Carousel = ({ children }: { children: ReactNode }) => {
       }
     }
   }
+
+  useEffect(() => {
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current)
+      }
+    }
+  })
+
   return (
-    <div className='relative w-full'>
+    <div className='relative mt-4 w-full'>
       <button className='absolute left-4 top-0 z-50 h-[200px]' onClick={onPrev}>
         prev
       </button>
@@ -37,14 +73,17 @@ const Carousel = ({ children }: { children: ReactNode }) => {
       </button>
       <div
         ref={el}
-        className='flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth *:w-full *:flex-shrink-0 *:snap-center'
+        onScroll={onScroll}
+        className='[--scrollbar-color-thumb: hotpink] flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
       >
         {children}
       </div>
-      <div className='flex justify-around'>
-        <button onClick={() => goTo(0)}>1</button>
-        <button onClick={() => goTo(1)}>2</button>
-        <button onClick={() => goTo(2)}>3</button>
+      <div className='mt-6 flex items-center justify-center gap-8'>
+        {new Array(numOfItems).fill(0).map((_, index) => (
+          <button key={index} onClick={() => goTo(index)}>
+            <NavigationDot active={currentIndex === index} />
+          </button>
+        ))}
       </div>
     </div>
   )
