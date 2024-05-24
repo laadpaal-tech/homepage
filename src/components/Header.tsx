@@ -24,32 +24,32 @@ const Header = () => (
   <div className='z-10 flex w-full flex-col items-center justify-start'>
     {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] @lg:min-h-[800px] relative flex min-h-screen w-full max-w-5xl flex-col items-center justify-start bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
     <MenuButton />
-    <div className='@3xl:hidden mt-16'>
+    <div className='mt-16 @3xl:hidden'>
       <Logo width='120px' />
     </div>
-    <div className='@3xl:justify-start @3xl:items-start flex w-full items-center justify-center'>
-      <div className='@3xl:ml-16 @3xl:mt-[180px] @3xl:block mr-4 hidden'>
+    <div className='flex w-full items-center justify-center @3xl:items-start @3xl:justify-start'>
+      <div className='mr-4 hidden @3xl:ml-16 @3xl:mt-[180px] @3xl:block'>
         <Logo width='110px' />
       </div>
-      <div className='@3xl:mt-[180px] flex flex-col'>
-        <h1 className='@sm:text-5xl @3xl:text-7xl @3xl:mt-0 my-6 font-roboto-mono text-4xl font-bold text-white'>
+      <div className='flex flex-col @3xl:mt-[180px]'>
+        <h1 className='my-6 font-roboto-mono text-4xl font-bold text-white @sm:text-5xl @3xl:mt-0 @3xl:text-7xl'>
           laadpaal.tech
         </h1>
-        <h2 className='@sm:text-3xl @3xl:text-5xl text-2xl text-white'>
+        <h2 className='text-2xl text-white @sm:text-3xl @3xl:text-5xl'>
           uw eigen laadpaal thuis
         </h2>
-        <h2 className='@sm:text-3xl @3xl:text-5xl text-theme-yellow my-2 text-2xl'>
+        <h2 className='my-2 text-2xl text-theme-yellow @sm:text-3xl @3xl:text-5xl'>
           advies en installatie
         </h2>
       </div>
     </div>
-    <div className='@sm:h-24 @5xl:h-auto @5xl:self-end @5xl:mr-48 @5xl:-mt-8 @5xl:mb-8 h-8'>
-      <Arrow className='@5xl:block hidden' width='160px' />
+    <div className='h-8 @sm:h-24 @5xl:-mt-8 @5xl:mb-8 @5xl:mr-48 @5xl:h-auto @5xl:self-end'>
+      <Arrow className='hidden @5xl:block' width='160px' />
     </div>
-    <div className='@5xl:self-end @5xl:mr-16'>
+    <div className='@5xl:mr-16 @5xl:self-end'>
       <MakeAppointmentButton variant='yellow' />
     </div>
-    <div className='@5xl:h-0 h-16' />
+    <div className='h-16 @5xl:h-0' />
     <div className='mb-8'>
       <ReadMoreButton />
     </div>

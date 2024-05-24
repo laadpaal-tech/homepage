@@ -7,31 +7,34 @@ const CircledNumber = ({ value }: { value: string }) => (
 )
 
 const Steps = () => (
-  <div className='bg-theme-yellow z-10 mt-48 flex w-full flex-col items-center justify-start'>
-    <h2 className='@3xl:w-auto mt-6 w-[340px] text-center text-4xl font-bold'>
+  <div className='z-10 mb-24 mt-24 flex w-full flex-col items-center justify-start bg-theme-yellow @5xl:w-4/5'>
+    <h2 className='mt-12 w-[340px] text-center text-4xl font-bold @3xl:w-auto'>
       Uw eigen laadpaal thuis in 3 stappen:
     </h2>
-    <ol className='flex flex-col items-center justify-start'>
-      <li className='mt-8 flex flex-col items-center'>
+    <ol
+      className='flex flex-col items-center justify-start *:mt-8 *:flex *:flex-col *:items-center @5xl:min-w-min *:@5xl:w-full *:@5xl:flex-row
+    '
+    >
+      <li>
         <CircledNumber value='1' />
-        <p className='mt-3 w-[340px] text-center text-3xl'>
+        <p className='mt-3 w-[340px] text-center text-3xl @5xl:ml-4 @5xl:mt-0 @5xl:w-auto'>
           Aansluiting controleren en aanpassen.
         </p>
       </li>
-      <li className='mt-8 flex flex-col items-center'>
+      <li>
         <CircledNumber value='2' />
-        <p className='mt-3 w-[340px] text-center text-3xl'>
+        <p className='mt-3 w-[340px] text-center text-3xl @5xl:ml-4 @5xl:mt-0 @5xl:w-auto'>
           Groepenkast controleren en uitbreiden.
         </p>
       </li>
-      <li className='mt-8 flex flex-col items-center'>
+      <li>
         <CircledNumber value='3' />
-        <p className='mt-3 w-[340px] text-center text-3xl'>
+        <p className='mt-3 w-[340px] text-center text-3xl @5xl:ml-4 @5xl:mt-0 @5xl:w-auto'>
           Laadpaal installeren.
         </p>
       </li>
     </ol>
-    <div className='@5xl:self-end @5xl:mr-16 my-6'>
+    <div className='my-6 @5xl:mr-16 @5xl:self-end'>
       <MakeAppointmentButton variant='black' />
     </div>
   </div>

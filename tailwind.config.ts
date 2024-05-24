@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Arial', ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
         'roboto-mono': "'Roboto Mono', serif"
       },
       colors: {

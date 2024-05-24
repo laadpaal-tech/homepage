@@ -1,4 +1,6 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import NavPrevIcon from '~/assets/nav-prev-icon.svg?react'
+import NavNextIcon from '~/assets/nav-next-icon.svg?react'
 
 const NavigationDot = ({ active }: { active: boolean }) => (
   <div
@@ -61,22 +63,33 @@ const Carousel = ({ children }: { children: ReactNode }) => {
   })
 
   return (
-    <div className='relative mt-4 w-full'>
-      <button className='absolute left-4 top-0 z-50 h-[200px]' onClick={onPrev}>
-        prev
-      </button>
-      <button
-        className='absolute right-4 top-0 z-50 h-[200px]'
-        onClick={onNext}
-      >
-        next
-      </button>
-      <div
-        ref={el}
-        onScroll={onScroll}
-        className='[--scrollbar-color-thumb: hotpink] flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
-      >
-        {children}
+    <div className='relative mt-4 w-full @5xl:w-4/5'>
+      <div className='relative'>
+        <div className='absolute left-1 top-0 z-50 flex h-full w-[48px] items-center @3xl:w-[56px] @5xl:-left-20'>
+          <button
+            className={`${currentIndex === 0 ? 'hidden' : 'block'} w-full -translate-y-[84px] opacity-50 disabled:cursor-not-allowed disabled:opacity-25 @5xl:-translate-y-[11px]`}
+            disabled={currentIndex === 0}
+            onClick={onPrev}
+          >
+            <NavPrevIcon width='100%' />
+          </button>
+        </div>
+        <div className='absolute right-1 top-0 z-50 flex h-full w-[48px] items-center @3xl:w-[56px] @5xl:-right-20'>
+          <button
+            disabled={currentIndex === numOfItems - 1}
+            className={`${currentIndex === numOfItems - 1 ? 'hidden' : 'block'} w-full -translate-y-[84px] opacity-50 disabled:cursor-not-allowed disabled:opacity-25 @5xl:-translate-y-[11px]`}
+            onClick={onNext}
+          >
+            <NavNextIcon width='100%' />
+          </button>
+        </div>
+        <div
+          ref={el}
+          onScroll={onScroll}
+          className='[--scrollbar-color-thumb: hotpink] flex w-full snap-x snap-mandatory gap-1 overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
+        >
+          {children}
+        </div>
       </div>
       <div className='mt-6 flex items-center justify-center gap-8'>
         {new Array(numOfItems).fill(0).map((_, index) => (
