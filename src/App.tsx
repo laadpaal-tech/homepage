@@ -3,6 +3,7 @@ import { Header } from '~/components/Header'
 import { Steps } from '~/components/Steps'
 import { Services } from './components/Services'
 import { AboutMe } from './components/AboutMe'
+import { Footer } from './components/Footer'
 
 const App = () => {
   return (
@@ -11,15 +12,15 @@ const App = () => {
         <div className='max-w-5xl'>
           <img className='@md:hidden' src='/img/background-mobile.jpg' />
           <img
-            className='@md:block @lg:hidden hidden'
+            className='hidden @md:block @lg:hidden'
             src='/img/background-desktop.jpg'
           />
           <img
-            className='@lg:block @3xl:hidden hidden'
+            className='hidden @lg:block @3xl:hidden'
             src='/img/background-desktop-lg.jpg'
           />
           <img
-            className='@3xl:block hidden'
+            className='hidden @3xl:block'
             src='/img/background-desktop-xl.jpg'
           />
         </div>
@@ -29,6 +30,7 @@ const App = () => {
       <Steps />
       <Services />
       <AboutMe />
+      <Footer />
     </Layout>
   )
 }
