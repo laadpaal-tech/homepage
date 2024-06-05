@@ -1,9 +1,12 @@
+import { RecoilRoot } from 'recoil'
 import { Layout } from '~/components/Layout'
 import { Header } from '~/components/Header'
 import { Steps } from '~/components/Steps'
 import { Services } from './components/Services'
 import { AboutMe } from './components/AboutMe'
 import { Footer } from './components/Footer'
+import { MeerWeten } from './components/MeerWeten'
+import { StepByStep } from './components/StepByStep'
 
 const App = () => {
   return (
@@ -26,11 +29,15 @@ const App = () => {
         </div>
         {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] absolute left-0 top-0 w-full max-w-5xl bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
       </div>
-      <Header />
-      <Steps />
-      <Services />
-      <AboutMe />
-      <Footer />
+      <RecoilRoot>
+        <Header />
+        <Steps />
+        <Services />
+        <MeerWeten />
+        <StepByStep />
+        <AboutMe />
+        <Footer />
+      </RecoilRoot>
     </Layout>
   )
 }
