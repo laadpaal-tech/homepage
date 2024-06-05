@@ -18,7 +18,7 @@ const ServicePersonal = () => (
           echte op-maat oplossing te creëren.
         </p>
       </section>
-      <div className='absolute right-0 top-0 z-[8] h-full @3xl:h-[90%]'>
+      <div className='absolute right-[1px] top-0 z-[8] h-full @3xl:h-[90%]'>
         <img
           className='hidden max-h-full @5xl:block'
           src='/img/img-service-1a.jpg'
