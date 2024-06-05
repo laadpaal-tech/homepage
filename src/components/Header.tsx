@@ -3,6 +3,8 @@ import MenuIcon from '~/assets/menu-icon.svg?react'
 import Arrow from '~/assets/arrow-2.svg?react'
 import ReadMoreIcon from '~/assets/read-more-icon.svg?react'
 
+import { useRecoilValue } from 'recoil'
+import { readMoreState } from '~/app-state'
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
 const MenuButton = () => (
@@ -13,12 +15,22 @@ const MenuButton = () => (
   </div>
 )
 
-const ReadMoreButton = () => (
-  <button className='flex flex-col items-center font-roboto-mono text-xl text-white opacity-60'>
-    <div>LEES MEER</div>
-    <ReadMoreIcon width={132} />
-  </button>
-)
+const ReadMoreButton = () => {
+  const { elementToShow } = useRecoilValue(readMoreState)
+  const readMore = () => {
+    elementToShow?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <button
+      onClick={readMore}
+      className='flex flex-col items-center font-roboto-mono text-xl text-white opacity-60'
+    >
+      <div>LEES MEER</div>
+      <ReadMoreIcon width={132} />
+    </button>
+  )
+}
 
 const Header = () => (
   <div className='z-10 flex w-full flex-col items-center justify-start'>
@@ -32,11 +44,17 @@ const Header = () => (
         <Logo width='110px' />
       </div>
       <div className='flex flex-col @3xl:mt-[180px]'>
-        <h1 className='my-6 font-roboto-mono text-4xl font-bold text-white @sm:text-5xl @3xl:mt-0 @3xl:text-7xl'>
+        <h1 className='my-6 self-center font-roboto-mono text-4xl font-bold text-white @sm:text-5xl @3xl:mt-0 @3xl:text-7xl'>
           laadpaal.tech
+          {/* <h2 className='mt-6 font-sans text-2xl font-normal text-white @sm:text-3xl @3xl:text-5xl'>
+            jouw eigen laadpaal thuis
+          </h2>
+          <h2 className='my-2 w-full font-sans text-2xl font-normal text-theme-yellow @sm:text-3xl @3xl:text-5xl'>
+            advies en installatie
+          </h2> */}
         </h1>
         <h2 className='text-2xl text-white @sm:text-3xl @3xl:text-5xl'>
-          uw eigen laadpaal thuis
+          jouw eigen laadpaal thuis
         </h2>
         <h2 className='my-2 text-2xl text-theme-yellow @sm:text-3xl @3xl:text-5xl'>
           advies en installatie
