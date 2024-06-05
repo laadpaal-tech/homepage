@@ -1,4 +1,3 @@
-import InstallationDiagram from '~/assets/installatie.svg?react'
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
 const StepByStep = () => (
@@ -80,7 +79,7 @@ const StepByStep = () => (
     <p className='mt-2'>
       Onderstaande afbeelding toont een voorbeeld van een 3-fase installatie met
       een 3x25A aansluiting:
-      <InstallationDiagram />
+      <img src='/img/installatie.svg' />
       Na de slimme meter (1) hebben we een hoofdschakelaar (2), waarna we onze
       reguliere groepen (3) laten beveiligen door een aardlekschakelaar van Type
       A (weergegeven op een grijze achtergrond). Dan zien we twee verschillende
@@ -96,7 +95,7 @@ const StepByStep = () => (
       B en nominale stroom 16A (6 en 7).
     </p>
     <h3 className='my-4 text-left text-2xl font-semibold italic'>
-      Plaatsing van uw laadpunt
+      Plaatsing van jouw laadpunt
     </h3>
     <p>
       Soms is dit een makkelijke stap, wanneer jouw laadpunt dichtbij jouw
@@ -143,7 +142,7 @@ const StepByStep = () => (
       uiteindelijk geld zal kosten.
     </p>
     <div className='relative mt-6 flex w-full items-center justify-center'>
-      <div className='relative -left-12 bottom-0 z-30 mt-[200px] @xl:-left-24 @xl:mt-[260px]'>
+      <div className='relative -left-12 bottom-0 z-30 mt-[120px] @md:mt-[200px] @lg:mt-[230px] @xl:-left-24 @xl:mt-[260px]'>
         <MakeAppointmentButton variant='yellow' />
       </div>
       <div className='absolute bottom-8 @xl:bottom-0'>
