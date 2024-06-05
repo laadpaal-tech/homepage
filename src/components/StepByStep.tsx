@@ -141,9 +141,22 @@ const StepByStep = () => (
       tussenkomst van uw netwerkbeheerder nodig is om deze te herstellen, wat u
       uiteindelijk geld zal kosten.
     </p>
-    <div className='mt-6 flex w-full items-center justify-center'>
-      <MakeAppointmentButton variant='yellow' />
+    <div className='relative mt-6 flex w-full items-center justify-center'>
+      <div className='relative -left-12 bottom-0 z-30 mt-[200px] @xl:-left-24 @xl:mt-[260px]'>
+        <MakeAppointmentButton variant='yellow' />
+      </div>
+      <div className='absolute bottom-8 @xl:bottom-0'>
+        <img width='600px' src='/img/me-with-text.jpg' />
+        {/* <p className='absolute left-10 top-[80px] border border-red-800 text-xl font-extrabold text-theme-blue @lg:top-[100px] @xl:top-[110px] @xl:text-2xl @3xl:text-3xl'>
+          Dit is veel om te leren...
+          <br />
+          Hulp nodig?
+        </p> */}
+      </div>
     </div>
+    {/* <div className='mt-6 flex w-full items-center justify-center'>
+      <MakeAppointmentButton variant='yellow' />
+    </div> */}
   </section>
 )
 
