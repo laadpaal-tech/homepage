@@ -86,7 +86,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
         <div
           ref={el}
           onScroll={onScroll}
-          className='[--scrollbar-color-thumb: hotpink] flex w-full snap-x snap-mandatory gap-1 overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
+          className='flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
         >
           {children}
         </div>
@@ -103,7 +103,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
 }
 
 const CarouselItem = ({ children }: { children: ReactNode }) => (
-  <div className='flex min-h-[200px] w-full items-center justify-center'>
+  <div className='flex min-h-[200px] w-full items-center justify-center bg-theme-blue '>
     {children}
   </div>
 )
