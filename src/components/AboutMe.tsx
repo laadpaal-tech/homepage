@@ -13,11 +13,11 @@ const AboutMe = () => (
           behaal mijn masterdiploma in Software Engineering en Ph.D. op het
           gebied van computerbeveiliging. De afgelopen 10 jaar heb ik bij
           Philips doorgebracht als senior software engineer en senior software
-          architect. Nu bouw ik mijn eigen startup op het gebied van privacy,
-          beveiliging en energiemanagement. Om de behoeften van de markt beter
-          te begrijpen en een relatie bouwen met mijn potentiële toekomstige
-          klanten (en om ook te helpen gefinancierd te blijven) geef ik ook
-          advies en ondersteuning bij de installatie van laadpunten.
+          architect. Nu bouw ik mijn eigen onderneming op het gebied van
+          privacy, beveiliging en energiemanagement. Om de behoeften van de
+          markt beter te begrijpen en een relatie bouwen met mijn potentiële
+          toekomstige klanten (en om ook te helpen gefinancierd te blijven) geef
+          ik ook advies en ondersteuning bij de installatie van laadpunten.
         </p>
         <p className='mt-3'>
           Op 28 maart 2024 heb ik het examen{' '}

@@ -6,12 +6,12 @@ const ServicePersonal = () => (
           Op maat en personal
         </h2>
         <p className='@3xl:mt-4'>
-          Elke situatie is anders. Heeft u 1-fase of 3-fase aansluiting. Is uw
-          oude groepenkast aan te vervangen? Wat is uw levensstijl ten opzichte
-          van uw energie verbruik? Wilt U Uw auto's dagelijks laden, of is een
-          tot twee keer per week voldoende. Heeft u een garage, een carport? Is
-          uw laadpaal dichtbij uw meterkast of moet het gegraven worden om de
-          installatie kabels naar uw garage te brengen.
+          Elke situatie is anders. Heb je 1-fase of 3-fase aansluiting. Is jouw
+          oude groepenkast aan te vervangen? Wat is jouw levensstijl ten
+          opzichte van uw energie verbruik? Wil je jouw auto's dagelijks laden,
+          of is een tot twee keer per week voldoende. Heb je een garage of een
+          carport? Is jouw laadpaal dichtbij jouw meterkast of moet het gegraven
+          worden om de installatie kabels naar uw garage te brengen.
         </p>
         <p className='mt-4'>
           Deze en andere vragen gaan wij samen bespreken en beantwoorden om een

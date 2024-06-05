@@ -9,11 +9,11 @@ const ServiceBeyondOrdinary = () => (
         <h2 className='mb-4 text-3xl font-bold @5xl:text-4xl'>Buiten gewoon</h2>
         <p className='@3xl:mt-4'>
           Ben je bereid om iets te experimenteren? Naast de populaire laadpalen
-          van bekende fabrikanten kan ik u ook adviseren hoe je jouw
+          van bekende fabrikanten kan ik je ook adviseren hoe je jouw
           laadpaalinstallatie meer modulaire en gedecentraliseerd kan maken en
           binnenkort hoop ik ook mijn eigen laadpalen in offerte te hebben die
-          meer modulaire en beter voorbereid zijn op slimme oplossingen samen
-          met mijn eigen energiemanagementsysteem voor thuis.
+          meer modulaire en beter voorbereid zijn op slimme, privacybewust
+          oplossingen samen met mijn eigen energiemanagementsysteem voor thuis.
         </p>
         <p className='mt-4'>
           Zin in bouwen van jouw eigen laadpaal? Hulp nodig met jouw

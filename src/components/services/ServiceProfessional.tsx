@@ -9,8 +9,8 @@ const ServiceProfessional = () => (
         <h2 className='mb-4 text-3xl font-bold @5xl:text-4xl'>Deskundig</h2>
         <p className='@3xl:mt-4'>
           Ik kom goed voorbereid. Alles wordt netjes gemonteerd en getest
-          geleverd. U hoeft zich geen zorgen te maken over welke
-          installatieautomaten of aardlekschakelaars nodig zijn en hoe uw
+          geleverd. Je heb zich geen zorgen te maken over welke
+          installatieautomaten of aardlekschakelaars nodig zijn en hoe jouw
           groepenkast moet worden samengesteld zodat alles veilig en goed
           functioneert volgens de Nederlandse normen.
         </p>
@@ -18,7 +18,7 @@ const ServiceProfessional = () => (
           En waarschijnlijk het allerbelangrijkste: de fouten zijn mijn
           verantwoordelijkheid. Ik ben opgeleid en gecertificeerd om de
           benodigde installatiewerkzaamheden vakkundig uit te voeren. Bij
-          garantieaanvragen of problemen met uw laadpaal kunt u altijd contact
+          garantieaanvragen of problemen met jouw laadpaal kan je altijd contact
           met mij opnemen.
         </p>
       </section>

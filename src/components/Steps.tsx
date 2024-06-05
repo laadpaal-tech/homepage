@@ -22,7 +22,7 @@ const Steps = () => {
       className='z-10 mb-24 mt-24 flex w-full flex-col items-center justify-start bg-theme-yellow @5xl:w-4/5'
     >
       <h2 className='mt-12 w-[340px] text-center text-4xl font-bold @3xl:w-auto'>
-        Uw eigen laadpaal thuis in 3 stappen:
+        Jouw eigen laadpaal thuis in 3 stappen:
       </h2>
       <ol
         className='flex flex-col items-center justify-start *:mt-8 *:flex *:flex-col *:items-center @5xl:min-w-min *:@5xl:w-full *:@5xl:flex-row
