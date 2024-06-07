@@ -47,6 +47,5 @@ jobs:
           tar czvf laadpaal-tech.tar.gz dist/
           scp -i tmpkey laadpaal-tech.tar.gz idbox@$DEPLOYHOST:~/personal-hosting/deployments/
           ssh -i tmpkey idbox@$DEPLOYHOST /home/idbox/personal-hosting/deploy-laadpaal-tech.sh
-
       - name: Remove SSH Private Key
         run: rm -f tmpkey
