@@ -3,7 +3,7 @@ const ServicePersonal = () => (
     <div className='relative flex w-full bg-theme-blue p-6 pr-0 @3xl:h-[400px] @5xl:h-[450px]'>
       <section className='relative z-10 mt-64 w-11/12 text-lg font-extralight text-white @3xl:mt-0 @3xl:w-3/5 @3xl:text-xl'>
         <h2 className='mb-4 text-3xl font-bold @5xl:text-4xl'>
-          Op maat en personal
+          Op maat en persoonlijk
         </h2>
         <p className='@3xl:mt-4'>
           Elke situatie is anders. Heb je 1-fase of 3-fase aansluiting. Is jouw

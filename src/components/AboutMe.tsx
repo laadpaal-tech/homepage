@@ -14,10 +14,15 @@ const AboutMe = () => (
           gebied van computerbeveiliging. De afgelopen 10 jaar heb ik bij
           Philips doorgebracht als senior software engineer en senior software
           architect. Nu bouw ik mijn eigen onderneming op het gebied van
-          privacy, beveiliging en energiemanagement. Om de behoeften van de
-          markt beter te begrijpen en een relatie bouwen met mijn potentiële
-          toekomstige klanten (en om ook te helpen gefinancierd te blijven) geef
-          ik ook advies en ondersteuning bij de installatie van laadpunten.
+          privacy, beveiliging en energiemanagement.
+        </p>
+        <p className='mt-3'>
+          Als installateur ben ik waarschijnlijk een beetje overgeschoold (Ph.D.
+          in computerbeveiliging), maar ik vind dat leren van de eindgebruikers
+          de beste manier is om hun behoeften en problemen te begrijpen. In de
+          toekomst wil ik er ook voor zorgen dat mijn installateurs op een
+          soortgelijke manier werken: samen met de klant naar de toekomst kijken
+          en de beste oplossing voor nu vinden.
         </p>
         <p className='mt-3'>
           Op 28 maart 2024 heb ik het examen{' '}

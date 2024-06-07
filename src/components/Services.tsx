@@ -2,6 +2,7 @@ import { MakeAppointmentButton } from './MakeAppointmentButton'
 import { Carousel, CarouselItem } from './Carousel'
 import {
   ServiceBeyondOrdinary,
+  ServiceExperiment,
   ServicePersonal,
   ServiceProfessional
 } from './services/'
@@ -20,6 +21,9 @@ const Services = () => (
       </CarouselItem>
       <CarouselItem>
         <ServiceBeyondOrdinary />
+      </CarouselItem>
+      <CarouselItem>
+        <ServiceExperiment />
       </CarouselItem>
     </Carousel>
     <div className='mt-8'>

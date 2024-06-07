@@ -15,20 +15,20 @@ const MeerWeten = () => (
       Bij het plaatsen van een laadpaal werk je met hoge vermogens. De
       installatie moet dus veilig zijn, anders bestaat er brandgevaar.
       Waarschijnlijk voer je ook werkzaamheden uit aan je groepenkast. Misschien
-      moet u uw oude groepenkast vervangen. Ben jij goed voorbereid? Beschik je
-      al over het juiste gereedschap? Ben je bekend met termen als
+      moet je jouw oude groepenkast vervangen. Ben je goed voorbereid? Beschik
+      je al over het juiste gereedschap? Ben je bekend met termen als
       selectiviteit, soorten lekstroom en RCD-verblinding? Zelfs voor een
       ervaren klusser zijn deze termen vaak niet zo bekend en zonder ervaring
-      krijg je uw laadpaal werkend maar toch een onveilige installatie.
+      krijg je jouw laadpaal werkend maar toch een onveilige installatie.
     </p>
     <p className='mt-2 bg-theme-light-yellow p-2 italic'>
       Veel laadpaalfabrikanten weigeren jouw garantierechten als je de laadpaal
       zelf installeert. Om de installatiekosten te verlagen kan je soms sommige
       werkzaamheden zelf uitvoeren maar het is verstandig om dit door een
-      gecertifieerd elektricien te laten inschakelen en controleren. Wilt u een
+      gecertificeerd elektricien te laten inschakelen en controleren. Wil je een
       deel van de werkzaamheden zelf uitvoeren om de installatiekosten te
-      beperken, dan sta ik u graag met advies bij. Plan nu online een afspraak
-      leer meer over de mogelijkheden.
+      beperken, dan adviseer ik je graag. Plan nu online een afspraak en leer
+      meer over de mogelijkheden.
     </p>
     <div className='mt-6 flex w-full items-center justify-center'>
       <MakeAppointmentButton variant='yellow' />

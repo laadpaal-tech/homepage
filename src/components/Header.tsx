@@ -1,5 +1,5 @@
 import Logo from '~/assets/logo-white.svg?react'
-import MenuIcon from '~/assets/menu-icon.svg?react'
+// import MenuIcon from '~/assets/menu-icon.svg?react'
 import Arrow from '~/assets/arrow-2.svg?react'
 import ReadMoreIcon from '~/assets/read-more-icon.svg?react'
 
@@ -7,13 +7,13 @@ import { useRecoilValue } from 'recoil'
 import { readMoreState } from '~/app-state'
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
-const MenuButton = () => (
-  <div className='absolute left-0 top-0 bg-slate-100'>
-    <button className='m-0 block p-0' onClick={() => console.log('hello')}>
-      <MenuIcon width='52px' height='52px' />
-    </button>
-  </div>
-)
+// const MenuButton = () => (
+//   <div className='absolute left-0 top-0 bg-slate-100'>
+//     <button className='m-0 block p-0' onClick={() => console.log('hello')}>
+//       <MenuIcon width='52px' height='52px' />
+//     </button>
+//   </div>
+// )
 
 const ReadMoreButton = () => {
   const { elementToShow } = useRecoilValue(readMoreState)
@@ -35,7 +35,7 @@ const ReadMoreButton = () => {
 const Header = () => (
   <div className='z-10 flex w-full flex-col items-center justify-start'>
     {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] @lg:min-h-[800px] relative flex min-h-screen w-full max-w-5xl flex-col items-center justify-start bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
-    <MenuButton />
+    {/* <MenuButton /> */}
     <div className='mt-16 @3xl:hidden'>
       <Logo width='120px' />
     </div>
@@ -66,8 +66,11 @@ const Header = () => (
     </div>
     <div className='@5xl:mr-16 @5xl:self-end'>
       <MakeAppointmentButton variant='yellow' />
+      <p className='mt-2 text-white opacity-70'>
+        Oriëntatiegesprek, vrijblijvend.
+      </p>
     </div>
-    <div className='h-16 @5xl:h-0' />
+    <div className='h-12 @5xl:h-0' />
     <div className='mb-8'>
       <ReadMoreButton />
     </div>
