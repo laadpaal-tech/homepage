@@ -3,7 +3,7 @@ const ServiceBeyondOrdinary = () => (
     <div className='relative flex w-full flex-col gap-6 bg-theme-blue p-6 @3xl:h-[500px] @3xl:flex-row @5xl:h-[450px] '>
       <div className='absolute left-0 top-0 w-full @3xl:hidden'>
         <img className='w-full' src='/img/workingdesk.jpg' />
-        <div className='absolute bottom-0 left-0 right-0 h-[120px] w-full bg-gradient-to-t from-theme-blue to-[rgba(66,97,128,0.7)] @md:h-[200px] @lg:h-[240px] @xl:h-[220px] @2xl:h-[300px]'></div>
+        <div className='absolute bottom-0 left-0 right-[2px] h-[120px] bg-gradient-to-t from-theme-blue to-[rgba(66,97,128,0.7)] @md:h-[200px] @lg:h-[240px] @xl:h-[220px] @2xl:h-[300px]'></div>
       </div>
       <div className='absolute left-0 top-0 hidden w-full @3xl:block'>
         <img
