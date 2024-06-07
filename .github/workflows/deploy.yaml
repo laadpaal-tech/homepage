@@ -19,9 +19,9 @@ jobs:
 
     steps:
       - name: Check out code 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Setup yarn
@@ -46,5 +46,7 @@ jobs:
         run: |
           tar czvf laadpaal-tech.tar.gz dist/
           scp -i tmpkey laadpaal-tech.tar.gz idbox@$DEPLOYHOST:~/personal-hosting/deployments/
+          ssh -i tmpkey idbox@$DEPLOYHOST /home/idbox/personal-hosting/deploy-laadpaal-tech.sh
+
       - name: Remove SSH Private Key
         run: rm -f tmpkey
