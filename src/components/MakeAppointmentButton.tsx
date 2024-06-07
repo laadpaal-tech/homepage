@@ -7,6 +7,7 @@ const MakeAppointmentButton = (
   <a
     href='https://cal.com/laadpaal.tech'
     rel='noreferrer'
+    target='_blank'
     className={`${variant === 'yellow' ? 'bg-theme-yellow' : 'bg-black'} flex items-center rounded-[28px] px-4 py-3 @sm:rounded-[38px]`}
   >
     <div className='w-[40px] @sm:w-[52px]'>
