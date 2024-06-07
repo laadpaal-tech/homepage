@@ -15,12 +15,20 @@ const Carousel = ({ children }: { children: ReactNode }) => {
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
 
   const onNext = () => {
-    console.log('onNext', el.current?.clientWidth)
-    el.current?.scrollBy(el.current?.clientWidth, 0)
+    if (el.current) {
+      const newPosition = (currentIndex + 1) * el.current.clientWidth
+      scrollToPosition(newPosition)
+    }
+    // console.log('onNext', el.current?.clientWidth)
+    // el.current?.scrollBy(el.current?.clientWidth + 1, 0)
   }
   const onPrev = () => {
-    console.log('onPrev')
-    el.current?.scrollBy(-1 * el.current?.clientWidth, 0)
+    if (el.current) {
+      const newPosition = (currentIndex - 1) * el.current.clientWidth
+      scrollToPosition(newPosition)
+    }
+    // console.log('onPrev')
+    // el.current?.scrollBy(-1 * el.current?.clientWidth, 0)
   }
 
   const onScroll = () => {
@@ -37,20 +45,34 @@ const Carousel = ({ children }: { children: ReactNode }) => {
     }, 100)
   }
 
-  const goTo = (index: number) => {
+  const scrollToPosition = (position: number) => {
     if (el.current) {
       const currentPosition = el.current.scrollLeft
-      const newPosition = index * el.current.clientWidth
-      console.log('scrollWidth=', el.current.scrollWidth)
-      if (
-        newPosition < currentPosition - 1 ||
-        newPosition > currentPosition + 1
-      ) {
+      if (position < currentPosition - 1 || position > currentPosition + 1) {
         el.current?.scrollTo({
-          left: newPosition,
+          left: position,
           behavior: 'smooth'
         })
       }
+    }
+  }
+
+  const goTo = (index: number) => {
+    if (el.current) {
+      const newPosition = index * el.current.clientWidth
+      scrollToPosition(newPosition)
+      // const currentPosition = el.current.scrollLeft
+      // const newPosition = index * el.current.clientWidth
+      // console.log('scrollWidth=', el.current.scrollWidth)
+      // if (
+      //   newPosition < currentPosition - 1 ||
+      //   newPosition > currentPosition + 1
+      // ) {
+      //   el.current?.scrollTo({
+      //     left: newPosition,
+      //     behavior: 'smooth'
+      //   })
+      // }
     }
   }
 
