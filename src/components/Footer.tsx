@@ -26,8 +26,20 @@ const Footer = () => (
     <section className='flex flex-col'>
       <h3 className='mb-0 text-3xl font-bold'>Contact</h3>
       <section className='mb-2 flex items-center gap-12 py-4'>
-        <SignalLogo width={99} height={27} />
-        <WhatsAppLogo width={117} height={27} />
+        <a
+          rel='noreferrer'
+          target='_blank'
+          href='https://signal.me/#eu/ejxg_PgqvcokkxdOrdTHl0JTcdM-kaJkzBLKEjgTbRPSvfP9YvREraiB3S8j7iX4'
+        >
+          <SignalLogo width={99} height={27} />
+        </a>
+        <a
+          rel='noreferrer'
+          target='_blank'
+          href='https://wa.me/message/WRGJMP2QSRXYA1'
+        >
+          <WhatsAppLogo width={117} height={27} />
+        </a>
       </section>
       <p>info@laadpaal.tech</p>
     </section>

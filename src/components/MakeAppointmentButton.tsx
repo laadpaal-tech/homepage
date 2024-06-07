@@ -4,10 +4,12 @@ import CalendarIcon2 from '~/assets/calendar-yellow.svg?react'
 const MakeAppointmentButton = (
   { variant }: { variant: 'yellow' | 'black' } = { variant: 'yellow' }
 ) => (
-  <button
-    className={`${variant === 'yellow' ? 'bg-theme-yellow' : 'bg-black'} @sm:rounded-[38px] flex items-center rounded-[28px] px-4 py-3`}
+  <a
+    href='https://cal.com/laadpaal.tech'
+    rel='noreferrer'
+    className={`${variant === 'yellow' ? 'bg-theme-yellow' : 'bg-black'} flex items-center rounded-[28px] px-4 py-3 @sm:rounded-[38px]`}
   >
-    <div className='@sm:w-[52px] w-[40px]'>
+    <div className='w-[40px] @sm:w-[52px]'>
       {variant === 'yellow' ? (
         <CalendarIcon width='100%' />
       ) : (
@@ -15,11 +17,11 @@ const MakeAppointmentButton = (
       )}
     </div>
     <span
-      className={`@sm:text-[22px] ml-3 inline-block text-[18px] font-bold ${variant === 'black' ? 'text-theme-yellow' : 'text-black'}`}
+      className={`ml-3 inline-block text-[18px] font-bold @sm:text-[22px] ${variant === 'black' ? 'text-theme-yellow' : 'text-black'}`}
     >
       Maak een afspraak
     </span>
-  </button>
+  </a>
 )
 
 export { MakeAppointmentButton }
