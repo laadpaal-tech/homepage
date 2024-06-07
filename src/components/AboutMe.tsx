@@ -10,19 +10,18 @@ const AboutMe = () => (
           Ik heb expertise op het gebied van elektronica en informatica. Ik heb
           meer dan 25 jaar ervaring in verschillende software engineering
           projecten, variërend van embedded systemen tot web en mobiel. Ik
-          behaal mijn masterdiploma in Software Engineering en Ph.D. op het
+          behaalde mijn masterdiploma in Software Engineering en Ph.D. op het
           gebied van computerbeveiliging. De afgelopen 10 jaar heb ik bij
           Philips doorgebracht als senior software engineer en senior software
           architect. Nu bouw ik mijn eigen onderneming op het gebied van
           privacy, beveiliging en energiemanagement.
         </p>
         <p className='mt-3'>
-          Als installateur ben ik waarschijnlijk een beetje overgeschoold (Ph.D.
-          in computerbeveiliging), maar ik vind dat leren van de eindgebruikers
-          de beste manier is om hun behoeften en problemen te begrijpen. In de
-          toekomst wil ik er ook voor zorgen dat mijn installateurs op een
-          soortgelijke manier werken: samen met de klant naar de toekomst kijken
-          en de beste oplossing voor nu vinden.
+          Ik vind dat leren van de eindgebruikers de beste manier is om hun
+          behoeften en problemen te begrijpen. In de toekomst wil ik er ook voor
+          zorgen dat mijn installateurs op een soortgelijke manier werken: samen
+          met de klant naar de toekomst kijken om de beste oplossing voor{' '}
+          <i>nu</i> vinden.
         </p>
         <p className='mt-3'>
           Op 28 maart 2024 heb ik het examen{' '}
