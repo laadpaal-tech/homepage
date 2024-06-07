@@ -932,6 +932,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/container-queries@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@tailwindcss/container-queries@npm:0.1.1"
+  peerDependencies:
+    tailwindcss: ">=3.2.0"
+  checksum: 10/2515ae0ce3ca5f3eb2a54116e97cbf4bce45d5fc7ad4b01f3204f51937461ff099c878048afbca22ca422ea3a9c1779df68a7cfe320ca155da47a8dde3257f4b
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^10.0.0, @testing-library/dom@npm:^10.1.0":
   version: 10.1.0
   resolution: "@testing-library/dom@npm:10.1.0"
@@ -3284,6 +3293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hamt_plus@npm:1.0.2":
+  version: 1.0.2
+  resolution: "hamt_plus@npm:1.0.2"
+  checksum: 10/3680a1820b8e03c79e5977edb7e1ccb48b9db853f5a1fbee2d3b3615f8dded7fa276e158f52d3eea8cb6192a27b2622ae2112e197be7602a8f99814793dc096f
+  languageName: node
+  linkType: hard
+
 "happy-dom@npm:^14.11.0":
   version: 14.11.0
   resolution: "happy-dom@npm:14.11.0"
@@ -3356,6 +3372,55 @@ __metadata:
   checksum: 10/7898a9c1788b2862cf0f9c345a6bec77ba4a0c0983c7f19d610c382343d4f98fa260686b225dfb1f88393a66679d2ec58ee310c1d6868c081eda7918f32cc70a
   languageName: node
   linkType: hard
+
+"homepage@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "homepage@workspace:."
+  dependencies:
+    "@eslint/eslintrc": "npm:^3.1.0"
+    "@eslint/js": "npm:^9.3.0"
+    "@tailwindcss/container-queries": "npm:^0.1.1"
+    "@testing-library/dom": "npm:^10.1.0"
+    "@testing-library/jest-dom": "npm:^6.4.5"
+    "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/user-event": "npm:^14.5.2"
+    "@types/eslint": "npm:^8.56.10"
+    "@types/node": "npm:^20.12.12"
+    "@types/react": "npm:^18.3.2"
+    "@types/react-dom": "npm:^18.3.0"
+    "@typescript-eslint/eslint-plugin": "npm:^7.10.0"
+    "@vitejs/plugin-react": "npm:^4.2.1"
+    "@vitest/coverage-c8": "npm:^0.33.0"
+    autoprefixer: "npm:^10.4.19"
+    eslint: "npm:^9.3.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-config-standard: "npm:^17.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jest: "npm:^28.5.0"
+    eslint-plugin-n: "npm:^17.7.0"
+    eslint-plugin-node: "npm:^11.1.0"
+    eslint-plugin-promise: "npm:^6.1.1"
+    eslint-plugin-react: "npm:^7.34.1"
+    eslint-plugin-react-hooks: "npm:^4.6.2"
+    globals: "npm:^15.3.0"
+    happy-dom: "npm:^14.11.0"
+    postcss: "npm:^8.4.38"
+    prettier: "npm:^3.2.5"
+    prettier-plugin-tailwindcss: "npm:^0.5.14"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    react-router-dom: "npm:^6.23.1"
+    recoil: "npm:^0.7.7"
+    tailwindcss: "npm:^3.4.3"
+    tsconfig-paths: "npm:^4.2.0"
+    typescript: "npm:^5.4.5"
+    typescript-eslint: "npm:^7.10.0"
+    vite: "npm:^5.2.11"
+    vite-plugin-svgr: "npm:^4.2.0"
+    vite-tsconfig-paths: "npm:^4.3.2"
+    vitest: "npm:^1.6.0"
+  languageName: unknown
+  linkType: soft
 
 "html-escaper@npm:^2.0.0":
   version: 2.0.2
@@ -4757,6 +4822,61 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-tailwindcss@npm:^0.5.14":
+  version: 0.5.14
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.14"
+  peerDependencies:
+    "@ianvs/prettier-plugin-sort-imports": "*"
+    "@prettier/plugin-pug": "*"
+    "@shopify/prettier-plugin-liquid": "*"
+    "@trivago/prettier-plugin-sort-imports": "*"
+    "@zackad/prettier-plugin-twig-melody": "*"
+    prettier: ^3.0
+    prettier-plugin-astro: "*"
+    prettier-plugin-css-order: "*"
+    prettier-plugin-import-sort: "*"
+    prettier-plugin-jsdoc: "*"
+    prettier-plugin-marko: "*"
+    prettier-plugin-organize-attributes: "*"
+    prettier-plugin-organize-imports: "*"
+    prettier-plugin-sort-imports: "*"
+    prettier-plugin-style-order: "*"
+    prettier-plugin-svelte: "*"
+  peerDependenciesMeta:
+    "@ianvs/prettier-plugin-sort-imports":
+      optional: true
+    "@prettier/plugin-pug":
+      optional: true
+    "@shopify/prettier-plugin-liquid":
+      optional: true
+    "@trivago/prettier-plugin-sort-imports":
+      optional: true
+    "@zackad/prettier-plugin-twig-melody":
+      optional: true
+    prettier-plugin-astro:
+      optional: true
+    prettier-plugin-css-order:
+      optional: true
+    prettier-plugin-import-sort:
+      optional: true
+    prettier-plugin-jsdoc:
+      optional: true
+    prettier-plugin-marko:
+      optional: true
+    prettier-plugin-organize-attributes:
+      optional: true
+    prettier-plugin-organize-imports:
+      optional: true
+    prettier-plugin-sort-imports:
+      optional: true
+    prettier-plugin-style-order:
+      optional: true
+    prettier-plugin-svelte:
+      optional: true
+  checksum: 10/8cb1e9d914012bfe42b23ba8d31fb3fe17abbbb18ad8ba33e6b81c05a92f7e1dd46836179cde7cf036a628081c9e4bbdf971b17f45844a139781e807b81229a9
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
@@ -4925,6 +5045,22 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 10/196b30ef6ccf9b6e18c4e1724b7334f72a093d011a99f3b5920470f0b3406a51770867b3e1ae9711f227ef7a7065982f6ee2ce316746b2cb42c88efe44297fe7
+  languageName: node
+  linkType: hard
+
+"recoil@npm:^0.7.7":
+  version: 0.7.7
+  resolution: "recoil@npm:0.7.7"
+  dependencies:
+    hamt_plus: "npm:1.0.2"
+  peerDependencies:
+    react: ">=16.13.1"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 10/4ac9dfeddda2795f213b14290de09767b04fb98f1a760bcabe796c53830229f51de63a02cf54c18991c557f25cfeb9571a129ae0a19d734bd98cfc45eebbc82d
   languageName: node
   linkType: hard
 
@@ -5949,52 +6085,6 @@ __metadata:
   checksum: 10/c860e65836509a144cf838eabcf420d848f35aea4c83044e75c9f9d00947f878217470536ea4098dc4e78510cb5fb683ec564f33cddde4dab0459e3a87f5ff79
   languageName: node
   linkType: hard
-
-"vite-starter-react-bun@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "vite-starter-react-bun@workspace:."
-  dependencies:
-    "@eslint/eslintrc": "npm:^3.1.0"
-    "@eslint/js": "npm:^9.3.0"
-    "@testing-library/dom": "npm:^10.1.0"
-    "@testing-library/jest-dom": "npm:^6.4.5"
-    "@testing-library/react": "npm:^15.0.7"
-    "@testing-library/user-event": "npm:^14.5.2"
-    "@types/eslint": "npm:^8.56.10"
-    "@types/node": "npm:^20.12.12"
-    "@types/react": "npm:^18.3.2"
-    "@types/react-dom": "npm:^18.3.0"
-    "@typescript-eslint/eslint-plugin": "npm:^7.10.0"
-    "@vitejs/plugin-react": "npm:^4.2.1"
-    "@vitest/coverage-c8": "npm:^0.33.0"
-    autoprefixer: "npm:^10.4.19"
-    eslint: "npm:^9.3.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-config-standard: "npm:^17.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jest: "npm:^28.5.0"
-    eslint-plugin-n: "npm:^17.7.0"
-    eslint-plugin-node: "npm:^11.1.0"
-    eslint-plugin-promise: "npm:^6.1.1"
-    eslint-plugin-react: "npm:^7.34.1"
-    eslint-plugin-react-hooks: "npm:^4.6.2"
-    globals: "npm:^15.3.0"
-    happy-dom: "npm:^14.11.0"
-    postcss: "npm:^8.4.38"
-    prettier: "npm:^3.2.5"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-router-dom: "npm:^6.23.1"
-    tailwindcss: "npm:^3.4.3"
-    tsconfig-paths: "npm:^4.2.0"
-    typescript: "npm:^5.4.5"
-    typescript-eslint: "npm:^7.10.0"
-    vite: "npm:^5.2.11"
-    vite-plugin-svgr: "npm:^4.2.0"
-    vite-tsconfig-paths: "npm:^4.3.2"
-    vitest: "npm:^1.6.0"
-  languageName: unknown
-  linkType: soft
 
 "vite-tsconfig-paths@npm:^4.3.2":
   version: 4.3.2
