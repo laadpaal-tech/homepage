@@ -5,7 +5,7 @@ const ServiceBeyondOrdinary = () => (
         <img className='w-full' src='/img/workingdesk.jpg' />
         <div className='absolute bottom-0 left-0 right-0 h-[120px] bg-gradient-to-t from-theme-blue to-[rgba(66,97,128,0.7)] @md:h-[200px] @lg:h-[240px] @xl:h-[220px] @2xl:h-[300px]'></div>
       </div>
-      <div className='absolute bottom-0 left-0 right-0 top-0 hidden @3xl:block'>
+      <div className='absolute left-0 right-0 top-0 hidden @3xl:block'>
         <img
           className='max-h-[450px] w-full object-cover'
           src='/img/workingdesk.jpg'
