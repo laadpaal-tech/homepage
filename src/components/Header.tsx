@@ -1,5 +1,6 @@
 import Logo from '~/assets/logo-white.svg?react'
 // import MenuIcon from '~/assets/menu-icon.svg?react'
+import Schouwing from '~/assets/schouwing.svg?react'
 import Arrow from '~/assets/arrow-2.svg?react'
 import ReadMoreIcon from '~/assets/read-more-icon.svg?react'
 
@@ -36,14 +37,14 @@ const Header = () => (
   <div className='z-10 flex w-full flex-col items-center justify-start'>
     {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] @lg:min-h-[800px] relative flex min-h-screen w-full max-w-5xl flex-col items-center justify-start bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
     {/* <MenuButton /> */}
-    <div className='mt-16 @3xl:hidden'>
+    <div className='mt-8 @3xl:hidden'>
       <Logo width='120px' />
     </div>
     <div className='flex w-full items-center justify-center @3xl:items-start @3xl:justify-start'>
-      <div className='mr-4 hidden @3xl:ml-16 @3xl:mt-[180px] @3xl:block'>
+      <div className='mr-4 hidden @3xl:ml-16 @3xl:mt-[120px] @3xl:block'>
         <Logo width='110px' />
       </div>
-      <div className='flex flex-col @3xl:mt-[180px]'>
+      <div className='flex flex-col @3xl:mt-[120px]'>
         <h1 className='my-6 self-center font-roboto-mono text-4xl font-bold text-white @sm:text-5xl @3xl:mt-0 @3xl:text-7xl'>
           laadpaal.tech
           {/* <h2 className='mt-6 font-sans text-2xl font-normal text-white @sm:text-3xl @3xl:text-5xl'>
@@ -61,16 +62,32 @@ const Header = () => (
         </h2>
       </div>
     </div>
-    <div className='h-8 @sm:h-24 @5xl:-mt-8 @5xl:mb-8 @5xl:mr-48 @5xl:h-auto @5xl:self-end'>
-      <Arrow className='hidden @5xl:block' width='160px' />
+    <div className='flex w-full flex-col items-center justify-center @5xl:flex-row @5xl:justify-between'>
+      <div className='relative left-12 top-0 hidden w-1/2 flex-col @5xl:flex'>
+        <Schouwing />
+        <p className='relative left-1 mt-2 text-white opacity-70'>
+          Eindhoven en omgeving (≈ 10km van het centrum van Eindhoven).
+        </p>
+      </div>
+      <div className='relative mt-6 flex w-3/4 flex-col @5xl:hidden'>
+        <Schouwing />
+        <p className='relative top-1 text-xs text-white opacity-70 @2xl:text-base @5xl:left-1 @5xl:mt-2'>
+          Eindhoven en omgeving (≈ 10km van het centrum van Eindhoven).
+        </p>
+      </div>
+      <div>
+        <div className='h-8 @sm:h-12 @5xl:-mt-8 @5xl:mb-8 @5xl:mr-48 @5xl:h-auto @5xl:self-end'>
+          <Arrow className='hidden @5xl:block' width='160px' />
+        </div>
+        <div className='@5xl:mr-16 @5xl:self-end'>
+          <MakeAppointmentButton variant='yellow' />
+          <p className='mt-2 text-white opacity-70'>
+            Oriëntatiegesprek, vrijblijvend.
+          </p>
+        </div>
+      </div>
     </div>
-    <div className='@5xl:mr-16 @5xl:self-end'>
-      <MakeAppointmentButton variant='yellow' />
-      <p className='mt-2 text-white opacity-70'>
-        Oriëntatiegesprek, vrijblijvend.
-      </p>
-    </div>
-    <div className='h-12 @5xl:h-0' />
+    <div className='h-6' />
     <div className='mb-8'>
       <ReadMoreButton />
     </div>
