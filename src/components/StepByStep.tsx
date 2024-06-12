@@ -1,7 +1,7 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
 const StepByStep = () => (
-  <section className='bg-theme-very-light-yellow w-full p-6 text-lg'>
+  <section className='w-full bg-theme-very-light-yellow p-6 text-lg'>
     <h2 className='my-6 text-center text-4xl font-bold'>
       Laadpaal installatie stap voor stap
     </h2>
@@ -142,7 +142,7 @@ const StepByStep = () => (
       uiteindelijk geld zal kosten.
     </p>
     <div className='relative mt-6 flex w-full items-center justify-center'>
-      <div className='relative -left-12 bottom-0 z-30 mt-[120px] @md:mt-[200px] @lg:mt-[230px] @xl:-left-24 @xl:mt-[260px]'>
+      <div className='relative -left-12 bottom-0 z-30 mt-[140px] @md:mt-[200px] @lg:mt-[230px] @xl:-left-24 @xl:mt-[260px]'>
         <MakeAppointmentButton variant='yellow' />
       </div>
       <div className='absolute bottom-8 @xl:bottom-0'>
