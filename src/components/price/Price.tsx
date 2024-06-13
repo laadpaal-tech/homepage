@@ -1,4 +1,4 @@
-import { Questionnaire } from './Questionnaire'
+import { Questionnaire } from '../questionnaire/Questionnaire'
 
 const Price = () => {
   return (
