@@ -1,7 +1,7 @@
 // import { Select, SelectItem, Button } from '@nextui-org/react'
 import { RadioGroup } from '@nextui-org/react'
 import {
-  defaultInstallationConfig,
+  // defaultInstallationConfig,
   installationConfig
 } from '../../app-state/configuration'
 import type {
@@ -15,6 +15,7 @@ import type { Language } from './questionnaireData'
 
 import { CustomRadio } from './CustomRadio'
 import { useRecoilState } from 'recoil'
+import { useEffect, useRef } from 'react'
 
 type QuestionnaireStepProps<C extends keyof Configuration> = {
   onNext: (keyValue: ConfigurationOption<C>) => void
@@ -31,6 +32,7 @@ const QuestionnaireStep = <C extends keyof Configuration>({
   language,
   name
 }: QuestionnaireStepProps<C>) => {
+  const ref = useRef<HTMLDivElement>(null)
   const [config, setConfig] = useRecoilState(installationConfig)
   const onValueChange = (value: string) => {
     const allowedValues = options.map((o) => o.value) as [
@@ -49,8 +51,16 @@ const QuestionnaireStep = <C extends keyof Configuration>({
     onNext(option)
   }
 
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+  })
+
   return (
-    <div className='flex'>
+    <div ref={ref} className='flex scroll-mt-6'>
       <RadioGroup
         label={questionnaireData[language][name].question}
         className='w-2/3 p-6 pl-6'
@@ -59,7 +69,7 @@ const QuestionnaireStep = <C extends keyof Configuration>({
           label: 'text-xl pb-4 text-black'
         }}
         onValueChange={onValueChange}
-        defaultValue={defaultInstallationConfig[name]}
+        // defaultValue={defaultInstallationConfig[name]}
         value={config[name]}
       >
         {options.map((option) => (

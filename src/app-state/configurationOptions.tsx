@@ -3,6 +3,7 @@ const configurationOptionsNL = {
     { value: '1PHASE', label: '1-fase', description: null, extraInfo: null },
     { value: '3PHASE', label: '3-fase', description: null, extraInfo: null }
   ],
+  connectionValue1Phase: [],
   upgradeConnection: [
     { value: 'YES', label: 'JA', description: null, extraInfo: null },
     { value: 'NO', label: 'NEE', description: null, extraInfo: null }
