@@ -1,25 +1,12 @@
-// type ConnectionNL = '1-fase' | '2-fase'
-// type Connection = ConnectionNL
+const questionnaireNL = {
+  connection: {
+    question: 'Wat is jouw huidige aansluiting?',
+    label: 'huidige aansluiting'
+  }
+} as const
 
-// type ConnectionOption = {
-//   key: 'connection'
-//   value: Connection
-// }
-
-// type OptionBase = {
-//   default?: boolean
-// }
-
-// type Option = ConnectionOption & OptionBase
-
-type Connection = '1PHASE' | '3PHASE'
-
-type Configuration = {
-  connection: Connection
-}
-
-const defaultConfiguration: Configuration = {
-  connection: '1PHASE'
+const questionnaire = {
+  nl: questionnaireNL
 }
 
 const configurationOptionsNL = {
@@ -29,7 +16,46 @@ const configurationOptionsNL = {
   ]
 } as const
 
+const configurationOptions = {
+  nl: configurationOptionsNL
+}
+
 type ConfigurationOptionsNL = typeof configurationOptionsNL
 
-export { defaultConfiguration, configurationOptionsNL }
-export type { ConfigurationOptionsNL, Configuration }
+type ConfigurationOptions = ConfigurationOptionsNL
+
+type ConfigurationOptionsKeyValues = Pick<
+  ConfigurationOptions,
+  'connection'
+>['connection']
+
+type ConfigurationOptionValues<C extends keyof ConfigurationOptions> =
+  ConfigurationOptions[C][number]['key']
+
+type ConfigurationOptionsKeyValuePairs<C extends keyof ConfigurationOptions> =
+  ConfigurationOptions[C]
+
+type Configuration = {
+  connection: ConfigurationOptionValues<'connection'>
+}
+
+const defaultConfiguration: Configuration = {
+  connection: '1PHASE'
+}
+
+type ConfigurationOption<C extends keyof Configuration> = {
+  [key in C]: Configuration[C]
+}
+
+type Language = keyof typeof questionnaire
+
+export { defaultConfiguration, configurationOptions, questionnaire }
+export type {
+  ConfigurationOptions,
+  Configuration,
+  ConfigurationOptionsKeyValuePairs,
+  ConfigurationOptionValues,
+  ConfigurationOption,
+  ConfigurationOptionsKeyValues,
+  Language
+}
