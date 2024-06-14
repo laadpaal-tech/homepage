@@ -1,23 +1,4 @@
-import { ReactNode } from 'react'
-
-type StepOption = {
-  value: string
-  label: string
-  description?: string
-  extraInfo?: () => ReactNode
-}
-
-type StepConfig = {
-  type: 'radio' | 'select' | 'info'
-  header: string
-  options: StepOption[]
-}
-
-type StepName = 'connection' | 'upgradeConnection' | 'distributionBox3Phase'
-
-type QuestionnaireConfig = {
-  [Key in StepName]: StepConfig
-}
+import type { QuestionnaireConfig } from '../components/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 
 const questionnaireConfig: QuestionnaireConfig = {
   connection: {
@@ -81,42 +62,6 @@ const questionnaireConfig: QuestionnaireConfig = {
       // }
     ]
   }
-} as const
-
-// type QuestionnaireConfig = typeof questionnaireConfig
-// type QuestionnaireStepNames = keyof QuestionnaireConfig
-
-// type ValuesForStepName<Name extends QuestionnaireStepNames> =
-//   QuestionnaireConfig[Name]['options'][number]['value']
-
-// type QuestionnaireConfigForStepName<Name extends QuestionnaireStepNames> =
-//   QuestionnaireConfig[Name]
-
-// type OptionsTypeForStepName<Name extends QuestionnaireStepNames> = QuestionnaireConfigForStepName<Name>['options']
-
-// type StepNameValues = {
-//   [Key in keyof QuestionnaireConfig]: QuestionnaireConfig[Key]['options'][number]['value']
-// }
-
-type ValueSelectedForStepName = {
-  stepName: StepName
-  selectedValue: string
 }
 
 export { questionnaireConfig }
-export type {
-  QuestionnaireConfig,
-  StepConfig,
-  StepOption,
-  StepName,
-  ValueSelectedForStepName
-}
-// export type {
-//   QuestionnaireConfig,
-//   QuestionnaireConfigForStepName,
-//   OptionsTypeForStepName,
-//   QuestionnaireStepNames,
-//   ValuesForStepName,
-//   StepNameValues,
-//   ValueSelectedForStepName
-// }

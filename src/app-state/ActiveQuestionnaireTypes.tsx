@@ -1,4 +1,7 @@
-import type { StepConfig, StepName } from './combinedConfiguration'
+import type {
+  StepConfig,
+  StepName
+} from '../components/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 
 type StepData = {
   id: string

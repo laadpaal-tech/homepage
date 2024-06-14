@@ -2,9 +2,9 @@ import { useRecoilState } from 'recoil'
 import { activeQuestionnaire } from '~/app-state/activeQuestionnaire'
 import type { StepData } from '~/app-state/ActiveQuestionnaireTypes'
 
-import { ValueSelectedForStepName } from '~/app-state/combinedConfiguration'
+import type { ValueSelectedForStepName } from './questionnaire-state-machine/QuestionnaireTypes'
 import { NewQuestionnaireStepRadio } from './NewQuestionnaireStepRadio'
-import { QuestionnaireStateMachine } from '~/app-state/QuestionnaireStateMachine'
+import { QuestionnaireStateMachine } from './questionnaire-state-machine/QuestionnaireStateMachine'
 
 const NewQuestionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =

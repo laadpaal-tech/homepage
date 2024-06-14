@@ -1,10 +1,10 @@
 import { RadioGroup } from '@nextui-org/react'
 import { CustomRadio } from './CustomRadio'
 import { useEffect, useRef } from 'react'
-import {
+import type {
   StepName,
   ValueSelectedForStepName
-} from '~/app-state/combinedConfiguration'
+} from './questionnaire-state-machine/QuestionnaireTypes'
 import { StepData } from '~/app-state/ActiveQuestionnaireTypes'
 
 type NewQuestionnaireStepRadioProps = {
