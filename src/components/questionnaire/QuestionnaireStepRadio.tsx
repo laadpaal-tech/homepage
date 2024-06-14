@@ -1,39 +1,36 @@
-// import { Select, SelectItem, Button } from '@nextui-org/react'
 import { RadioGroup } from '@nextui-org/react'
-import {
-  // defaultInstallationConfig,
-  installationConfig
-} from '../../app-state/configuration'
+import { installationConfig } from '../../app-state/configuration'
 import type {
   Configuration,
   ConfigurationOption,
   ConfigurationOptionValues,
   ConfigurationOptionsObjects
 } from '../../app-state/configuration'
-import { questionnaireData } from './questionnaireData'
-import type { Language } from './questionnaireData'
+import type { Language, QuestionnaireData } from './questionnaireData'
 
 import { CustomRadio } from './CustomRadio'
-import { useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { useEffect, useRef } from 'react'
 
-type QuestionnaireStepProps<C extends keyof Configuration> = {
+type QuestionnaireStepRadioProps<C extends keyof Configuration> = {
   onNext: (keyValue: ConfigurationOption<C>) => void
   options: ConfigurationOptionsObjects<C>
   name: C
+  questionnaireData: QuestionnaireData
   language: Language
   className?: string
   classNames?: Record<string, string>
 }
 
-const QuestionnaireStep = <C extends keyof Configuration>({
+const QuestionnaireStepRadio = <C extends keyof Configuration>({
   onNext,
   options,
   language,
-  name
-}: QuestionnaireStepProps<C>) => {
+  name,
+  questionnaireData
+}: QuestionnaireStepRadioProps<C>) => {
   const ref = useRef<HTMLDivElement>(null)
-  const [config, setConfig] = useRecoilState(installationConfig)
+  const setConfig = useSetRecoilState(installationConfig)
   const onValueChange = (value: string) => {
     const allowedValues = options.map((o) => o.value) as [
       ConfigurationOptionValues<C>
@@ -63,14 +60,12 @@ const QuestionnaireStep = <C extends keyof Configuration>({
     <div ref={ref} className='flex scroll-mt-6'>
       <RadioGroup
         label={questionnaireData[language][name].question}
-        className='w-2/3 p-6 pl-6'
+        className='w-2/3 p-6'
         classNames={{
           base: 'border border-theme-blue rounded-xl',
           label: 'text-xl pb-4 text-black'
         }}
         onValueChange={onValueChange}
-        // defaultValue={defaultInstallationConfig[name]}
-        value={config[name]}
       >
         {options.map((option) => (
           <CustomRadio
@@ -83,26 +78,8 @@ const QuestionnaireStep = <C extends keyof Configuration>({
           </CustomRadio>
         ))}
       </RadioGroup>
-      {/* <Select
-          selectionMode='single'
-          label={questionnaire[language][name].label}
-          name={name}
-          className='max-w-xs'
-          classNames={{ value: 'text-xl', trigger: 'min-h-16 text-xl' }}
-          disallowEmptySelection
-          onChange={onChange}
-        >
-          {options.map((option) => (
-            <SelectItem key={option.key} aria-multiline>
-              {option.value}
-            </SelectItem>
-          ))}
-        </Select>
-        <Button color='primary' isDisabled={!selected} onClick={onNextStep}>
-          Next...
-        </Button> */}
     </div>
   )
 }
 
-export { QuestionnaireStep }
+export { QuestionnaireStepRadio }
