@@ -1,6 +1,6 @@
 import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 
-class Utils {
+class QuestionnaireUtils {
   static validateData(value: string, stepData: StepData) {
     const allowedValues = stepData.stepConfig.options.map((o) => o.value)
     if (!allowedValues.includes(value)) {
@@ -9,4 +9,4 @@ class Utils {
   }
 }
 
-export { Utils }
+export { QuestionnaireUtils }

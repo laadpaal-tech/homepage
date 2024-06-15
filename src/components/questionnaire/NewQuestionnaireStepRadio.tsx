@@ -3,7 +3,7 @@ import { RadioGroup } from '@nextui-org/react'
 import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 import { CustomRadio } from './CustomRadio'
-import { Utils } from './Utils'
+import { QuestionnaireUtils } from './QuestionnaireUtils'
 
 type NewQuestionnaireStepRadioProps = {
   stepData: StepData
@@ -18,7 +18,7 @@ const NewQuestionnaireStepRadio = ({
 }: NewQuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const onValueChange = (value: string) => {
-    Utils.validateData(value, stepData)
+    QuestionnaireUtils.validateData(value, stepData)
     const valueSelectedForStepName: ValueSelectedForStepName = {
       stepName: stepData.name,
       selectedValue: value

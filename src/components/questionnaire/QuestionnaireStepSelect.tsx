@@ -3,7 +3,7 @@ import { Select, SelectItem } from '@nextui-org/react'
 
 import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
-import { Utils } from './Utils'
+import { QuestionnaireUtils } from './QuestionnaireUtils'
 
 type QuestionnaireStepSelectProps = {
   stepData: StepData
@@ -19,7 +19,7 @@ const QuestionnaireStepSelect = ({
   const ref = useRef<HTMLDivElement>(null)
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value
-    Utils.validateData(value, stepData)
+    QuestionnaireUtils.validateData(value, stepData)
     const valueSelectedForStepName: ValueSelectedForStepName = {
       stepName: stepData.name,
       selectedValue: value
