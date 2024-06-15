@@ -1,7 +1,7 @@
 import {
   Configuration,
   defaultInstallationConfig
-} from '~/app-state/configuration'
+} from '~/to-be-deleted/configuration'
 
 const questionnaireNL = {
   connection: {

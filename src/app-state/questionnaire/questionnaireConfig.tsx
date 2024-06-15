@@ -1,4 +1,4 @@
-import type { QuestionnaireConfig } from '../components/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import type { QuestionnaireConfig } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 
 const questionnaireConfig: QuestionnaireConfig = {
   connection: {

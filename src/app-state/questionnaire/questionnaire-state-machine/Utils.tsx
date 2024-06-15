@@ -1,5 +1,5 @@
-import { StepData } from '~/app-state/ActiveQuestionnaireTypes'
-import { questionnaireConfig } from '../../../app-state/combinedConfiguration'
+import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
+import { questionnaireConfig } from '~/app-state/questionnaire/questionnaireConfig'
 import type { StepConfig, StepName, StepOption } from './QuestionnaireTypes'
 
 type NextStepArgs = {

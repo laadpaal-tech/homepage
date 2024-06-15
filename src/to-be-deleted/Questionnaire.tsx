@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { configurationOptions } from '../../app-state/configurationOptions'
+import { configurationOptions } from './configurationOptions'
 import {
   installationConfig,
   type Configuration,
   type ConfigurationOption,
   type ConfigurationOptionValues
-} from '../../app-state/configuration'
+} from './configuration'
 import { QuestionnaireStepRadio } from './QuestionnaireStepRadio'
 import { questionnaireData } from './questionnaireData'
 import type { Language } from './questionnaireData'

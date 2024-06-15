@@ -1,14 +1,14 @@
 import { RadioGroup } from '@nextui-org/react'
-import { installationConfig } from '../../app-state/configuration'
+import { installationConfig } from './configuration'
 import type {
   Configuration,
   ConfigurationOption,
   ConfigurationOptionValues,
   ConfigurationOptionsObjects
-} from '../../app-state/configuration'
+} from './configuration'
 import type { Language, QuestionnaireData } from './questionnaireData'
 
-import { CustomRadio } from './CustomRadio'
+import { CustomRadio } from '../components/questionnaire/CustomRadio'
 import { useSetRecoilState } from 'recoil'
 import { useEffect, useRef } from 'react'
 

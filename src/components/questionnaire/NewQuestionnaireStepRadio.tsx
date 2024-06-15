@@ -4,8 +4,8 @@ import { useEffect, useRef } from 'react'
 import type {
   StepName,
   ValueSelectedForStepName
-} from './questionnaire-state-machine/QuestionnaireTypes'
-import { StepData } from '~/app-state/ActiveQuestionnaireTypes'
+} from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 
 type NewQuestionnaireStepRadioProps = {
   name: StepName

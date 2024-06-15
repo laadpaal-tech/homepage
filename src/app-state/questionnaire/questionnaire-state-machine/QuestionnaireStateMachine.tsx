@@ -1,4 +1,4 @@
-import type { ActiveQuestionnaire } from '../../../app-state/ActiveQuestionnaireTypes'
+import type { ActiveQuestionnaire } from '../../../app-state/questionnaire/ActiveQuestionnaireTypes'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Utils } from './Utils'
