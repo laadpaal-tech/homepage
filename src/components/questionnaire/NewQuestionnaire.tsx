@@ -36,16 +36,19 @@ const NewQuestionnaire = () => {
       baseSequence[positionInSequence]
     )
     currentStep.selectedValue = selectedValue
-    newCurrentSequence.push(currentStep)
+    // newCurrentSequence.push(currentStep)
 
-    const nextStepData = QuestionnaireStateMachine.nextStep({
+    const nextStep = QuestionnaireStateMachine.nextStep({
       stepName,
       selectedValue,
-      baseSequence: newCurrentSequence
+      immutablePreviousSteps: baseSequence,
+      mutableCurrentStep: currentStep
     })
 
-    if (nextStepData) {
-      baseSequence.push(nextStepData)
+    newCurrentSequence.push(currentStep)
+
+    if (nextStep) {
+      baseSequence.push(nextStep)
     }
 
     setActiveQuestionnaireData((prev) => {

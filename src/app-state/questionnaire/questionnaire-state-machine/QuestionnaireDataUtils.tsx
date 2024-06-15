@@ -7,7 +7,8 @@ import type { StepConfig, StepName, StepOption } from './QuestionnaireTypes'
 type NextStepArgs = {
   stepName: StepName
   selectedValue: string
-  baseSequence: StepData[]
+  readonly immutablePreviousSteps: StepData[]
+  mutableCurrentStep: StepData
 }
 
 class QuestionnaireDataUtils {
