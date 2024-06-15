@@ -1,23 +1,24 @@
-import { useEffect, useRef } from 'react'
-import { RadioGroup } from '@nextui-org/react'
+import { ChangeEvent, useEffect, useRef } from 'react'
+import { Select, SelectItem } from '@nextui-org/react'
+
 import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
 import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
-import { CustomRadio } from './CustomRadio'
 import { Utils } from './Utils'
 
-type NewQuestionnaireStepRadioProps = {
+type QuestionnaireStepSelectProps = {
   stepData: StepData
   onValueSelected: (valueSelectedForStepName: ValueSelectedForStepName) => void
   disableScrollIntoView?: boolean
 }
 
-const NewQuestionnaireStepRadio = ({
+const QuestionnaireStepSelect = ({
   stepData,
   onValueSelected,
   disableScrollIntoView
-}: NewQuestionnaireStepRadioProps) => {
+}: QuestionnaireStepSelectProps) => {
   const ref = useRef<HTMLDivElement>(null)
-  const onValueChange = (value: string) => {
+  const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value
     Utils.validateData(value, stepData)
     const valueSelectedForStepName: ValueSelectedForStepName = {
       stepName: stepData.name,
@@ -35,29 +36,26 @@ const NewQuestionnaireStepRadio = ({
   })
 
   return (
-    <div ref={ref} className='flex scroll-mt-6'>
-      <RadioGroup
-        label={stepData.stepConfig.header}
-        className='w-2/3 p-6'
-        classNames={{
-          base: 'border border-theme-blue rounded-xl',
-          label: 'text-xl pb-4 text-black'
-        }}
-        onValueChange={onValueChange}
+    <div
+      ref={ref}
+      className='flex w-2/3 scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
+    >
+      <h3 className='pb-4 text-xl text-black'>{stepData.stepConfig.header}</h3>
+      <Select
+        selectionMode='single'
+        label={stepData.stepConfig.label}
+        name={stepData.name}
+        className='max-w-xs'
+        classNames={{ value: 'text-xl', trigger: 'min-h-16 text-xl' }}
+        disallowEmptySelection
+        onChange={onChange}
       >
         {stepData.stepConfig.options.map((option) => (
-          <CustomRadio
-            key={option.value}
-            description={option.description}
-            value={option.value}
-            renderExtraInfo={option.extraInfo}
-          >
-            {option.label}
-          </CustomRadio>
+          <SelectItem key={option.value}>{option.label}</SelectItem>
         ))}
-      </RadioGroup>
+      </Select>
     </div>
   )
 }
 
-export { NewQuestionnaireStepRadio }
+export { QuestionnaireStepSelect }

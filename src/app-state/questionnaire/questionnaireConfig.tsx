@@ -29,13 +29,33 @@ const questionnaireConfig: QuestionnaireConfig = {
         label: 'NEE'
       }
     ]
-    // next: (value: string) => {
-    //   if (value === 'YES') {
-    //     return 'distributionBox3Phase'
-    //   } else {
-    //     return 'currentCapacity1Phase'
-    //   }
-    // }
+  },
+  currentCapacity1Phase: {
+    type: 'select',
+    header: 'Wat is jouw huidige 1-fase aansluiting waarde?',
+    label: 'aansluiting waarde:',
+    options: [
+      {
+        value: '1x6A',
+        label: '1x6A'
+      },
+      {
+        value: '1x10A',
+        label: '1x10A'
+      },
+      {
+        value: '1x25A',
+        label: '1x25A'
+      },
+      {
+        value: '1x35A',
+        label: '1x35A'
+      },
+      {
+        value: '1x40A',
+        label: '1x40A'
+      }
+    ]
   },
   distributionBox3Phase: {
     type: 'radio',

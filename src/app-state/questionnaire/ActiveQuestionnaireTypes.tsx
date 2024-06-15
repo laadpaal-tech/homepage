@@ -8,7 +8,8 @@ type StepData = {
   name: StepName
   selectedValue?: string
   price?: number
-} & StepConfig
+  stepConfig: StepConfig
+}
 
 type ActiveQuestionnaire = {
   currentSequence: StepData[]

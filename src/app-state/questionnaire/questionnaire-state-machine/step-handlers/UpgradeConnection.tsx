@@ -1,14 +1,14 @@
 import { QuestionnaireDataUtils } from '../QuestionnaireDataUtils'
 import type { NextStepArgs } from '../QuestionnaireDataUtils'
 
-class Connection {
+class UpgradeConnection {
   static nextStep({ selectedValue }: NextStepArgs) {
-    if (selectedValue === '1PHASE') {
-      return QuestionnaireDataUtils.createStepData('upgradeConnection')
-    } else {
+    if (selectedValue === 'YES') {
       return QuestionnaireDataUtils.createStepData('distributionBox3Phase')
+    } else {
+      return QuestionnaireDataUtils.createStepData('currentCapacity1Phase')
     }
   }
 }
 
-export { Connection }
+export { UpgradeConnection }

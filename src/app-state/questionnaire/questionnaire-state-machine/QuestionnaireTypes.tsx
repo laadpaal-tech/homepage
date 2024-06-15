@@ -11,10 +11,15 @@ type StepConfig = {
   type: 'radio' | 'select' | 'info'
   header: string
   isInitial?: boolean
+  label?: string
   options: StepOption[]
 }
 
-type StepName = 'connection' | 'upgradeConnection' | 'distributionBox3Phase'
+type StepName =
+  | 'connection'
+  | 'upgradeConnection'
+  | 'distributionBox3Phase'
+  | 'currentCapacity1Phase'
 
 type QuestionnaireConfig = {
   [Key in StepName]: StepConfig

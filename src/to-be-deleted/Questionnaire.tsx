@@ -9,7 +9,7 @@ import {
 import { QuestionnaireStepRadio } from './QuestionnaireStepRadio'
 import { questionnaireData } from './questionnaireData'
 import type { Language } from './questionnaireData'
-import { QuestionnaireStepSelect } from './QuestionnaireStepSelect'
+import { QuestionnaireStepSelect } from '../components/questionnaire/QuestionnaireStepSelect'
 import { useRecoilValue } from 'recoil'
 
 type QuestionnaireStepName = keyof Configuration

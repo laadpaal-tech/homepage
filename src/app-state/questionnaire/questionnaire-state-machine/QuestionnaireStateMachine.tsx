@@ -1,12 +1,13 @@
 import type { ActiveQuestionnaire } from '../../../app-state/questionnaire/ActiveQuestionnaireTypes'
 import { v4 as uuidv4 } from 'uuid'
 
-import { Utils } from './Utils'
-import type { NextStepArgs } from './Utils'
+import { QuestionnaireDataUtils } from './QuestionnaireDataUtils'
+import type { NextStepArgs } from './QuestionnaireDataUtils'
 
-import { Connection } from './step-handlers/Connection'
 import { questionnaireConfig } from '../questionnaireConfig'
-import { StepName } from './QuestionnaireTypes'
+import type { StepName } from './QuestionnaireTypes'
+
+import { Connection, UpgradeConnection } from './step-handlers/'
 
 class QuestionnaireStateMachine {
   activeQuestionnaire: ActiveQuestionnaire
@@ -24,13 +25,13 @@ class QuestionnaireStateMachine {
         'No initial step configured in the questionnaireConfig! One of the steps needs to have <<isInitial>> attribute set to <<true>>.'
       )
     }
-    const connectionConfig = Utils.copyConfig(initialStepName)
+    const stepConfig = QuestionnaireDataUtils.copyConfig(initialStepName)
     const initialQuestionnaire: ActiveQuestionnaire = {
       currentSequence: [
         {
           id: uuidv4(),
           name: initialStepName,
-          ...connectionConfig
+          stepConfig
         }
       ]
     }
@@ -41,6 +42,8 @@ class QuestionnaireStateMachine {
     switch (args.stepName) {
       case 'connection':
         return Connection.nextStep(args)
+      case 'upgradeConnection':
+        return UpgradeConnection.nextStep(args)
       default:
         break
     }
