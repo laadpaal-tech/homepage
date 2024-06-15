@@ -10,6 +10,7 @@ type StepOption = {
 type StepConfig = {
   type: 'radio' | 'select' | 'info'
   header: string
+  isInitial?: boolean
   options: StepOption[]
 }
 

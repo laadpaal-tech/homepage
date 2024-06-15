@@ -11,12 +11,14 @@ type NewQuestionnaireStepRadioProps = {
   name: StepName
   stepData: StepData
   onValueSelected: (valueSelectedForStepName: ValueSelectedForStepName) => void
+  disableScrollIntoView?: boolean
 }
 
 const NewQuestionnaireStepRadio = ({
   name,
   stepData,
-  onValueSelected
+  onValueSelected,
+  disableScrollIntoView
 }: NewQuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const onValueChange = (value: string) => {
@@ -32,7 +34,7 @@ const NewQuestionnaireStepRadio = ({
   }
 
   useEffect(() => {
-    if (ref.current) {
+    if (!disableScrollIntoView && ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth'
       })

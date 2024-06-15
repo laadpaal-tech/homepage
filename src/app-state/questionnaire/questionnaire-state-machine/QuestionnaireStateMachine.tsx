@@ -5,6 +5,8 @@ import { Utils } from './Utils'
 import type { NextStepArgs } from './Utils'
 
 import { Connection } from './step-handlers/Connection'
+import { questionnaireConfig } from '../questionnaireConfig'
+import { StepName } from './QuestionnaireTypes'
 
 class QuestionnaireStateMachine {
   activeQuestionnaire: ActiveQuestionnaire
@@ -14,12 +16,20 @@ class QuestionnaireStateMachine {
   }
 
   static init(): ActiveQuestionnaire {
-    const connectionConfig = Utils.copyConfig('connection')
+    const initialStepName = Object.keys(questionnaireConfig).find(
+      (e) => questionnaireConfig[e as StepName].isInitial === true
+    ) as StepName
+    if (!initialStepName) {
+      throw new Error(
+        'No initial step configured in the questionnaireConfig! One of the steps needs to have <<isInitial>> attribute set to <<true>>.'
+      )
+    }
+    const connectionConfig = Utils.copyConfig(initialStepName)
     const initialQuestionnaire: ActiveQuestionnaire = {
       currentSequence: [
         {
           id: uuidv4(),
-          name: 'connection',
+          name: initialStepName,
           ...connectionConfig
         }
       ]

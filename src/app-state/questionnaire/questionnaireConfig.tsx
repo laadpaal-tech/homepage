@@ -4,6 +4,7 @@ const questionnaireConfig: QuestionnaireConfig = {
   connection: {
     type: 'radio',
     header: 'Wat is jouw huidige aansluiting?',
+    isInitial: true,
     options: [
       {
         value: '1PHASE',

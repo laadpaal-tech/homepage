@@ -53,6 +53,7 @@ const NewQuestionnaire = () => {
           key={stepData.id}
           name={stepData.name}
           stepData={stepData}
+          disableScrollIntoView={stepData.name === 'connection'}
           onValueSelected={onValueSelected}
         />
       )
