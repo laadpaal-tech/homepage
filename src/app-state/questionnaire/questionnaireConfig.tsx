@@ -1,4 +1,8 @@
 import type { QuestionnaireConfig } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import {
+  MustUpgradeCapacity1PhaseHeader,
+  MustUpgradeCapacity1PhaseYES3PhaseDescription
+} from './extra-formatting-components/'
 
 const questionnaireConfig: QuestionnaireConfig = {
   connection: {
@@ -27,6 +31,40 @@ const questionnaireConfig: QuestionnaireConfig = {
       {
         value: 'NO',
         label: 'NEE'
+      }
+    ]
+  },
+  upgradeCapactity1Phase: {
+    type: 'radio',
+    header: 'Wil je jouw huidige 1-fase aansluiting verzwaren?',
+    options: [
+      {
+        value: 'YES',
+        label: 'JA'
+      },
+      {
+        value: 'NO',
+        label: 'NEE'
+      }
+    ]
+  },
+  mustUpgradeCapactity1Phase: {
+    type: 'radio',
+    header: '',
+    headerComponent: MustUpgradeCapacity1PhaseHeader,
+    options: [
+      {
+        value: 'YES-1phase',
+        label: 'JA, ik wil mijn 1-fase aansluiting verzwaren'
+      },
+      {
+        value: 'YES-3phase',
+        label: 'Ik ga direct 3-fase aansluiting aanvragen',
+        descriptionComponent: MustUpgradeCapacity1PhaseYES3PhaseDescription
+      },
+      {
+        value: 'NO',
+        label: 'NEE, Ik moet nog er over nadenken...'
       }
     ]
   },

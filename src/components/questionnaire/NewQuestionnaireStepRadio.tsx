@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { RadioGroup } from '@nextui-org/react'
-import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
 import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 import { CustomRadio } from './CustomRadio'
 import { QuestionnaireUtils } from './QuestionnaireUtils'
+import { useRecoilValue } from 'recoil'
+import { activeQuestionnaire } from '~/app-state/questionnaire/activeQuestionnaire'
 
 type NewQuestionnaireStepRadioProps = {
   stepData: StepData
@@ -17,6 +19,9 @@ const NewQuestionnaireStepRadio = ({
   disableScrollIntoView
 }: NewQuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
+  const activeQuestionnaireData = useRecoilValue(activeQuestionnaire)
+  const HeaderComponent = stepData.stepConfig.headerComponent
+
   const onValueChange = (value: string) => {
     QuestionnaireUtils.validateData(value, stepData)
     const valueSelectedForStepName: ValueSelectedForStepName = {
@@ -32,12 +37,21 @@ const NewQuestionnaireStepRadio = ({
         behavior: 'smooth'
       })
     }
-  })
+  }, [disableScrollIntoView])
 
   return (
     <div ref={ref} className='flex scroll-mt-6'>
       <RadioGroup
-        label={stepData.stepConfig.header}
+        label={
+          HeaderComponent ? (
+            <HeaderComponent
+              activeQuestionnaireData={activeQuestionnaireData}
+            />
+          ) : (
+            stepData.stepConfig.header
+          )
+        }
+        description={stepData.stepConfig.additionalInfo}
         className='w-2/3 p-6'
         classNames={{
           base: 'border border-theme-blue rounded-xl',
@@ -45,16 +59,27 @@ const NewQuestionnaireStepRadio = ({
         }}
         onValueChange={onValueChange}
       >
-        {stepData.stepConfig.options.map((option) => (
-          <CustomRadio
-            key={option.value}
-            description={option.description}
-            value={option.value}
-            renderExtraInfo={option.extraInfo}
-          >
-            {option.label}
-          </CustomRadio>
-        ))}
+        {stepData.stepConfig.options.map((option) => {
+          const DescriptionComponent = option.descriptionComponent
+          return (
+            <CustomRadio
+              key={option.value}
+              description={
+                DescriptionComponent ? (
+                  <DescriptionComponent
+                    activeQuestionnaireData={activeQuestionnaireData}
+                  />
+                ) : (
+                  option.description
+                )
+              }
+              value={option.value}
+              renderExtraInfo={option.extraInfo}
+            >
+              {option.label}
+            </CustomRadio>
+          )
+        })}
       </RadioGroup>
     </div>
   )

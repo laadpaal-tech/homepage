@@ -1,7 +1,7 @@
 import type {
   StepConfig,
   StepName
-} from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+} from '~/app-state/questionnaire/QuestionnaireTypes'
 
 type StepData = {
   id: string

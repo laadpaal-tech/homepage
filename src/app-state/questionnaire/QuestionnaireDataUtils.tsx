@@ -12,18 +12,19 @@ type NextStepArgs = {
 }
 
 class QuestionnaireDataUtils {
-  static copyOptions(options: StepOption[]) {
+  static copyOptions(options: StepOption[]): StepOption[] {
     return options.map((o) => {
       return {
         value: o.value,
         label: o.label,
         description: o.description,
+        descriptionComponent: o.descriptionComponent,
         extraInfo: o.extraInfo
       }
     })
   }
 
-  static copyConfig(name: StepName) {
+  static copyConfig(name: StepName): StepConfig {
     const configForName: StepConfig = questionnaireConfig[name]
     return this.copyStepConfig(configForName)
   }
@@ -32,8 +33,10 @@ class QuestionnaireDataUtils {
     return {
       type: stepConfigToCopy.type,
       header: stepConfigToCopy.header,
+      headerComponent: stepConfigToCopy.headerComponent,
       isInitial: stepConfigToCopy.isInitial,
       label: stepConfigToCopy.label,
+      additionalInfo: stepConfigToCopy.additionalInfo,
       options: this.copyOptions(stepConfigToCopy.options)
     }
   }

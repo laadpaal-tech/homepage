@@ -3,7 +3,8 @@ import globals from 'globals'
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import reactPlugin from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
+import { fixupPluginRules } from '@eslint/compat'
 import eslintPluginImport from 'eslint-plugin-import'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import jest from 'eslint-plugin-jest'
@@ -25,10 +26,7 @@ export default [
   ...compat.extends('eslint-config-standard'),
   eslintConfigPrettier,
   {
-    ignores: [
-      '**/dist',
-      '**/.yarn'
-    ]
+    ignores: ['**/dist', '**/.yarn']
   },
   {
     files: ['**/*.test.js'],
@@ -51,10 +49,11 @@ export default [
     },
     plugins: {
       react: reactPlugin,
-      'react-hooks': reactHooks,
+      'react-hooks': fixupPluginRules(eslintPluginReactHooks),
       import: eslintPluginImport
     },
     rules: {
+      ...eslintPluginReactHooks.configs.recommended.rules,
       ...eslint.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
       'react/prop-types': 0,

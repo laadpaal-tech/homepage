@@ -2,11 +2,11 @@ import { useRecoilState } from 'recoil'
 import { activeQuestionnaire } from '~/app-state/questionnaire/activeQuestionnaire'
 import type { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 
-import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
 import { NewQuestionnaireStepRadio } from './NewQuestionnaireStepRadio'
 import { QuestionnaireStateMachine } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireStateMachine'
 import { QuestionnaireStepSelect } from './QuestionnaireStepSelect'
-import { QuestionnaireDataUtils } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireDataUtils'
+import { QuestionnaireDataUtils } from '~/app-state/questionnaire/QuestionnaireDataUtils'
 
 const NewQuestionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =
@@ -48,13 +48,13 @@ const NewQuestionnaire = () => {
     newCurrentSequence.push(currentStep)
 
     if (nextStep) {
-      baseSequence.push(nextStep)
+      newCurrentSequence.push(nextStep)
     }
 
     setActiveQuestionnaireData((prev) => {
       return {
         ...prev,
-        currentSequence: baseSequence
+        currentSequence: newCurrentSequence
       }
     })
   }

@@ -1,17 +1,21 @@
-import { ReactNode } from 'react'
+import { JSXElementConstructor, ReactNode } from 'react'
+import type { ExtraFormattingComponentProps } from './extra-formatting-components/ExtraFormattingComponentProps'
 
 type StepOption = {
   value: string
   label: string
-  description?: string
+  description?: ReactNode
+  descriptionComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
   extraInfo?: () => ReactNode
 }
 
 type StepConfig = {
   type: 'radio' | 'select' | 'info'
-  header: string
+  header?: ReactNode
+  headerComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
   isInitial?: boolean
   label?: string
+  additionalInfo?: ReactNode
   options: StepOption[]
 }
 
@@ -20,6 +24,9 @@ type StepName =
   | 'upgradeConnection'
   | 'distributionBox3Phase'
   | 'currentCapacity1Phase'
+  | 'mustUpgradeCapactity1Phase'
+  | 'upgradeCapactity1Phase'
+  | 'distributionBox1Phase'
 
 type QuestionnaireConfig = {
   [Key in StepName]: StepConfig

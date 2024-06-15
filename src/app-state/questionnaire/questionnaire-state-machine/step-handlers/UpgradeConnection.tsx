@@ -1,5 +1,5 @@
-import { QuestionnaireDataUtils } from '../QuestionnaireDataUtils'
-import type { NextStepArgs } from '../QuestionnaireDataUtils'
+import { QuestionnaireDataUtils } from '../../QuestionnaireDataUtils'
+import type { NextStepArgs } from '../../QuestionnaireDataUtils'
 
 class UpgradeConnection {
   static nextStep({ selectedValue }: NextStepArgs) {

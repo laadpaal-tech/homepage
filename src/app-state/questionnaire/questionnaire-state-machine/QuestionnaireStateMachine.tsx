@@ -1,13 +1,17 @@
 import type { ActiveQuestionnaire } from '../../../app-state/questionnaire/ActiveQuestionnaireTypes'
 import { v4 as uuidv4 } from 'uuid'
 
-import { QuestionnaireDataUtils } from './QuestionnaireDataUtils'
-import type { NextStepArgs } from './QuestionnaireDataUtils'
+import { QuestionnaireDataUtils } from '../QuestionnaireDataUtils'
+import type { NextStepArgs } from '../QuestionnaireDataUtils'
 
 import { questionnaireConfig } from '../questionnaireConfig'
-import type { StepName } from './QuestionnaireTypes'
+import type { StepName } from '../QuestionnaireTypes'
 
-import { Connection, UpgradeConnection } from './step-handlers/'
+import {
+  Connection,
+  CurrentCapacity1Phase,
+  UpgradeConnection
+} from './step-handlers/'
 
 class QuestionnaireStateMachine {
   activeQuestionnaire: ActiveQuestionnaire
@@ -44,6 +48,8 @@ class QuestionnaireStateMachine {
         return Connection.nextStep(args)
       case 'upgradeConnection':
         return UpgradeConnection.nextStep(args)
+      case 'currentCapacity1Phase':
+        return CurrentCapacity1Phase.nextStep(args)
       default:
         break
     }
