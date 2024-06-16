@@ -65,6 +65,7 @@ const NewQuestionnaire = () => {
         <NewQuestionnaireStepRadio
           key={stepData.id}
           stepData={stepData}
+          activeQuestionnaireData={activeQuestionnaireData}
           disableScrollIntoView={stepData.stepConfig.isInitial}
           onValueSelected={onValueSelected}
         />
@@ -74,6 +75,7 @@ const NewQuestionnaire = () => {
         <QuestionnaireStepSelect
           key={stepData.id}
           stepData={stepData}
+          activeQuestionnaireData={activeQuestionnaireData}
           disableScrollIntoView={stepData.stepConfig.isInitial}
           onValueSelected={onValueSelected}
         />

@@ -1,25 +1,27 @@
 import { useEffect, useRef } from 'react'
 import { RadioGroup } from '@nextui-org/react'
 import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
-import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
+import {
+  ActiveQuestionnaire,
+  StepData
+} from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 import { CustomRadio } from './CustomRadio'
 import { QuestionnaireUtils } from './QuestionnaireUtils'
-import { useRecoilValue } from 'recoil'
-import { activeQuestionnaire } from '~/app-state/questionnaire/activeQuestionnaire'
 
 type NewQuestionnaireStepRadioProps = {
   stepData: StepData
+  activeQuestionnaireData: ActiveQuestionnaire
   onValueSelected: (valueSelectedForStepName: ValueSelectedForStepName) => void
   disableScrollIntoView?: boolean
 }
 
 const NewQuestionnaireStepRadio = ({
   stepData,
+  activeQuestionnaireData,
   onValueSelected,
   disableScrollIntoView
 }: NewQuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
-  const activeQuestionnaireData = useRecoilValue(activeQuestionnaire)
   const HeaderComponent = stepData.stepConfig.headerComponent
 
   const onValueChange = (value: string) => {

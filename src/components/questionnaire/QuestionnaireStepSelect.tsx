@@ -1,22 +1,28 @@
 import { ChangeEvent, useEffect, useRef } from 'react'
 import { Select, SelectItem } from '@nextui-org/react'
 
-import type { ValueSelectedForStepName } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
-import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
+import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
+import {
+  ActiveQuestionnaire,
+  StepData
+} from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 import { QuestionnaireUtils } from './QuestionnaireUtils'
 
 type QuestionnaireStepSelectProps = {
   stepData: StepData
+  activeQuestionnaireData: ActiveQuestionnaire
   onValueSelected: (valueSelectedForStepName: ValueSelectedForStepName) => void
   disableScrollIntoView?: boolean
 }
 
 const QuestionnaireStepSelect = ({
   stepData,
+  activeQuestionnaireData,
   onValueSelected,
   disableScrollIntoView
 }: QuestionnaireStepSelectProps) => {
   const ref = useRef<HTMLDivElement>(null)
+  const HeaderComponent = stepData.stepConfig.headerComponent
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value
     QuestionnaireUtils.validateData(value, stepData)
@@ -40,7 +46,13 @@ const QuestionnaireStepSelect = ({
       ref={ref}
       className='flex w-2/3 scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
     >
-      <h3 className='pb-4 text-xl text-black'>{stepData.stepConfig.header}</h3>
+      <h3 className='pb-4 text-xl text-black'>
+        {HeaderComponent ? (
+          <HeaderComponent activeQuestionnaireData={activeQuestionnaireData} />
+        ) : (
+          stepData.stepConfig.header
+        )}
+      </h3>
       <Select
         selectionMode='single'
         label={stepData.stepConfig.label}
