@@ -2,11 +2,15 @@ import { useRecoilState } from 'recoil'
 import { activeQuestionnaire } from '~/app-state/questionnaire/activeQuestionnaire'
 import type { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 
-import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
+import type {
+  InfoStepAction,
+  ValueSelectedForStepName
+} from '~/app-state/questionnaire/QuestionnaireTypes'
 import { NewQuestionnaireStepRadio } from './NewQuestionnaireStepRadio'
 import { QuestionnaireStateMachine } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireStateMachine'
 import { QuestionnaireStepSelect } from './QuestionnaireStepSelect'
 import { QuestionnaireDataUtils } from '~/app-state/questionnaire/QuestionnaireDataUtils'
+import { QuestionnaireStepInfo } from './QuestionnaireStepInfo'
 
 const NewQuestionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =
@@ -18,6 +22,16 @@ const NewQuestionnaire = () => {
     const { stepName, selectedValue } = valueSelectedForStepName
     console.log('stepName=', stepName)
     console.log('selectedStepValue=', selectedValue)
+
+    if (
+      stepName === 'endConfigurator' &&
+      (selectedValue as InfoStepAction) === 'clear'
+    ) {
+      const activeQuestionnaireData = QuestionnaireStateMachine.init()
+      activeQuestionnaireData.currentSequence[0].stepConfig.isInitial = false
+      setActiveQuestionnaireData(activeQuestionnaireData)
+      return
+    }
 
     const currentSequence = activeQuestionnaireData.currentSequence
     // find position of the selected step in the current sequence
@@ -36,12 +50,11 @@ const NewQuestionnaire = () => {
       baseSequence[positionInSequence]
     )
     currentStep.selectedValue = selectedValue
-    // newCurrentSequence.push(currentStep)
 
     const nextStep = QuestionnaireStateMachine.nextStep({
       stepName,
       selectedValue,
-      immutablePreviousSteps: baseSequence,
+      immutablePreviousSteps: newCurrentSequence,
       mutableCurrentStep: currentStep
     })
 
@@ -73,6 +86,16 @@ const NewQuestionnaire = () => {
     } else if (stepData.stepConfig.type === 'select') {
       return (
         <QuestionnaireStepSelect
+          key={stepData.id}
+          stepData={stepData}
+          activeQuestionnaireData={activeQuestionnaireData}
+          disableScrollIntoView={stepData.stepConfig.isInitial}
+          onValueSelected={onValueSelected}
+        />
+      )
+    } else if (stepData.stepConfig.type === 'info') {
+      return (
+        <QuestionnaireStepInfo
           key={stepData.id}
           stepData={stepData}
           activeQuestionnaireData={activeQuestionnaireData}

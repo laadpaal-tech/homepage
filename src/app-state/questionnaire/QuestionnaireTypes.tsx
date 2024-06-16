@@ -6,8 +6,10 @@ type StepOption = {
   label: string
   description?: ReactNode
   descriptionComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
-  extraInfo?: () => ReactNode
+  additionalConfigurationComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
 }
+
+type InfoStepAction = 'clear'
 
 type StepConfig = {
   type: 'radio' | 'select' | 'info'
@@ -16,6 +18,7 @@ type StepConfig = {
   isInitial?: boolean
   label?: string
   additionalInfo?: ReactNode
+  infoStepAction?: InfoStepAction
   options: StepOption[]
 }
 
@@ -27,6 +30,7 @@ type StepName =
   | 'mustUpgradeCapactity1Phase'
   | 'upgradeCapactity1Phase'
   | 'distributionBox1Phase'
+  | 'endConfigurator'
 
 type QuestionnaireConfig = {
   [Key in StepName]: StepConfig
@@ -42,5 +46,6 @@ export type {
   StepConfig,
   StepOption,
   StepName,
+  InfoStepAction,
   ValueSelectedForStepName
 }

@@ -12,6 +12,7 @@ import {
   CurrentCapacity1Phase,
   UpgradeConnection
 } from './step-handlers/'
+import { MustUpgradeCapactity1Phase } from './step-handlers/MustUpgradeCapactity1Phase'
 
 class QuestionnaireStateMachine {
   activeQuestionnaire: ActiveQuestionnaire
@@ -50,6 +51,8 @@ class QuestionnaireStateMachine {
         return UpgradeConnection.nextStep(args)
       case 'currentCapacity1Phase':
         return CurrentCapacity1Phase.nextStep(args)
+      case 'mustUpgradeCapactity1Phase':
+        return MustUpgradeCapactity1Phase.nextStep(args)
       default:
         break
     }

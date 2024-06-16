@@ -8,7 +8,7 @@ class MustUpgradeCapactity1Phase {
     } else if (selectedValue === 'YES-3phase') {
       return QuestionnaireDataUtils.createStepData('distributionBox3Phase')
     } else {
-      return QuestionnaireDataUtils.createStepData('end')
+      return QuestionnaireDataUtils.createStepData('endConfigurator')
     }
   }
 }

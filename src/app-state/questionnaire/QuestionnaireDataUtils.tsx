@@ -19,7 +19,7 @@ class QuestionnaireDataUtils {
         label: o.label,
         description: o.description,
         descriptionComponent: o.descriptionComponent,
-        extraInfo: o.extraInfo
+        additionalConfigurationComponent: o.additionalConfigurationComponent
       }
     })
   }
@@ -37,6 +37,7 @@ class QuestionnaireDataUtils {
       isInitial: stepConfigToCopy.isInitial,
       label: stepConfigToCopy.label,
       additionalInfo: stepConfigToCopy.additionalInfo,
+      infoStepAction: stepConfigToCopy.infoStepAction,
       options: this.copyOptions(stepConfigToCopy.options)
     }
   }

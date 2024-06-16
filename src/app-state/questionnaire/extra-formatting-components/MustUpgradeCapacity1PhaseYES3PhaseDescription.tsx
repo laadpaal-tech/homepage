@@ -5,27 +5,15 @@ const MustUpgradeCapacity1PhaseYES3PhaseDescription = ({
   activeQuestionnaireData
 }: ExtraFormattingComponentProps) => {
   const [showWarning, setShowWarning] = useState<boolean>(false)
-  console.log(
-    'MustUpgradeCapacity1PhaseYES3PhaseDescription[activeQuestionnaireData]=',
-    activeQuestionnaireData
-  )
 
   useEffect(() => {
-    console.log(
-      'MustUpgradeCapacity1PhaseYES3PhaseDescription[1]:',
-      activeQuestionnaireData
-    )
     if (activeQuestionnaireData && activeQuestionnaireData.currentSequence) {
-      const currentConnectionStep =
-        activeQuestionnaireData.currentSequence.find(
-          (step) => step.name === 'currentCapacity1Phase'
-        )
-      if (currentConnectionStep) {
-        console.log(
-          'currentConnectionValue:',
-          currentConnectionStep.selectedValue
-        )
-        if (currentConnectionStep.selectedValue === '1x6A') {
+      const currentStep = activeQuestionnaireData.currentSequence.find(
+        (step) => step.name === 'currentCapacity1Phase'
+      )
+      if (currentStep) {
+        console.log('selectedValue:', currentStep.selectedValue)
+        if (currentStep.selectedValue === '1x6A') {
           setShowWarning(true)
         }
       }

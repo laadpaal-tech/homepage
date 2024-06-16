@@ -42,7 +42,7 @@ const NewQuestionnaireStepRadio = ({
   }, [disableScrollIntoView])
 
   return (
-    <div ref={ref} className='flex scroll-mt-6'>
+    <div ref={ref} className='animate-fadeIn flex scroll-mt-6'>
       <RadioGroup
         label={
           HeaderComponent ? (
@@ -63,6 +63,8 @@ const NewQuestionnaireStepRadio = ({
       >
         {stepData.stepConfig.options.map((option) => {
           const DescriptionComponent = option.descriptionComponent
+          const AdditionalConfiguration =
+            option.additionalConfigurationComponent
           return (
             <CustomRadio
               key={option.value}
@@ -76,7 +78,13 @@ const NewQuestionnaireStepRadio = ({
                 )
               }
               value={option.value}
-              renderExtraInfo={option.extraInfo}
+              additionalConfiguration={
+                AdditionalConfiguration ? (
+                  <AdditionalConfiguration
+                    activeQuestionnaireData={activeQuestionnaireData}
+                  />
+                ) : null
+              }
             >
               {option.label}
             </CustomRadio>

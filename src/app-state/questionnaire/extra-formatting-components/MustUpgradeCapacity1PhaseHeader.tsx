@@ -9,16 +9,12 @@ const MustUpgradeCapacity1PhaseHeader = ({
 
   useEffect(() => {
     if (activeQuestionnaireData && activeQuestionnaireData.currentSequence) {
-      const currentConnectionStep =
-        activeQuestionnaireData.currentSequence.find(
-          (step) => step.name === 'currentCapacity1Phase'
-        )
-      if (currentConnectionStep) {
-        setCurrentConnectionCapacity(currentConnectionStep.selectedValue)
-        console.log(
-          'currentConnectionValue:',
-          currentConnectionStep.selectedValue
-        )
+      const currentStep = activeQuestionnaireData.currentSequence.find(
+        (step) => step.name === 'currentCapacity1Phase'
+      )
+      if (currentStep) {
+        setCurrentConnectionCapacity(currentStep.selectedValue)
+        console.log('selectedValue:', currentStep.selectedValue)
       }
     }
   }, [activeQuestionnaireData])

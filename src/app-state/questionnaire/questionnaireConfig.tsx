@@ -4,6 +4,8 @@ import {
   MustUpgradeCapacity1PhaseYES3PhaseDescription
 } from './extra-formatting-components/'
 
+const ExampleAdditionalConfigurationComponent = () => <div>ALA MA KONIA</div>
+
 const questionnaireConfig: QuestionnaireConfig = {
   connection: {
     type: 'radio',
@@ -95,6 +97,31 @@ const questionnaireConfig: QuestionnaireConfig = {
       }
     ]
   },
+  distributionBox1Phase: {
+    type: 'radio',
+    header: 'Wat moet er gebeuren met jouw 3-fase groepenkast?',
+    // label: '3-fase groepenkast',
+    options: [
+      {
+        value: 'NEWBOX',
+        label: 'Nieuwe 1-fase groepenkast',
+        description: 'Ik wil een nieuwe 1-fase groepenkast installeren'
+      },
+      {
+        value: 'NEWGROUP',
+        label: 'Alleen een nieuwe groep',
+        description:
+          'Ik will alleen maar een nieuwe group voor de laadpaal. Ik heb voldoende ruimte in mijn huidige groepenkast om de nieuwe group te installeren'
+      }
+      // next: (value: string) => {
+      //   if (value === 'YES') {
+      //     return 'distributionBox3Phase'
+      //   } else {
+      //     return 'distributionBox1Phase'
+      //   }
+      // }
+    ]
+  },
   distributionBox3Phase: {
     type: 'radio',
     header: 'Wat moet er gebeuren met jouw 3-fase groepenkast?',
@@ -110,7 +137,8 @@ const questionnaireConfig: QuestionnaireConfig = {
         label: 'Alleen een nieuwe groep',
         description:
           'Ik will alleen maar een nieuwe group voor de laadpaal. Ik heb voldoende ruimte in mijn huidige groepenkast om de nieuwe group te installeren',
-        extraInfo: () => <div>ALA MA KONIA</div>
+        additionalConfigurationComponent:
+          ExampleAdditionalConfigurationComponent
       }
       // next: (value: string) => {
       //   if (value === 'YES') {
@@ -120,6 +148,18 @@ const questionnaireConfig: QuestionnaireConfig = {
       //   }
       // }
     ]
+  },
+  endConfigurator: {
+    type: 'info',
+    header: (
+      <span>
+        Bedankt voor het gebruik van de configurator. U kunt opnieuw beginnen
+        door op de onderstaande knop <strong>Wissen</strong> te klikken.
+      </span>
+    ),
+    label: 'Wissen',
+    infoStepAction: 'clear',
+    options: []
   }
 }
 

@@ -2,10 +2,13 @@ import { useRadio, VisuallyHidden, RadioProps, cn } from '@nextui-org/react'
 import { ReactNode } from 'react'
 
 interface CustomRadioProps extends RadioProps {
-  renderExtraInfo?: () => ReactNode
+  additionalConfiguration?: ReactNode
 }
 
-const CustomRadio = ({ renderExtraInfo, ...props }: CustomRadioProps) => {
+const CustomRadio = ({
+  additionalConfiguration,
+  ...props
+}: CustomRadioProps) => {
   const {
     Component,
     children,
@@ -30,7 +33,7 @@ const CustomRadio = ({ renderExtraInfo, ...props }: CustomRadioProps) => {
       <div
         className={cn(
           'group inline-flex flex-row items-center justify-start hover:bg-theme-very-light-yellow',
-          `w-full cursor-pointer gap-4 ${renderExtraInfo ? 'border-b-2 border-default' : ''} p-4`,
+          `w-full cursor-pointer gap-4 ${additionalConfiguration ? 'border-b-2 border-default' : ''} p-4`,
           'data-[selected=true]:border-primary'
         )}
       >
@@ -47,7 +50,7 @@ const CustomRadio = ({ renderExtraInfo, ...props }: CustomRadioProps) => {
           )}
         </div>
       </div>
-      {renderExtraInfo && renderExtraInfo()}
+      {additionalConfiguration}
     </Component>
   )
 }
