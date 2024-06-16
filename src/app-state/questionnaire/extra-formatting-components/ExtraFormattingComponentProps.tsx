@@ -1,7 +1,7 @@
 import type { ActiveQuestionnaire } from '../ActiveQuestionnaireTypes'
 
 type ExtraFormattingComponentProps = {
-  activeQuestionnaireData: ActiveQuestionnaire
+  activeQuestionnaireData?: ActiveQuestionnaire
 }
 
 export type { ExtraFormattingComponentProps }

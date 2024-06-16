@@ -40,7 +40,7 @@ const MustUpgradeCapacity1PhaseHeader = ({
           <strong>1x35A</strong>.
         </p>
         <p>
-          Je mag toch er ook willen een 3-fase aansluiting aanvragen (beste
+          Je mag toch ook willen direct een 3-fase aansluiting aanvragen (beste
           optie).
         </p>
       </section>

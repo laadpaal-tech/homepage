@@ -1,4 +1,4 @@
-import type { QuestionnaireConfig } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireTypes'
+import type { QuestionnaireConfig } from '~/app-state/questionnaire/QuestionnaireTypes'
 import {
   MustUpgradeCapacity1PhaseHeader,
   MustUpgradeCapacity1PhaseYES3PhaseDescription
