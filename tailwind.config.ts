@@ -22,6 +22,15 @@ export default {
         'theme-blue': '#426180',
         'theme-dark-blue': '#25496D'
       }
+    },
+    animation: {
+      fadeIn: 'fadeIn .5s ease-in-out'
+    },
+    keyframes: {
+      fadeIn: {
+        from: { opacity: '0' },
+        to: { opacity: '1' }
+      }
     }
   },
   darkMode: 'class',
