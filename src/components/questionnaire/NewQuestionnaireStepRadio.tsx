@@ -34,12 +34,13 @@ const NewQuestionnaireStepRadio = ({
   }
 
   useEffect(() => {
+    console.log('NewQuestionnaireStepRadio[price]=', stepData.price)
     if (!disableScrollIntoView && ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth'
       })
     }
-  }, [disableScrollIntoView])
+  }, [disableScrollIntoView, stepData])
 
   return (
     <div ref={ref} className='animate-fadeIn flex scroll-mt-6'>
@@ -68,6 +69,7 @@ const NewQuestionnaireStepRadio = ({
           return (
             <CustomRadio
               key={option.value}
+              price={stepData.price}
               description={
                 DescriptionComponent ? (
                   <DescriptionComponent

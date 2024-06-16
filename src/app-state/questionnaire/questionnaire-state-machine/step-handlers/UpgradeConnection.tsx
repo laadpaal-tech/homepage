@@ -1,12 +1,19 @@
 import { QuestionnaireDataUtils } from '../../QuestionnaireDataUtils'
-import type { NextStepArgs } from '../../QuestionnaireDataUtils'
+import type {
+  NextStepArgs,
+  NextStepReturnValue
+} from '../QuestionnaireStateMachine'
 
 class UpgradeConnection {
-  static nextStep({ selectedValue }: NextStepArgs) {
+  static nextStep({ selectedValue }: NextStepArgs): NextStepReturnValue {
     if (selectedValue === 'YES') {
-      return QuestionnaireDataUtils.createStepData('distributionBox3Phase')
+      return {
+        nextStep: QuestionnaireDataUtils.createStepData('distributionBox3Phase')
+      }
     } else {
-      return QuestionnaireDataUtils.createStepData('currentCapacity1Phase')
+      return {
+        nextStep: QuestionnaireDataUtils.createStepData('currentCapacity1Phase')
+      }
     }
   }
 }

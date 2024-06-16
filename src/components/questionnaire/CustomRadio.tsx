@@ -3,10 +3,12 @@ import { ReactNode } from 'react'
 
 interface CustomRadioProps extends RadioProps {
   additionalConfiguration?: ReactNode
+  price?: number
 }
 
 const CustomRadio = ({
   additionalConfiguration,
+  price,
   ...props
 }: CustomRadioProps) => {
   const {
@@ -20,16 +22,19 @@ const CustomRadio = ({
     getLabelWrapperProps,
     getControlProps
   } = useRadio(props)
-
+  console.log('price[CustomRadio]:', price)
   return (
     <Component
       {...getBaseProps()}
       className={cn(
-        'group inline-flex flex-col items-center justify-start hover:bg-theme-very-light-yellow',
+        'group relative inline-flex flex-col items-center justify-start hover:bg-theme-very-light-yellow',
         'w-full cursor-pointer gap-4 rounded-lg border-2 border-default p-4',
         'data-[selected=true]:border-primary'
       )}
     >
+      {price !== undefined && (
+        <div className='absolute right-0 top-0'>{price}</div>
+      )}
       <div
         className={cn(
           'group inline-flex flex-row items-center justify-start hover:bg-theme-very-light-yellow',

@@ -4,13 +4,6 @@ import { StepData } from '~/app-state/questionnaire/ActiveQuestionnaireTypes'
 import { questionnaireConfig } from '~/app-state/questionnaire/questionnaireConfig'
 import type { StepConfig, StepName, StepOption } from './QuestionnaireTypes'
 
-type NextStepArgs = {
-  stepName: StepName
-  selectedValue: string
-  readonly immutablePreviousSteps: StepData[]
-  mutableCurrentStep: StepData
-}
-
 class QuestionnaireDataUtils {
   static copyOptions(options: StepOption[]): StepOption[] {
     return options.map((o) => {
@@ -63,4 +56,3 @@ class QuestionnaireDataUtils {
 }
 
 export { QuestionnaireDataUtils }
-export type { NextStepArgs }

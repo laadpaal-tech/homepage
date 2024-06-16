@@ -16,7 +16,7 @@ const NewQuestionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =
     useRecoilState(activeQuestionnaire)
 
-  const onValueSelected = (
+  const onValueSelected = async (
     valueSelectedForStepName: ValueSelectedForStepName
   ) => {
     const { stepName, selectedValue } = valueSelectedForStepName
@@ -33,7 +33,8 @@ const NewQuestionnaire = () => {
       return
     }
 
-    const currentSequence = activeQuestionnaireData.currentSequence
+    const { currentSequence, ...otherQuestionnaireMembers } =
+      activeQuestionnaireData
     // find position of the selected step in the current sequence
     const positionInSequence = currentSequence.findIndex(
       (stepData) => stepData.name === stepName
@@ -51,25 +52,34 @@ const NewQuestionnaire = () => {
     )
     currentStep.selectedValue = selectedValue
 
-    const nextStep = QuestionnaireStateMachine.nextStep({
+    const returnValue = await QuestionnaireStateMachine.nextStep2({
       stepName,
       selectedValue,
       immutablePreviousSteps: newCurrentSequence,
-      mutableCurrentStep: currentStep
+      mutableCurrentStep: currentStep,
+      ...otherQuestionnaireMembers
     })
 
-    newCurrentSequence.push(currentStep)
+    if (returnValue) {
+      const { nextStep, ...otherOptions } = returnValue
 
-    if (nextStep) {
-      newCurrentSequence.push(nextStep)
-    }
+      console.log('nextStep:', nextStep)
+      console.log('otherOptions:', otherOptions)
 
-    setActiveQuestionnaireData((prev) => {
-      return {
-        ...prev,
-        currentSequence: newCurrentSequence
+      newCurrentSequence.push(currentStep)
+
+      if (nextStep) {
+        newCurrentSequence.push(nextStep)
       }
-    })
+
+      setActiveQuestionnaireData((prev) => {
+        return {
+          ...prev,
+          currentSequence: newCurrentSequence,
+          ...otherOptions
+        }
+      })
+    }
   }
 
   const renderStep = (stepData: StepData) => {

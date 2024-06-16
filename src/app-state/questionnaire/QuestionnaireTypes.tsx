@@ -27,6 +27,8 @@ type StepName =
   | 'upgradeConnection'
   | 'distributionBox3Phase'
   | 'currentCapacity1Phase'
+  | 'destinationCapacity1Phase'
+  | 'destinationCapacity3Phase'
   | 'mustUpgradeCapactity1Phase'
   | 'upgradeCapactity1Phase'
   | 'distributionBox1Phase'

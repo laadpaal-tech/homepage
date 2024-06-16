@@ -1,7 +1,8 @@
 import type { QuestionnaireConfig } from '~/app-state/questionnaire/QuestionnaireTypes'
 import {
   MustUpgradeCapacity1PhaseHeader,
-  MustUpgradeCapacity1PhaseYES3PhaseDescription
+  MustUpgradeCapacity1PhaseYES3PhaseDescription,
+  MustUpgradeCapacity1PhaseYES1PhaseDescription
 } from './extra-formatting-components/'
 
 const ExampleAdditionalConfigurationComponent = () => <div>ALA MA KONIA</div>
@@ -42,7 +43,16 @@ const questionnaireConfig: QuestionnaireConfig = {
     options: [
       {
         value: 'YES',
-        label: 'JA'
+        label: 'JA',
+        description: (
+          <span>
+            Vanaf jouw huidige aansluiting <strong>1x25A</strong> kan je alleen
+            nog <strong>1x35A</strong> aanvragen. Er zijn{' '}
+            <strong>geen eenmalige kosten</strong>
+            verbonden en jouw maandelijkse netwerkkosten blijven dezelfde
+            <strong>€35,59</strong>.
+          </span>
+        )
       },
       {
         value: 'NO',
@@ -57,7 +67,8 @@ const questionnaireConfig: QuestionnaireConfig = {
     options: [
       {
         value: 'YES-1phase',
-        label: 'JA, ik wil mijn 1-fase aansluiting verzwaren'
+        label: 'JA, ik wil mijn 1-fase aansluiting verzwaren',
+        descriptionComponent: MustUpgradeCapacity1PhaseYES1PhaseDescription
       },
       {
         value: 'YES-3phase',
@@ -97,9 +108,15 @@ const questionnaireConfig: QuestionnaireConfig = {
       }
     ]
   },
+  destinationCapacity1Phase: {
+    type: 'select',
+    header: 'Wat is jouw gewenste 1-fase aansluiting waarde?',
+    label: 'aansluiting waarde:',
+    options: []
+  },
   distributionBox1Phase: {
     type: 'radio',
-    header: 'Wat moet er gebeuren met jouw 3-fase groepenkast?',
+    header: 'Wat moet er gebeuren met jouw 1-fase groepenkast?',
     // label: '3-fase groepenkast',
     options: [
       {
