@@ -8,6 +8,10 @@ import {
   ServiceProfessional
 } from './services/'
 
+// import { ServicePersonal } from './services/ServicePersonal'
+// import { ServiceExperiment } from './services/ServiceExperiment'
+// import { ServiceProfessional } from './services/ServiceProfessional'
+
 const Services = () => (
   // <div className='z-[8] -mt-24 flex w-full flex-col items-center justify-start bg-theme-dark-blue pb-8 @5xl:-mt-48 @5xl:pt-40'>
   <div className='z-[8] flex w-full flex-col items-center justify-start bg-theme-dark-blue pb-8'>

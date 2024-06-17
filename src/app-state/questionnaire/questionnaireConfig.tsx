@@ -3,7 +3,7 @@ import {
   MustUpgradeCapacity1PhaseHeader,
   MustUpgradeCapacity1PhaseYES3PhaseDescription,
   MustUpgradeCapacity1PhaseYES1PhaseDescription
-} from './extra-formatting-components/'
+} from './extra-formatting-components'
 
 const ExampleAdditionalConfigurationComponent = () => <div>ALA MA KONIA</div>
 
@@ -111,6 +111,12 @@ const questionnaireConfig: QuestionnaireConfig = {
   destinationCapacity1Phase: {
     type: 'select',
     header: 'Wat is jouw gewenste 1-fase aansluiting waarde?',
+    label: 'aansluiting waarde:',
+    options: []
+  },
+  destinationCapacity3Phase: {
+    type: 'select',
+    header: 'Wat is jouw gewenste 3-fase aansluiting waarde?',
     label: 'aansluiting waarde:',
     options: []
   },

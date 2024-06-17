@@ -1,5 +1,5 @@
 import { QuestionnaireDataUtils } from '../../QuestionnaireDataUtils'
-import type { NextStepArgs } from '../../QuestionnaireDataUtils'
+import type { NextStepArgs } from '../QuestionnaireStateMachine'
 
 class EndConfigurator {
   static nextStep({ selectedValue }: NextStepArgs) {

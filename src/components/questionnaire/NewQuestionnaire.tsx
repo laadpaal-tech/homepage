@@ -52,7 +52,7 @@ const NewQuestionnaire = () => {
     )
     currentStep.selectedValue = selectedValue
 
-    const returnValue = await QuestionnaireStateMachine.nextStep2({
+    const returnValue = await QuestionnaireStateMachine.nextStep({
       stepName,
       selectedValue,
       immutablePreviousSteps: newCurrentSequence,
