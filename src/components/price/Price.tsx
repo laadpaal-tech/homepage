@@ -1,4 +1,4 @@
-import { NewQuestionnaire } from '../questionnaire/NewQuestionnaire'
+import { Questionnaire } from '../questionnaire/Questionnaire'
 
 const Price = () => {
   return (
@@ -6,7 +6,7 @@ const Price = () => {
       <h2 className='w-[340px] text-center text-4xl font-bold @3xl:w-auto @5xl:mb-14  @5xl:text-6xl'>
         Wat kost een laadpaal?
       </h2>
-      <NewQuestionnaire />
+      <Questionnaire />
     </div>
   )
 }

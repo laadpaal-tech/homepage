@@ -8,19 +8,19 @@ import {
 import { CustomRadio } from './CustomRadio'
 import { QuestionnaireUtils } from './QuestionnaireUtils'
 
-type NewQuestionnaireStepRadioProps = {
+type QuestionnaireStepRadioProps = {
   stepData: StepData
   activeQuestionnaireData: ActiveQuestionnaire
   onValueSelected: (valueSelectedForStepName: ValueSelectedForStepName) => void
   disableScrollIntoView?: boolean
 }
 
-const NewQuestionnaireStepRadio = ({
+const QuestionnaireStepRadio = ({
   stepData,
   activeQuestionnaireData,
   onValueSelected,
   disableScrollIntoView
-}: NewQuestionnaireStepRadioProps) => {
+}: QuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const HeaderComponent = stepData.stepConfig.headerComponent
 
@@ -97,4 +97,4 @@ const NewQuestionnaireStepRadio = ({
   )
 }
 
-export { NewQuestionnaireStepRadio }
+export { QuestionnaireStepRadio }

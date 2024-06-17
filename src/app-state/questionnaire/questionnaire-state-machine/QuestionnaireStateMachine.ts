@@ -6,14 +6,6 @@ import { QuestionnaireDataUtils } from '../QuestionnaireDataUtils'
 import { questionnaireConfig } from '../questionnaireConfig'
 import type { StepName } from '../QuestionnaireTypes'
 
-// import {
-//   Connection,
-//   CurrentCapacity1Phase,
-//   UpgradeConnection
-// } from './step-handlers/'
-// import { MustUpgradeCapactity1Phase } from './step-handlers/MustUpgradeCapactity1Phase'
-// import { UpgradeCapactity1Phase } from './step-handlers/UpgradeCapactity1Phase'
-
 type NextStepArgs = Partial<Omit<ActiveQuestionnaire, 'currentSequence'>> & {
   stepName: StepName
   selectedValue: string
@@ -69,24 +61,6 @@ class QuestionnaireStateMachine {
 
     return handler.nextStep(args)
   }
-
-  //   static nextStep(args: NextStepArgs): NextStepReturnValue {
-  //     switch (args.stepName) {
-  //       case 'connection':
-  //         return Connection.nextStep(args)
-  //       case 'upgradeConnection':
-  //         return UpgradeConnection.nextStep(args)
-  //       case 'currentCapacity1Phase':
-  //         return CurrentCapacity1Phase.nextStep(args)
-  //       case 'mustUpgradeCapactity1Phase':
-  //         return MustUpgradeCapactity1Phase.nextStep(args)
-  //       case 'upgradeCapactity1Phase':
-  //         return UpgradeCapactity1Phase.nextStep(args)
-  //       default:
-  //         break
-  //     }
-  //     return undefined
-  //   }
 }
 
 export { QuestionnaireStateMachine }

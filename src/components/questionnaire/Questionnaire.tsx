@@ -6,13 +6,13 @@ import type {
   InfoStepAction,
   ValueSelectedForStepName
 } from '~/app-state/questionnaire/QuestionnaireTypes'
-import { NewQuestionnaireStepRadio } from './NewQuestionnaireStepRadio'
+import { QuestionnaireStepRadio } from './QuestionnaireStepRadio'
 import { QuestionnaireStateMachine } from '~/app-state/questionnaire/questionnaire-state-machine/QuestionnaireStateMachine'
 import { QuestionnaireStepSelect } from './QuestionnaireStepSelect'
 import { QuestionnaireDataUtils } from '~/app-state/questionnaire/QuestionnaireDataUtils'
 import { QuestionnaireStepInfo } from './QuestionnaireStepInfo'
 
-const NewQuestionnaire = () => {
+const Questionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =
     useRecoilState(activeQuestionnaire)
 
@@ -85,7 +85,7 @@ const NewQuestionnaire = () => {
   const renderStep = (stepData: StepData) => {
     if (stepData.stepConfig.type === 'radio') {
       return (
-        <NewQuestionnaireStepRadio
+        <QuestionnaireStepRadio
           key={stepData.id}
           stepData={stepData}
           activeQuestionnaireData={activeQuestionnaireData}
@@ -125,4 +125,4 @@ const NewQuestionnaire = () => {
   )
 }
 
-export { NewQuestionnaire }
+export { Questionnaire }
