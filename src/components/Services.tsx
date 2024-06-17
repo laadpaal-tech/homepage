@@ -1,12 +1,27 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 import { Carousel, CarouselItem } from './Carousel'
+
+// // The following triggers an error when building on macOS:
+// error during build:
+// RollupError: src/components/Services.tsx (6:2): "ServicePersonal" is not exported by "src/components/Services.tsx", imported by "src/components/Services.tsx".
+// file: /Users/mczenko/code/open-source/laadpaal-tech/homepage/src/components/Services.tsx:6:2
+// 4:   // ServiceBeyondOrdinary,
+// 5:   ServiceExperiment,
+// 6:   ServicePersonal,
+//      ^
+// 7:   ServiceProfessional
+// 8: } from './services/'
+//     at getRollupError (file:///Users/mczenko/code/open-source/laadpaal-tech/homepage/node_modules/rollup/dist/es/shared/parseAst.js:394:41)
+// Works find on github action (ubuntu).
+// WORKAROUND:
+// changing the import path from: './services' to '~/components/services/' fixes the issue.
 import {
   AlwaysNearby,
   ServiceBeyondOrdinary,
   ServiceExperiment,
   ServicePersonal,
   ServiceProfessional
-} from './services/'
+} from '~/components/services/'
 
 // import { ServicePersonal } from './services/ServicePersonal'
 // import { ServiceExperiment } from './services/ServiceExperiment'
