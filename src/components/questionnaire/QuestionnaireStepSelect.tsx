@@ -34,17 +34,22 @@ const QuestionnaireStepSelect = ({
   }
 
   useEffect(() => {
-    if (!disableScrollIntoView && ref.current) {
-      ref.current.scrollIntoView({
-        behavior: 'smooth'
-      })
+    const timerId = setTimeout(() => {
+      if (!disableScrollIntoView && ref.current) {
+        ref.current.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
+    }, 0)
+    return () => {
+      clearTimeout(timerId)
     }
-  })
+  }, [disableScrollIntoView])
 
   return (
     <div
       ref={ref}
-      className='animate-fadeIn flex w-2/3 scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
+      className='flex w-2/3 animate-fadeIn scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
     >
       <h3 className='pb-4 text-xl text-black'>
         {HeaderComponent ? (
