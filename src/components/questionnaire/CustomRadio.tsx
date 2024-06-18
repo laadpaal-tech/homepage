@@ -1,16 +1,25 @@
-import { useRadio, VisuallyHidden, RadioProps, cn } from '@nextui-org/react'
-import { ReactNode } from 'react'
+import {
+  useRadio,
+  VisuallyHidden,
+  RadioProps,
+  cn,
+  Chip
+} from '@nextui-org/react'
+import { ReactNode, useEffect, useState } from 'react'
 
 interface CustomRadioProps extends RadioProps {
   additionalConfiguration?: ReactNode
   price?: number
+  priceMonthly?: number
 }
 
 const CustomRadio = ({
   additionalConfiguration,
   price,
+  priceMonthly,
   ...props
 }: CustomRadioProps) => {
+  const [showPrices, setShowPrices] = useState(false)
   const {
     Component,
     children,
@@ -22,7 +31,16 @@ const CustomRadio = ({
     getLabelWrapperProps,
     getControlProps
   } = useRadio(props)
-  console.log('price[CustomRadio]:', price)
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setShowPrices(true)
+    }, 1000)
+    return () => {
+      clearTimeout(timerId)
+    }
+  })
+
   return (
     <Component
       {...getBaseProps()}
@@ -32,8 +50,17 @@ const CustomRadio = ({
         'data-[selected=true]:border-primary'
       )}
     >
-      {price !== undefined && (
-        <div className='absolute right-0 top-0'>{price}</div>
+      {showPrices && (
+        <div className='absolute right-1 top-1 flex animate-appearance-in flex-col items-end gap-1'>
+          {price && (
+            <Chip color='primary'>€{price.toString().replace('.', ',')}</Chip>
+          )}
+          {priceMonthly && (
+            <Chip color='warning'>
+              €{priceMonthly.toString().replace('.', ',')}
+            </Chip>
+          )}
+        </div>
       )}
       <div
         className={cn(

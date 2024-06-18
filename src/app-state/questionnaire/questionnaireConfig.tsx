@@ -136,13 +136,6 @@ const questionnaireConfig: QuestionnaireConfig = {
         description:
           'Ik will alleen maar een nieuwe group voor de laadpaal. Ik heb voldoende ruimte in mijn huidige groepenkast om de nieuwe group te installeren'
       }
-      // next: (value: string) => {
-      //   if (value === 'YES') {
-      //     return 'distributionBox3Phase'
-      //   } else {
-      //     return 'distributionBox1Phase'
-      //   }
-      // }
     ]
   },
   distributionBox3Phase: {
@@ -163,14 +156,17 @@ const questionnaireConfig: QuestionnaireConfig = {
         additionalConfigurationComponent:
           ExampleAdditionalConfigurationComponent
       }
-      // next: (value: string) => {
-      //   if (value === 'YES') {
-      //     return 'distributionBox3Phase'
-      //   } else {
-      //     return 'distributionBox1Phase'
-      //   }
-      // }
     ]
+  },
+  distributionBox1PhaseConfig: {
+    type: 'fuse-box',
+    header: 'Configureer jouw nieuwe 1-fase groepenkast?',
+    options: []
+  },
+  distributionBox3PhaseConfig: {
+    type: 'fuse-box',
+    header: 'Configureer jouw nieuwe 3-fase groepenkast?',
+    options: []
   },
   endConfigurator: {
     type: 'info',

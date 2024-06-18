@@ -14,12 +14,25 @@ class CurrentCapacity1Phase {
       returnValue.nextStep = QuestionnaireDataUtils.createStepData(
         'mustUpgradeCapactity1Phase'
       )
+      const stepOptions = returnValue.nextStep.stepConfig.options
+      const option1 = stepOptions.find((o) => o.value === 'YES-1phase')
+      const option2 = stepOptions.find((o) => o.value === 'YES-3phase')
+      if (!option1 || !option2) {
+        throw new Error('Error: options YES-1phase and YES-3phase do not exist')
+      }
+      option1.priceMonthly = 35.59
+      option2.priceMonthly = 35.59
       if (selectedValue === '1x6A') {
-        returnValue.price = 603.79
-        returnValue.nextStep.price = 603.79
+        option1.price = 603.79
+        option2.price = 603.79
+
+        // returnValue.price = 603.79
+        // returnValue.nextStep.price = 603.79
       } else {
-        returnValue.price = 309.43
-        returnValue.nextStep.price = 309.43
+        option1.price = 309.43
+        option2.price = 309.43
+        // returnValue.price = 309.43
+        // returnValue.nextStep.price = 309.43
       }
       returnValue.destinationCapacity = '1x35A'
       returnValue.destinationMonthlyConnectionCost = 35.59

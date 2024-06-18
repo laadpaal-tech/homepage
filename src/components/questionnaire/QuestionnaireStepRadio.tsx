@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { RadioGroup } from '@nextui-org/react'
+import { useEffect, useRef, useState } from 'react'
+import { RadioGroup, Chip } from '@nextui-org/react'
 import type { ValueSelectedForStepName } from '~/app-state/questionnaire/QuestionnaireTypes'
 import {
   ActiveQuestionnaire,
@@ -22,6 +22,7 @@ const QuestionnaireStepRadio = ({
   disableScrollIntoView
 }: QuestionnaireStepRadioProps) => {
   const ref = useRef<HTMLDivElement>(null)
+  const [showPrices, setShowPrices] = useState(false)
   const HeaderComponent = stepData.stepConfig.headerComponent
 
   const onValueChange = (value: string) => {
@@ -34,6 +35,18 @@ const QuestionnaireStepRadio = ({
   }
 
   useEffect(() => {
+    const timerId = setTimeout(() => {
+      const hasPrices = stepData.stepConfig.options.find((o) => o.price)
+      if (hasPrices) {
+        setShowPrices(true)
+      }
+    }, 1000)
+    return () => {
+      clearTimeout(timerId)
+    }
+  }, [stepData])
+
+  useEffect(() => {
     console.log('NewQuestionnaireStepRadio[price]=', stepData.price)
     if (!disableScrollIntoView && ref.current) {
       ref.current.scrollIntoView({
@@ -43,7 +56,7 @@ const QuestionnaireStepRadio = ({
   }, [disableScrollIntoView, stepData])
 
   return (
-    <div ref={ref} className='animate-fadeIn flex scroll-mt-6'>
+    <div ref={ref} className='flex animate-fadeIn scroll-mt-6'>
       <RadioGroup
         label={
           HeaderComponent ? (
@@ -69,7 +82,8 @@ const QuestionnaireStepRadio = ({
           return (
             <CustomRadio
               key={option.value}
-              price={stepData.price}
+              price={option.price}
+              priceMonthly={option.priceMonthly}
               description={
                 DescriptionComponent ? (
                   <DescriptionComponent
@@ -92,6 +106,12 @@ const QuestionnaireStepRadio = ({
             </CustomRadio>
           )
         })}
+        {showPrices && (
+          <div className='mt-2 flex gap-2'>
+            <Chip color='primary'>eenmalig</Chip>
+            <Chip color='warning'>maandelijk</Chip>
+          </div>
+        )}
       </RadioGroup>
     </div>
   )

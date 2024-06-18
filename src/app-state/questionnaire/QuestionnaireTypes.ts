@@ -5,6 +5,8 @@ type StepOption = {
   value: string
   label: string
   description?: ReactNode
+  price?: number
+  priceMonthly?: number
   descriptionComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
   additionalConfigurationComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
 }
@@ -12,7 +14,7 @@ type StepOption = {
 type InfoStepAction = 'clear'
 
 type StepConfig = {
-  type: 'radio' | 'select' | 'info'
+  type: 'radio' | 'select' | 'info' | 'fuse-box'
   header?: ReactNode
   headerComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
   isInitial?: boolean
@@ -32,6 +34,9 @@ type StepName =
   | 'mustUpgradeCapactity1Phase'
   | 'upgradeCapactity1Phase'
   | 'distributionBox1Phase'
+  | 'distributionBox1PhaseConfig'
+  | 'distributionBox3Phase'
+  | 'distributionBox3PhaseConfig'
   | 'endConfigurator'
 
 type QuestionnaireConfig = {

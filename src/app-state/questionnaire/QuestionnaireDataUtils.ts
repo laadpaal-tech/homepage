@@ -11,6 +11,8 @@ class QuestionnaireDataUtils {
         value: o.value,
         label: o.label,
         description: o.description,
+        price: o.price,
+        priceMonthly: o.priceMonthly,
         descriptionComponent: o.descriptionComponent,
         additionalConfigurationComponent: o.additionalConfigurationComponent
       }
