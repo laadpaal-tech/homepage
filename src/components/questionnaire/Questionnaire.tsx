@@ -11,6 +11,7 @@ import { QuestionnaireStateMachine } from '~/app-state/questionnaire/questionnai
 import { QuestionnaireStepSelect } from './QuestionnaireStepSelect'
 import { QuestionnaireDataUtils } from '~/app-state/questionnaire/QuestionnaireDataUtils'
 import { QuestionnaireStepInfo } from './QuestionnaireStepInfo'
+import { QuestionnaireStepFuseBox1Phase } from './QuestionnaireStepFuseBox1Phase'
 
 const Questionnaire = () => {
   const [activeQuestionnaireData, setActiveQuestionnaireData] =
@@ -83,38 +84,50 @@ const Questionnaire = () => {
   }
 
   const renderStep = (stepData: StepData) => {
-    if (stepData.stepConfig.type === 'radio') {
-      return (
-        <QuestionnaireStepRadio
-          key={stepData.id}
-          stepData={stepData}
-          activeQuestionnaireData={activeQuestionnaireData}
-          disableScrollIntoView={stepData.stepConfig.isInitial}
-          onValueSelected={onValueSelected}
-        />
-      )
-    } else if (stepData.stepConfig.type === 'select') {
-      return (
-        <QuestionnaireStepSelect
-          key={stepData.id}
-          stepData={stepData}
-          activeQuestionnaireData={activeQuestionnaireData}
-          disableScrollIntoView={stepData.stepConfig.isInitial}
-          onValueSelected={onValueSelected}
-        />
-      )
-    } else if (stepData.stepConfig.type === 'info') {
-      return (
-        <QuestionnaireStepInfo
-          key={stepData.id}
-          stepData={stepData}
-          activeQuestionnaireData={activeQuestionnaireData}
-          disableScrollIntoView={stepData.stepConfig.isInitial}
-          onValueSelected={onValueSelected}
-        />
-      )
+    switch (stepData.stepConfig.type) {
+      case 'radio':
+        return (
+          <QuestionnaireStepRadio
+            key={stepData.id}
+            stepData={stepData}
+            activeQuestionnaireData={activeQuestionnaireData}
+            disableScrollIntoView={stepData.stepConfig.isInitial}
+            onValueSelected={onValueSelected}
+          />
+        )
+      case 'select':
+        return (
+          <QuestionnaireStepSelect
+            key={stepData.id}
+            stepData={stepData}
+            activeQuestionnaireData={activeQuestionnaireData}
+            disableScrollIntoView={stepData.stepConfig.isInitial}
+            onValueSelected={onValueSelected}
+          />
+        )
+      case 'info':
+        return (
+          <QuestionnaireStepInfo
+            key={stepData.id}
+            stepData={stepData}
+            activeQuestionnaireData={activeQuestionnaireData}
+            disableScrollIntoView={stepData.stepConfig.isInitial}
+            onValueSelected={onValueSelected}
+          />
+        )
+      case 'fuse-box-1phase':
+        return (
+          <QuestionnaireStepFuseBox1Phase
+            key={stepData.id}
+            stepData={stepData}
+            activeQuestionnaireData={activeQuestionnaireData}
+            disableScrollIntoView={stepData.stepConfig.isInitial}
+            onValueSelected={onValueSelected}
+          />
+        )
+      default:
+        return null
     }
-    return null
   }
   return (
     <div className='flex w-full flex-col gap-6'>

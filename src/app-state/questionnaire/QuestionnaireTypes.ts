@@ -14,7 +14,7 @@ type StepOption = {
 type InfoStepAction = 'clear'
 
 type StepConfig = {
-  type: 'radio' | 'select' | 'info' | 'fuse-box'
+  type: 'radio' | 'select' | 'info' | 'fuse-box-1phase' | 'fuse-box-3phase'
   header?: ReactNode
   headerComponent?: JSXElementConstructor<ExtraFormattingComponentProps>
   isInitial?: boolean

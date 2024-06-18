@@ -159,12 +159,12 @@ const questionnaireConfig: QuestionnaireConfig = {
     ]
   },
   distributionBox1PhaseConfig: {
-    type: 'fuse-box',
+    type: 'fuse-box-1phase',
     header: 'Configureer jouw nieuwe 1-fase groepenkast?',
     options: []
   },
   distributionBox3PhaseConfig: {
-    type: 'fuse-box',
+    type: 'fuse-box-3phase',
     header: 'Configureer jouw nieuwe 3-fase groepenkast?',
     options: []
   },
