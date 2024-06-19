@@ -35,9 +35,9 @@ const App = () => {
         <Header />
         <Steps />
         <Services />
+        <AboutMe />
         <MeerWeten />
         <StepByStep />
-        <AboutMe />
         <Footer />
       </Layout>
     </RecoilRoot>

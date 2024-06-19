@@ -1,7 +1,8 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 import { Carousel, CarouselItem } from './Carousel'
 import {
-  // ServiceBeyondOrdinary,
+  AlwaysNearby,
+  ServiceBeyondOrdinary,
   ServiceExperiment,
   ServicePersonal,
   ServiceProfessional
@@ -19,9 +20,12 @@ const Services = () => (
       <CarouselItem>
         <ServiceProfessional />
       </CarouselItem>
-      {/* <CarouselItem>
+      <CarouselItem>
+        <AlwaysNearby />
+      </CarouselItem>
+      <CarouselItem>
         <ServiceBeyondOrdinary />
-      </CarouselItem> */}
+      </CarouselItem>
       <CarouselItem>
         <ServiceExperiment />
       </CarouselItem>

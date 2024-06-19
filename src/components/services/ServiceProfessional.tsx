@@ -10,17 +10,18 @@ const ServiceProfessional = () => (
           Zorgeloos en professioneel
         </h2>
         <p className='@3xl:mt-4'>
-          Zorgeloos of in ieder geval met minder zorgen. Elke keer als ik iemand
-          moet inhuren, denk ik van tevoren na of het niet beter is om de taak
-          zelf te doen. Dus ik begrijp het. Maar ik zorg goed voor mijn werk en
-          heb er ook veel plezier in...
+          Zorgeloos of ten minste met wat minder zorgen. Laadpaal installatie
+          kan soms overweldigend zijn, omdat er mogelijk veel dingen in korte
+          tijd moeten gebeuren voordat je jouw auto kan gaan opladen.
         </p>
         <p className='mt-4'>
-          Ik kom dus goed voorbereid. Alles wordt netjes gemonteerd en getest
-          geleverd. Je hoef zich geen zorgen te maken over welke
-          aardlekschakelaars of installastieautomaten nodig zijn en hoe jouw
-          groepenkast in elkaar moet worden gezet zodat alles veilig en goed
-          functioneert volgens de Nederlandse normen.
+          Ik kom dus goed voorbereid en ik zorg goed voor mijn werk. Alles wordt
+          netjes gemonteerd en getest geleverd. Je heb zich geen zorgen te maken
+          over welke installatieautomaten of aardlekschakelaars nodig zijn en
+          hoe jouw groepenkast moet worden samengesteld zodat alles veilig en
+          goed functioneert volgens de Nederlandse normen. Je krijgt altijd
+          direct van mij een eerlijk advies, ook als ik iets niet kan, zeg ik
+          het gewoon.
         </p>
         {/* <p className='mt-4'>
           Ik ben opgeleid en gecertificeerd om de benodigde
