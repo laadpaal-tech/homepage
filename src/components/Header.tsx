@@ -1,6 +1,6 @@
 import Logo from '~/assets/logo-white.svg?react'
 // import MenuIcon from '~/assets/menu-icon.svg?react'
-import Schouwing from '~/assets/schouwing.svg?react'
+import GratisCheck from '~/assets/gratis-check.svg?react'
 import Arrow from '~/assets/arrow-2.svg?react'
 import ReadMoreIcon from '~/assets/read-more-icon.svg?react'
 
@@ -64,13 +64,13 @@ const Header = () => (
     </div>
     <div className='flex w-full flex-col items-center justify-center @5xl:flex-row @5xl:justify-between'>
       <div className='relative left-12 top-0 hidden w-1/2 flex-col @5xl:flex'>
-        <Schouwing />
+        <GratisCheck />
         <p className='relative left-1 mt-2 text-white opacity-70'>
           Eindhoven en omgeving (≈ 10km van het centrum van Eindhoven).
         </p>
       </div>
       <div className='relative mt-6 flex w-3/4 flex-col @5xl:hidden'>
-        <Schouwing />
+        <GratisCheck />
         <p className='relative top-1 text-xs text-white opacity-70 @2xl:text-base @5xl:left-1 @5xl:mt-2'>
           Eindhoven en omgeving (≈ 10km van het centrum van Eindhoven).
         </p>
