@@ -26,18 +26,28 @@ const NavigationBar = () => {
     })
   }
 
+  // SAFARI does not support "scrollend" event
   useEffect(() => {
+    let timerId: NodeJS.Timeout | null = null
     const scrollEventHandler = () => {
-      console.log('scrollend:', window.scrollY)
-      if (window.scrollY > 1000) {
-        setShowScrollToTop(true)
-      } else {
-        setShowScrollToTop(false)
+      if (timerId) {
+        clearTimeout(timerId)
       }
+      timerId = setTimeout(() => {
+        console.log('scrollend:', window.scrollY)
+        if (window.scrollY > 1000) {
+          setShowScrollToTop(true)
+        } else {
+          setShowScrollToTop(false)
+        }
+      }, 500)
     }
-    document.addEventListener('scrollend', scrollEventHandler)
+    document.addEventListener('scroll', scrollEventHandler)
     return () => {
-      document.removeEventListener('scrollend', scrollEventHandler)
+      if (timerId) {
+        clearTimeout(timerId)
+      }
+      document.removeEventListener('scroll', scrollEventHandler)
     }
   }, [])
 
