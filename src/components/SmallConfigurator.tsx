@@ -1,81 +1,202 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
+  Selection,
   Table,
   TableHeader,
   TableColumn,
   TableBody,
   TableRow,
-  TableCell,
-  RadioGroup,
-  Radio
+  TableCell
 } from '@nextui-org/react'
 
-const colors = [
-  'default',
-  'primary',
-  'secondary',
-  'success',
-  'warning',
-  'danger'
-] as const
+type ConfigItem = {
+  id: string
+  label: string
+  externalCosts: number
+  installationCosts: number
+}
 
-type Colors = (typeof colors)[number]
+const config: ConfigItem[] = [
+  {
+    id: 'upgrade-3phase',
+    label:
+      'Upgrade van 1-fase naar 3-fase aansluiting (kosten netwerkbeheerder)',
+    externalCosts: 310,
+    installationCosts: 0
+  },
+  {
+    id: 'box-rcd',
+    label:
+      'Nieuwe groepenkast, 8 groepen, 1x inductie groep, 1x laadpaal groep, variant: aardlekschakelaars',
+    externalCosts: 420,
+    installationCosts: 200
+  },
+  {
+    id: 'box-rcbo',
+    label:
+      'Nieuwe groepenkast, 8 groepen, 1x inductie groep, 1x laadpaal groep, variant: aardlekautomaten',
+    externalCosts: 550,
+    installationCosts: 200
+  },
+  {
+    id: 'group-rcd-a',
+    label: 'Een laadpaal groep: aardlekschakelaar 40A Type A + krachtgroep B16',
+    externalCosts: 75,
+    installationCosts: 100
+  },
+  {
+    id: 'group-rcd-b',
+    label: 'Een laadpaal groep: aardlekschakelaar 40A Type B + krachtgroep B16',
+    externalCosts: 192,
+    installationCosts: 100
+  },
+  {
+    id: 'group-rcbo-a',
+    label: 'Een laadpaal groep: aardlekautomaat 40A Type A B16 (merk: Chint)',
+    externalCosts: 87,
+    installationCosts: 100
+  },
+  {
+    id: 'group-rcbo-b',
+    label: 'Een laadpaal groep: aardlekautomaat 40A Type B B16 (merk: SEP)',
+    externalCosts: 350,
+    installationCosts: 100
+  },
+  {
+    id: 'charge-point',
+    label: 'Laadpaal (voorbeeldprijs met loadbalancing)',
+    externalCosts: 1100,
+    installationCosts: 0
+  },
+  {
+    id: 'connecting-charge-point',
+    label:
+      'Aansluiting laadpaal aan de groepenkast (prijs vanaf, na delocatiecheck)',
+    externalCosts: 25,
+    installationCosts: 100
+  }
+]
+
+const formatPrice = (price: number): string => `€${price},-`
+
+type BottomComponentProps = {
+  totalExternalCosts: number
+  totalInstallationCosts: number
+}
+
+const BottomComponent = ({
+  totalExternalCosts,
+  totalInstallationCosts
+}: BottomComponentProps) => {
+  return (
+    <Table
+      hideHeader
+      aria-label='Tables showing total costs'
+      classNames={{
+        base: 'max-h-[520px] max-w-[300px]',
+        table: 'max-w-[300px]'
+      }}
+    >
+      <TableHeader>
+        <TableColumn>A</TableColumn>
+        <TableColumn>B</TableColumn>
+      </TableHeader>
+      <TableBody>
+        <TableRow key='1'>
+          <TableCell>Totale externe kosten:</TableCell>
+          <TableCell>
+            <strong>{formatPrice(totalExternalCosts)}</strong>
+          </TableCell>
+        </TableRow>
+        <TableRow key='2'>
+          <TableCell>Totale installatiekosten:</TableCell>
+          <TableCell>
+            <strong>{formatPrice(totalInstallationCosts)}</strong>
+          </TableCell>
+        </TableRow>
+        <TableRow key='3'>
+          <TableCell>Totale kosten:</TableCell>
+          <TableCell>
+            <strong>
+              {formatPrice(totalInstallationCosts + totalExternalCosts)}
+            </strong>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  )
+}
+
+type Totals = {
+  totalExternalCosts: number
+  totalInstallationCosts: number
+}
 
 const SmallConfigurator = () => {
-  const [selectedColor, setSelectedColor] = React.useState<Colors>('default')
+  const [totals, setTotals] = useState<Totals>({
+    totalExternalCosts: 0,
+    totalInstallationCosts: 0
+  })
+  const onSelectionChange = (keys: Selection) => {
+    if (keys === 'all') {
+      return
+    }
 
-  const setSelected = (value: string) => {
-    setSelectedColor(value as Colors)
+    const selection = Array.from(keys)
+    const totals = selection.reduce(
+      (acc, current) => {
+        const configItem = config.find((e) => e.id === current)
+        if (configItem) {
+          const { externalCosts, installationCosts } = configItem
+          acc.totalExternalCosts += externalCosts
+          acc.totalInstallationCosts += installationCosts
+        }
+        return acc
+      },
+      { totalExternalCosts: 0, totalInstallationCosts: 0 }
+    )
+    setTotals(totals)
   }
-
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='flex w-full flex-col'>
       <Table
-        color={selectedColor}
+        color='primary'
+        classNames={{
+          // td: 'max-w-[100px]',
+          base: 'max-h-[520px]',
+          table: 'min-h-[420px] min-w-[600px]'
+        }}
+        onSelectionChange={onSelectionChange}
         selectionMode='multiple'
-        defaultSelectedKeys={['2', '3']}
+        defaultSelectedKeys={[]}
+        showSelectionCheckboxes={false}
+        isHeaderSticky
+        disabledBehavior='selection'
+        disabledKeys={['10']}
         aria-label='Example static collection table'
+        bottomContentPlacement='outside'
+        bottomContent={
+          <BottomComponent
+            totalExternalCosts={totals.totalExternalCosts}
+            totalInstallationCosts={totals.totalInstallationCosts}
+          />
+        }
       >
         <TableHeader>
-          <TableColumn>NAME</TableColumn>
-          <TableColumn>ROLE</TableColumn>
-          <TableColumn>STATUS</TableColumn>
+          <TableColumn>Dienst</TableColumn>
+          <TableColumn>Externe prijs indicatie</TableColumn>
+          <TableColumn>Installatiekosten laadpaal.tech</TableColumn>
         </TableHeader>
         <TableBody>
-          <TableRow key='1'>
-            <TableCell>Tony Reichert</TableCell>
-            <TableCell>CEO</TableCell>
-            <TableCell>Active</TableCell>
-          </TableRow>
-          <TableRow key='2'>
-            <TableCell>Zoey Lang</TableCell>
-            <TableCell>Technical Lead</TableCell>
-            <TableCell>Paused</TableCell>
-          </TableRow>
-          <TableRow key='3'>
-            <TableCell>Jane Fisher</TableCell>
-            <TableCell>Senior Developer</TableCell>
-            <TableCell>Active</TableCell>
-          </TableRow>
-          <TableRow key='4'>
-            <TableCell>William Howard</TableCell>
-            <TableCell>Community Manager</TableCell>
-            <TableCell>Vacation</TableCell>
-          </TableRow>
+          {config.map(({ id, label, externalCosts, installationCosts }) => (
+            <TableRow key={id}>
+              <TableCell>{label}</TableCell>
+              <TableCell>{formatPrice(externalCosts)}</TableCell>
+              <TableCell>{formatPrice(installationCosts)}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
-      <RadioGroup
-        label='Selection color'
-        orientation='horizontal'
-        value={selectedColor}
-        onValueChange={setSelected}
-      >
-        {colors.map((color) => (
-          <Radio key={color} color={color} value={color} className='capitalize'>
-            {color}
-          </Radio>
-        ))}
-      </RadioGroup>
     </div>
   )
 }
