@@ -19,7 +19,7 @@ const Steps = () => {
   return (
     <div
       ref={setRef}
-      className='z-10 mb-24 mt-24 flex w-full flex-col items-center justify-start bg-theme-yellow @5xl:w-4/5'
+      className='z-10 mb-24 mt-24 flex w-full scroll-mt-16 flex-col items-center justify-start bg-theme-yellow @5xl:w-4/5'
     >
       <h2 className='mt-12 w-[340px] text-center text-4xl font-bold @3xl:w-auto'>
         Jouw eigen laadpaal thuis in 3 stappen:
