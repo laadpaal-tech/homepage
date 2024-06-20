@@ -64,14 +64,14 @@ const config: ConfigItem[] = [
   },
   {
     id: 'charge-point',
-    label: 'Laadpaal (voorbeeldprijs met loadbalancing)',
+    label: 'Laadpaal (voorbeeldprijs met load-balancing)',
     externalCosts: 1100,
     installationCosts: 0
   },
   {
     id: 'connecting-charge-point',
     label:
-      'Aansluiting laadpaal aan de groepenkast (prijs vanaf, na delocatiecheck)',
+      'Aansluiting laadpaal aan de groepenkast (prijs vanaf, na de locatiecheck)',
     externalCosts: 25,
     installationCosts: 100
   }
