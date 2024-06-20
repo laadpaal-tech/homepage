@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div
       ref={setRef}
-      className='z-10 mb-0 mt-12 flex w-full flex-col gap-8 bg-theme-dark-blue p-8 font-roboto-mono text-base font-light text-white @2xl:flex-row'
+      className='z-10 mb-0 mt-12 flex w-full scroll-mt-10 flex-col gap-8 bg-theme-dark-blue p-8 font-roboto-mono text-base font-light text-white @2xl:flex-row'
     >
       <section className='flex flex-col'>
         <h3 className='mb-4 text-3xl font-bold'>laadpaal.tech</h3>
