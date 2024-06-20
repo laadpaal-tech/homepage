@@ -162,9 +162,10 @@ const SmallConfigurator = () => {
       <Table
         color='primary'
         classNames={{
-          // td: 'max-w-[100px]',
+          td: 'max-w-[130px] text-wrap @3xl:max-w-min',
+          th: 'max-w-[120px] text-wrap @3xl:max-w-max @3xl:text-nowrap',
           base: 'max-h-[520px]',
-          table: 'min-h-[420px] min-w-[600px]'
+          table: 'min-h-[420px] min-w-[300px]'
         }}
         onSelectionChange={onSelectionChange}
         selectionMode='multiple'
@@ -191,8 +192,12 @@ const SmallConfigurator = () => {
           {config.map(({ id, label, externalCosts, installationCosts }) => (
             <TableRow key={id}>
               <TableCell>{label}</TableCell>
-              <TableCell>{formatPrice(externalCosts)}</TableCell>
-              <TableCell>{formatPrice(installationCosts)}</TableCell>
+              <TableCell className='text-center'>
+                {formatPrice(externalCosts)}
+              </TableCell>
+              <TableCell className='text-center'>
+                {formatPrice(installationCosts)}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
