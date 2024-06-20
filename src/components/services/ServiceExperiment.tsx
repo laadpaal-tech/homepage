@@ -14,8 +14,8 @@ const ServiceExperiment = () => (
           van bekende fabrikanten kan ik je ook adviseren hoe je jouw
           laadpaalinstallatie meer modulaire en gedecentraliseerd kan maken en
           binnenkort hoop ik ook mijn eigen laadpalen in offerte te hebben die
-          meer modulaire en beter voorbereid zijn op slimme, privacybewust
-          oplossingen samen met mijn eigen energiemanagementsysteem voor thuis.
+          modulaire en goed voorbereid zijn op slimme, privacybewust oplossingen
+          samen met mijn eigen energiemanagementsysteem voor thuis.
         </p>
         <p className='mt-4'>
           Zin in bouwen van jouw eigen laadpaal? Hulp nodig met jouw

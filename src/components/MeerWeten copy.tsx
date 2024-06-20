@@ -1,7 +1,7 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
 const MeerWeten = () => (
-  <section className='w-full bg-theme-dark-blue p-6 text-lg text-white'>
+  <section className='bg-theme-very-light-yellow w-full p-6 text-lg'>
     <h2 className='my-6 text-center text-4xl font-bold'>
       Jouw laadpaal zelf installeren?
     </h2>
@@ -21,7 +21,7 @@ const MeerWeten = () => (
       ervaren klusser zijn deze termen vaak niet zo bekend en zonder ervaring
       krijg je jouw laadpaal werkend maar toch een onveilige installatie.
     </p>
-    <p className='mt-2 bg-theme-blue p-2 italic'>
+    <p className='mt-2 bg-theme-light-yellow p-2 italic'>
       Veel laadpaalfabrikanten weigeren jouw garantierechten als je de laadpaal
       zelf installeert. Om de installatiekosten te verlagen kan je soms sommige
       werkzaamheden zelf uitvoeren maar het is verstandig om dit door een

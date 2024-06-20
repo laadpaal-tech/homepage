@@ -108,7 +108,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
         <div
           ref={el}
           onScroll={onScroll}
-          className='flex w-full snap-x snap-mandatory overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
+          className='scroll flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth scrollbar-theme *:w-full *:flex-shrink-0 *:snap-center'
         >
           {children}
         </div>

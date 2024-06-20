@@ -76,7 +76,7 @@ const StepByStep = () => (
       (RCCB) worden geplaatst, gevolgd door een installatieautomaat die
       beschermt tegen overstroom en kortsluiting.
     </p>
-    <p className='mt-2'>
+    <p id='RCD-DC-TypeB' className='mt-2'>
       Onderstaande afbeelding toont een voorbeeld van een 3-fase installatie met
       een 3x25A aansluiting:
       <img src='/img/installatie.svg' />
@@ -119,7 +119,10 @@ const StepByStep = () => (
       vermogen om DC-lekken tegen te gaan en de <i>load balancing</i>, die we
       hieronder kort zullen bespreken.
     </p>
-    <h3 className='my-4 text-left text-2xl font-semibold italic'>
+    <h3
+      id='load-balancing'
+      className='my-4 text-left text-2xl font-semibold italic'
+    >
       Load balancing
     </h3>
     <p>

@@ -31,3 +31,4 @@ coverage
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+tsconfig.node.tsbuildinfo
