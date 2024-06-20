@@ -1,4 +1,5 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
+import { SmallConfigurator } from './SmallConfigurator'
 
 const HowMuchDoesItCost = () => (
   <section className='w-full bg-theme-very-light-yellow p-6 text-lg'>
@@ -18,6 +19,16 @@ const HowMuchDoesItCost = () => (
       en (3) hoe moeilijk het is om vanuit uw groepenkast jouw laadpaal te
       bereiken.
     </p>
+    <p className='mt-2'>
+      In onderstaande interactieve tabel zie je de meest voorkomende
+      prijscomponenten bij het installeren van een laadpaal. Daar kan je de
+      artikelen selecteren die je nodig hebt en de totaalprijs bekijken.{' '}
+    </p>
+    <p className='mb-2 mt-2 bg-theme-light-yellow p-2 font-bold'>
+      Let op: de getoonde prijzen zijn niet uitputtend en slechts een indicatie.
+      Lees aub de onderstaande beschrijving voor een meer gedetailleerde uitleg.
+    </p>
+    <SmallConfigurator />
     <h3 className='my-6 text-2xl font-bold'>Aansluiting</h3>
     <p className='mt-2'>
       Als je een 1-fase aansluiting hebt, raad ik sterk aan om te upgraden naar
@@ -108,12 +119,12 @@ const HowMuchDoesItCost = () => (
       <i>slechts</i> <strong>€900,-</strong> voor de optie met aardlekautomaten.
     </p>
     <p className='mt-2'>
-      De installatiekosten voor het vervangen van de gehele groepenkast bedragen
+      De installatiekosten voor het vervangen van de gehele groepenkast bedragen{' '}
       <strong>€200,-</strong>. Dit is inclusief van het spreiden van uw
       apparaten over de fasen voor de optimale laadervaring. Wanneer je slechts
       één groep voor het laadpunt hoeft toe te voegen, bedragen de
       installatiekosten maximaal <strong>€100,-</strong> (zonder de kosten van
-      de groep en benodige bekabling).
+      de groep en benodigde bekabeling).
     </p>
     <h3 className='my-6 text-2xl font-bold'>De kosten van de laadpaal</h3>
     <p className='mt-2'>
@@ -161,7 +172,6 @@ const HowMuchDoesItCost = () => (
       hebben, zodat je op een handigere manier zelf verschillende opties kan
       testen.
     </p>
-    <p className='mt-2'></p>
     <div className='mt-6 flex w-full items-center justify-center'>
       <MakeAppointmentButton variant='yellow' />
     </div>
