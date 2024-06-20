@@ -121,7 +121,7 @@ const HowMuchDoesItCost = () => (
       redelijk om aan te nemen dat de prijs van een laadpaal samen met benodigde
       energiemeter voor de load-balancing rond <strong>€1100,-</strong> ligt
       (lees meer over load-balancing{' '}
-      <a href='load-balancing' className='text-theme-dark-blue underline'>
+      <a href='#load-balancing' className='text-theme-dark-blue underline'>
         hieronder
       </a>
       ). Er zijn minder bekende, maar ook zeer betrouwbare oplossingen waarmee
