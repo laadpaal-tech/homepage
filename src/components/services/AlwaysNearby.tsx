@@ -16,8 +16,8 @@ const AlwaysNearby = () => (
           je in Eindhoven of omgeving? Dan ben ik altijd in de buurt.
           Makkelijker, sneller en goedkoper! En ook al kunnen sommige grotere
           opdrachten beter door mijn grote concurrenten worden uitgevoerd, toch
-          bied ik vaak een meer persoonlijke, klantgerichte en agile aanpak.
-          Door samen te werken met laadpaal.tech steun je dus een lokale
+          bied ik vaak een meer persoonlijke, klantgerichte en agile aanpak aan.
+          Door samen te werken met <i>laadpaal.tech</i> steun je dus een lokale
           onderneming in jouw regio. Alvast bedankt!
         </p>
       </section>

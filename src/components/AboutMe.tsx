@@ -1,18 +1,18 @@
 const AboutMe = () => (
   <div className='z-10 mt-0 flex w-full flex-col items-center justify-start bg-theme-light-yellow'>
-    <h2 className='mt-6 text-center text-4xl font-bold @5xl:self-start'>
+    <h2 className='mt-6 text-center text-4xl font-bold @5xl:self-start @5xl:pl-2'>
       Iets over mij...
     </h2>
     <div className='flex flex-col flex-nowrap items-center @5xl:flex-row @5xl:items-start @5xl:justify-start'>
       <img className='mt-6 w-11/12 @5xl:hidden' src='/img/me-mobile.jpg' />
-      <section className='mt-6 w-11/12 text-lg @5xl:mr-8 @5xl:w-auto @5xl:flex-[3_0_0]'>
+      <section className='mt-6 w-11/12 text-lg @5xl:mr-8 @5xl:w-auto @5xl:flex-[3_0_0] @5xl:pl-2'>
         <p>
           Jarenlang ben ik bezig met het onderzoeken van gedecentraliseerde
           systemen in verbinding met digitale identiteit en computerbeveiliging.
           Nu er steeds meer gebruik wordt gemaakt van verschillende slimme
           energieoplossingen, wordt de bescherming van onze
           energieverbruiksgegevens steeds relevanter. Met name het slim opladen
-          van elektrische auto’s in combinatie met dynamische energiecontracten
+          van elektrische auto's in combinatie met dynamische energiecontracten
           en thuisbatterijen vereist een hoge mate van synergie tussen lokale
           apparaten en de cloud. Vanaf mijn eerste ervaringen met mijn eigen
           elektrische auto en thuisladen werd het mij duidelijk dat we de

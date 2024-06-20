@@ -24,9 +24,9 @@ const ServiceBeyondOrdinary = () => (
           met jarenlang ervaring met embedded systems, web en mobile
           applicaties. Ik probeer dus altijd goede begrip te hebben over mijn
           werk en ik ben bereid om alles ook naar jouw zo makkelijk als mogelijk
-          maken zodat je altijd begrijp “waarom”. Bovendien, leer ik altijd
-          graag ook van jouw. Ik vind dat leren van de eindgebruikers de beste
-          manier is om hun behoeften en problemen te begrijpen.
+          te maken zodat je altijd begrijpt “waarom”. Bovendien, leer ik altijd
+          graag ook van jouw. Het luisteren naar de eindgebruikers helpt me om
+          hun behoeften en problemen beter te begrijpen.
         </p>
       </section>
     </div>

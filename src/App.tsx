@@ -8,6 +8,7 @@ import { Footer } from './components/Footer'
 import { MeerWeten } from './components/MeerWeten'
 import { StepByStep } from './components/StepByStep'
 import { Chat } from './components/Chat'
+import { HowMuchDoesItCost } from './components/HowMuchDoesItCost'
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Steps />
         <Services />
         <AboutMe />
+        <HowMuchDoesItCost />
         <MeerWeten />
         <StepByStep />
         <Footer />
