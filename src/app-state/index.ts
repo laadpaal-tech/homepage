@@ -9,4 +9,13 @@ const readMoreState = atom<ReadMoreState>({
   default: {}
 })
 
-export { readMoreState }
+type ScrollToFooter = {
+  elementToShow?: HTMLElement
+}
+
+const scrollToFooter = atom<ScrollToFooter>({
+  key: 'scrollToFooter',
+  default: {}
+})
+
+export { readMoreState, scrollToFooter }

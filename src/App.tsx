@@ -11,6 +11,7 @@ import { StepByStep } from './components/StepByStep'
 // import { Price } from './components/price'
 import { Chat } from './components/Chat'
 import { HowMuchDoesItCost } from './components/HowMuchDoesItCost'
+import { NavigationBar } from './components/NavigationBar'
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             </div>
             {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] absolute left-0 top-0 w-full max-w-5xl bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
           </div>
+          <NavigationBar />
           <Header />
           <Steps />
           <Services />
