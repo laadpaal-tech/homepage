@@ -3,15 +3,15 @@ import { NextUIProvider } from '@nextui-org/react'
 import { Layout } from '~/components/Layout'
 import { Header } from '~/components/Header'
 import { Steps } from '~/components/Steps'
-import { Services } from './components/Services'
-import { AboutMe } from './components/AboutMe'
-import { Footer } from './components/Footer'
-import { MeerWeten } from './components/MeerWeten'
-import { StepByStep } from './components/StepByStep'
+import { Services } from '../components/Services'
+import { AboutMe } from '../components/AboutMe'
+import { Footer } from '../components/Footer'
+import { MeerWeten } from '../components/MeerWeten'
+import { StepByStep } from '../components/StepByStep'
 // import { Price } from './components/price'
-import { Chat } from './components/Chat'
-import { HowMuchDoesItCost } from './components/HowMuchDoesItCost'
-import { NavigationBar } from './components/NavigationBar'
+import { Chat } from '../components/Chat'
+import { HowMuchDoesItCost } from '../components/HowMuchDoesItCost'
+import { NavigationBar } from '../components/NavigationBar'
 
 const App = () => {
   return (
@@ -53,4 +53,4 @@ const App = () => {
   )
 }
 
-export default App
+export { App }

@@ -4,18 +4,23 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle
 } from '@nextui-org/react'
 import Logo from '~/assets/logo-white.svg?react'
 import { scrollToFooter } from '~/app-state'
 import { Link, useLocation } from 'react-router-dom'
 
 const NavigationBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { elementToShow } = useRecoilValue(scrollToFooter)
   const [showScrollToTop, setShowScrollToTop] = useState(false)
   const { pathname } = useLocation()
 
   const onContact = () => {
+    setIsMenuOpen(false)
     elementToShow?.scrollIntoView({ behavior: 'smooth' })
   }
   const onScrollTop = () => {
@@ -53,9 +58,15 @@ const NavigationBar = () => {
 
   return (
     <Navbar
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
       className=''
       classNames={{ base: 'bg-black opacity-80 text-white', brand: '' }}
     >
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        // className='sm:hidden'
+      />
       <NavbarBrand>
         {pathname !== '/' ? (
           <Link to='/' className='flex items-center'>
@@ -117,6 +128,13 @@ const NavigationBar = () => {
           </button>
         </NavbarItem>
       </NavbarContent>
+      <NavbarMenu>
+        <NavbarMenuItem key='contact'>
+          <button className='hover:opacity-70' onClick={onContact}>
+            Contact
+          </button>
+        </NavbarMenuItem>
+      </NavbarMenu>
     </Navbar>
   )
 }

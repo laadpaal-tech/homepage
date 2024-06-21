@@ -1,15 +1,28 @@
 import { render, screen } from '@testing-library/react'
 
-import App from '../src/App'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { App } from '~/routes/App'
+import { ErrorPage } from '~/ErrorPage'
+
+import '~/index.css'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <ErrorPage />
+  }
+])
 
 describe('App', () => {
   it('has proper styling', async () => {
-    const { container } = render(<App />)
+    const { container } = render(<RouterProvider router={router} />)
     expect(container).toMatchSnapshot()
   })
 
   it('displays welcome text', () => {
-    render(<App />)
-    expect(screen.getByText(/^vite-tailwind-starter/i)).toBeInTheDocument()
+    render(<RouterProvider router={router} />)
+    expect(screen.getAllByText(/^laadpaal.tech/i).length).toBeGreaterThan(0)
   })
 })
