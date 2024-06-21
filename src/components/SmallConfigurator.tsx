@@ -79,6 +79,13 @@ const config: ConfigItem[] = [
 
 const formatPrice = (price: number): string => `€${price},-`
 
+const TopComponent = () => (
+  <p className='max-w-max self-end rounded-xl bg-white p-2 text-right text-sm italic'>
+    Scroll door de onderstaande tabel naar beneden om alle beschikbare items te
+    zien en selecteer de werkitems die je nodig heb.
+  </p>
+)
+
 type BottomComponentProps = {
   totalExternalCosts: number
   totalInstallationCosts: number
@@ -160,11 +167,11 @@ const SmallConfigurator = () => {
   return (
     <div className='flex w-full flex-col'>
       <Table
-        color='primary'
+        color='warning'
         classNames={{
           td: 'max-w-[130px] text-wrap @3xl:max-w-min',
           th: 'max-w-[120px] text-wrap @3xl:max-w-max @3xl:text-nowrap',
-          base: 'max-h-[520px]',
+          base: 'max-h-[520px] gap-2',
           table: 'min-h-[420px] min-w-[300px]'
         }}
         onSelectionChange={onSelectionChange}
@@ -176,6 +183,8 @@ const SmallConfigurator = () => {
         disabledKeys={['10']}
         aria-label='Example static collection table'
         bottomContentPlacement='outside'
+        topContent={<TopComponent />}
+        topContentPlacement='outside'
         bottomContent={
           <BottomComponent
             totalExternalCosts={totals.totalExternalCosts}
