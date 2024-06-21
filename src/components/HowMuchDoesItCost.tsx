@@ -1,5 +1,5 @@
 import { MakeAppointmentButton } from './MakeAppointmentButton'
-import { SmallConfigurator } from './SmallConfigurator'
+import { SmallConfigurator } from './small-configurator/SmallConfigurator'
 
 const HowMuchDoesItCost = () => (
   <section className='w-full bg-theme-very-light-yellow p-6 text-lg'>
