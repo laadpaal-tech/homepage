@@ -5,13 +5,12 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
   NavbarMenuToggle
 } from '@nextui-org/react'
 import Logo from '~/assets/logo-white.svg?react'
 import { scrollToFooter } from '~/app-state'
 import { Link, useLocation } from 'react-router-dom'
+import { NavigationMenu } from './NavigationMenu'
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,7 +38,6 @@ const NavigationBar = () => {
         clearTimeout(timerId)
       }
       timerId = setTimeout(() => {
-        console.log('scrollend:', window.scrollY)
         if (window.scrollY > 1000) {
           setShowScrollToTop(true)
         } else {
@@ -61,21 +59,21 @@ const NavigationBar = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       className=''
-      classNames={{ base: 'bg-black opacity-80 text-white', brand: '' }}
+      classNames={{
+        base: 'bg-theme-dark-blue/90 text-white backdrop-blur-xl backdrop-saturate-150 text-white',
+        brand: '',
+        menu: ''
+      }}
     >
-      <NavbarMenuToggle
-        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        // className='sm:hidden'
-      />
       <NavbarBrand>
         {pathname !== '/' ? (
           <Link to='/' className='flex items-center'>
-            <Logo width={50} />
+            <Logo width={40} />
             <p className='ml-2 font-bold text-inherit'>laadpaal.tech</p>
           </Link>
         ) : (
           <>
-            <Logo width={50} />
+            <Logo width={40} />
             <p className='ml-2 font-bold text-inherit'>laadpaal.tech</p>
           </>
         )}
@@ -122,19 +120,12 @@ const NavigationBar = () => {
         </NavbarItem>
       </NavbarContent> */}
       <NavbarContent justify='end'>
-        <NavbarItem>
-          <button className='hover:opacity-70' onClick={onContact}>
-            Contact
-          </button>
-        </NavbarItem>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          // className='sm:hidden'
+        />
       </NavbarContent>
-      <NavbarMenu>
-        <NavbarMenuItem key='contact'>
-          <button className='hover:opacity-70' onClick={onContact}>
-            Contact
-          </button>
-        </NavbarMenuItem>
-      </NavbarMenu>
+      <NavigationMenu />
     </Navbar>
   )
 }

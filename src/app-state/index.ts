@@ -18,4 +18,18 @@ const scrollToFooter = atom<ScrollToFooter>({
   default: {}
 })
 
-export { readMoreState, scrollToFooter }
+type AppState = {
+  contactHeight: number
+}
+
+const defaultAppState: AppState = {
+  contactHeight: 0
+}
+
+const appState = atom<AppState>({
+  key: 'appState',
+  default: defaultAppState
+})
+
+export { readMoreState, scrollToFooter, appState }
+export type { AppState }

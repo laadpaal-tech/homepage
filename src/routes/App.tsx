@@ -11,16 +11,18 @@ import { StepByStep } from '../components/StepByStep'
 // import { Price } from './components/price'
 import { Chat } from '../components/Chat'
 import { HowMuchDoesItCost } from '../components/HowMuchDoesItCost'
-import { NavigationBar } from '../components/NavigationBar'
+import { NavigationBar } from '../components/navigation/NavigationBar'
 
 const App = () => {
   return (
     <RecoilRoot>
       <NextUIProvider>
         <Chat />
+        <NavigationBar />
         <Layout>
-          <div className='absolute left-0 top-0 z-0 flex w-full items-center justify-center'>
-            <div className='max-w-5xl'>
+          <div className='absolute -top-10 left-0 z-0 flex w-full items-center justify-center'>
+            <div className=''>
+              {/* <div className='max-w-5xl'> */}
               <img className='@md:hidden' src='/img/background-mobile.jpg' />
               <img
                 className='hidden @md:block @lg:hidden'
@@ -37,16 +39,18 @@ const App = () => {
             </div>
             {/* <div className='@md:bg-[url("/img/background-desktop.jpg")] @lg:bg-[url("/img/background-desktop-lg.jpg")] @3xl:bg-[url("/img/background-desktop-xl.jpg")] absolute left-0 top-0 w-full max-w-5xl bg-[url("/img/background-mobile.jpg")] bg-cover bg-no-repeat'> */}
           </div>
-          <NavigationBar />
-          <Header />
-          <Steps />
-          <Services />
-          <HowMuchDoesItCost />
-          <AboutMe />
-          {/* <Price /> */}
-          <MeerWeten />
-          <StepByStep />
-          <Footer />
+          <div className='relative flex w-full flex-col items-center justify-center'>
+            {/* <NavigationBar /> */}
+            <Header />
+            <Steps />
+            <Services />
+            <HowMuchDoesItCost />
+            <AboutMe />
+            {/* <Price /> */}
+            <MeerWeten />
+            <StepByStep />
+            <Footer />
+          </div>
         </Layout>
       </NextUIProvider>
     </RecoilRoot>
