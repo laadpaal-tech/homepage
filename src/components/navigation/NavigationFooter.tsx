@@ -1,4 +1,4 @@
-import { CustomEvent } from '@piwikpro/react-piwik-pro'
+// import { CustomEvent } from '@piwikpro/react-piwik-pro'
 
 import SignalLogo from '~/assets/signal-logo-white.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-white.svg?react'
@@ -13,10 +13,16 @@ import { useNavigation } from 'react-router-dom'
 type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
 
 const NavigationFooter = () => {
-  const { location } = useNavigation()
+  // const { location } = useNavigation()
 
-  const onClick = (eventType: ContactEventType) => {
-    CustomEvent.trackEvent('Contact', `${eventType}:${location?.pathname}:MENU`)
+  const onClick = async (eventType: ContactEventType) => {
+    if (import.meta.env.PROD) {
+      const { CustomEvent } = await import('@piwikpro/react-piwik-pro')
+      CustomEvent.trackEvent(
+        'Contact',
+        `${eventType}:${location?.pathname}:MENU`
+      )
+    }
   }
 
   return (

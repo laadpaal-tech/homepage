@@ -1,7 +1,7 @@
 import CalendarIcon from '~/assets/calendar-icon.svg?react'
 import CalendarIcon2 from '~/assets/calendar-yellow.svg?react'
 
-import { CustomEvent } from '@piwikpro/react-piwik-pro'
+// import { CustomEvent } from '@piwikpro/react-piwik-pro'
 
 type MakeAppointmentButtonProps = {
   variant: 'yellow' | 'black'
@@ -12,8 +12,11 @@ const MakeAppointmentButton = ({
   variant = 'yellow',
   sourceId = 'unknown'
 }: MakeAppointmentButtonProps) => {
-  const onclick = () => {
-    CustomEvent.trackEvent('MakeAppointment', sourceId)
+  const onclick = async () => {
+    if (import.meta.env.PROD) {
+      const { CustomEvent } = await import('@piwikpro/react-piwik-pro')
+      CustomEvent.trackEvent('MakeAppointment', sourceId)
+    }
   }
   return (
     <a

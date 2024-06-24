@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { CustomEvent } from '@piwikpro/react-piwik-pro'
+// import { CustomEvent } from '@piwikpro/react-piwik-pro'
 
 import SignalLogo from '~/assets/signal-logo-white-inline.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-white-inline.svg?react'
@@ -12,14 +12,23 @@ import { useNavigation } from 'react-router-dom'
 type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
 
 const Footer = () => {
-  const { location } = useNavigation()
+  // const { location } = useNavigation()
   const scrollToFooterState = useSetRecoilState(scrollToFooter)
   const setAppState = useSetRecoilState(appState)
   const ref = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLDivElement>(null)
 
-  const onClick = (eventType: ContactEventType) => {
-    CustomEvent.trackEvent('Contact', `${eventType}:${location?.pathname}:MENU`)
+  console.log('location=', location?.pathname)
+
+  const onClick = async (eventType: ContactEventType) => {
+    console.log(location)
+    if (import.meta.env.PROD) {
+      const { CustomEvent } = await import('@piwikpro/react-piwik-pro')
+      CustomEvent.trackEvent(
+        'Contact',
+        `${eventType}:${location?.pathname}:MENU`
+      )
+    }
   }
 
   useEffect(() => {
