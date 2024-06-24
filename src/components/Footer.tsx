@@ -98,7 +98,7 @@ const Footer = () => {
             <a
               rel='noreferrer'
               target='_blank'
-              href='https://wa.me/message/WRGJMP2QSRXYA1'
+              href='https://cal.com/laadpaal.tech'
             >
               <CalendarInline height={28} width={117} />
             </a>
