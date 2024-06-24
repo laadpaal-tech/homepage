@@ -1,5 +1,5 @@
 // import { useEffect } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 import { AboutMe } from '~/components/AboutMe'
 import { MakeAppointmentButton } from '~/components/MakeAppointmentButton'
