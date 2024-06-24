@@ -8,19 +8,19 @@ import WhatsAppLogoInline from '~/assets/whatsapp-logo-white-inline.svg?react'
 import TelegramLogoInline from '~/assets/telegram-logo-white-inline.svg?react'
 import Calendar from '~/assets/calendar-white.svg?react'
 import CalendarInline from '~/assets/calendar-white-inline.svg?react'
-import { useNavigation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
 
 const NavigationFooter = () => {
-  // const { location } = useNavigation()
+  const { pathname } = useLocation()
 
   const onClick = async (eventType: ContactEventType) => {
     if (import.meta.env.PROD) {
       const { CustomEvent } = await import('@piwikpro/react-piwik-pro')
       CustomEvent.trackEvent(
         'Contact',
-        `${eventType}:${location?.pathname}:MENU`
+        `${eventType}:${pathname.replace('/', '')}:MENU`
       )
     }
   }

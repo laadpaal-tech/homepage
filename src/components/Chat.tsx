@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { useNavigation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 // import { CustomEvent } from '@piwikpro/react-piwik-pro'
 
 import ChatIcon from '~/assets/chat.svg?react'
@@ -13,7 +13,7 @@ import { appState } from '~/app-state'
 type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
 
 const Chat = () => {
-  // const { location } = useNavigation()
+  const { pathname } = useLocation()
   const [open, setOpen] = useState<boolean>(false)
   const [hideChat, setHideChat] = useState(false)
   const { contactHeight } = useRecoilValue(appState)
@@ -24,7 +24,7 @@ const Chat = () => {
       const { CustomEvent } = await import('@piwikpro/react-piwik-pro')
       CustomEvent.trackEvent(
         'Contact',
-        `${eventType}:${location?.pathname}:MENU`
+        `${eventType}:${pathname.replace('/', '')}:MENU`
       )
     }
   }
