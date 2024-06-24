@@ -1,16 +1,27 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useNavigation } from 'react-router-dom'
+import { CustomEvent } from '@piwikpro/react-piwik-pro'
+
 import ChatIcon from '~/assets/chat.svg?react'
+import Calendar from '~/assets/calendar-icon.svg?react'
 import SignalLogo from '~/assets/signal-logo-black.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-black.svg?react'
 import TelegramLogo from '~/assets/telegram-logo-black.svg?react'
 import { useRecoilValue } from 'recoil'
 import { appState } from '~/app-state'
 
+type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
+
 const Chat = () => {
+  const { location } = useNavigation()
   const [open, setOpen] = useState<boolean>(false)
   const [hideChat, setHideChat] = useState(false)
   const { contactHeight } = useRecoilValue(appState)
   const timerId = useRef<NodeJS.Timeout | null>(null)
+
+  const onClick = (eventType: ContactEventType) => {
+    CustomEvent.trackEvent('Contact', `${eventType}:${location?.pathname}:MENU`)
+  }
 
   const showContactOptions = () => {
     setOpen((prev) => {
@@ -58,6 +69,16 @@ const Chat = () => {
     return (
       <div className='flex flex-col gap-2'>
         <a
+          onClick={() => onClick('cal.com')}
+          rel='noreferrer'
+          target='_blank'
+          href='https://cal.com/laadpaal.tech'
+          className='flex h-[60px] w-[60px] items-center justify-center rounded-3xl border-2 border-white bg-theme-yellow'
+        >
+          <Calendar height='70%' width='70%' />
+        </a>
+        <a
+          onClick={() => onClick('signal')}
           rel='noreferrer'
           target='_blank'
           href='https://signal.me/#eu/ejxg_PgqvcokkxdOrdTHl0JTcdM-kaJkzBLKEjgTbRPSvfP9YvREraiB3S8j7iX4'
@@ -66,6 +87,7 @@ const Chat = () => {
           <SignalLogo width='70%' height='70%' />
         </a>
         <a
+          onClick={() => onClick('telegram')}
           rel='noreferrer'
           target='_blank'
           href='https://t.me/marcinczenko'
@@ -74,6 +96,7 @@ const Chat = () => {
           <TelegramLogo width='70%' height='70%' className='text-black' />
         </a>
         <a
+          onClick={() => onClick('whatsapp')}
           rel='noreferrer'
           target='_blank'
           href='https://wa.me/message/WRGJMP2QSRXYA1'
@@ -91,7 +114,7 @@ const Chat = () => {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 z-10 flex h-[280px] flex-col items-end justify-end gap-4`}
+      className={`fixed bottom-4 right-4 z-10 flex h-[340px] flex-col items-end justify-end gap-4`}
     >
       <div
         className={`${open ? 'flex-[1]' : 'flex-[0]'} h-auto overflow-hidden transition-all duration-300 ease-out`}

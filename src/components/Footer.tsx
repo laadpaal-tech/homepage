@@ -1,16 +1,26 @@
+import { useEffect, useRef } from 'react'
+import { CustomEvent } from '@piwikpro/react-piwik-pro'
+
 import SignalLogo from '~/assets/signal-logo-white-inline.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-white-inline.svg?react'
 import TelegramLogo from '~/assets/telegram-logo-white-inline.svg?react'
 import CalendarInline from '~/assets/calendar-white-inline.svg?react'
 import { useSetRecoilState } from 'recoil'
 import { appState, scrollToFooter } from '~/app-state'
-import { useEffect, useRef } from 'react'
+import { useNavigation } from 'react-router-dom'
+
+type ContactEventType = 'cal.com' | 'signal' | 'telegram' | 'whatsapp'
 
 const Footer = () => {
+  const { location } = useNavigation()
   const scrollToFooterState = useSetRecoilState(scrollToFooter)
   const setAppState = useSetRecoilState(appState)
   const ref = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLDivElement>(null)
+
+  const onClick = (eventType: ContactEventType) => {
+    CustomEvent.trackEvent('Contact', `${eventType}:${location?.pathname}:MENU`)
+  }
 
   useEffect(() => {
     if (ref.current) {
@@ -96,6 +106,7 @@ const Footer = () => {
           <h3 className='mb-0 text-3xl font-bold'>Contact</h3>
           <section className='mb-2 flex flex-wrap gap-8 py-4'>
             <a
+              onClick={() => onClick('cal.com')}
               rel='noreferrer'
               target='_blank'
               href='https://cal.com/laadpaal.tech'
@@ -103,6 +114,7 @@ const Footer = () => {
               <CalendarInline height={28} width={117} />
             </a>
             <a
+              onClick={() => onClick('signal')}
               rel='noreferrer'
               target='_blank'
               href='https://signal.me/#eu/ejxg_PgqvcokkxdOrdTHl0JTcdM-kaJkzBLKEjgTbRPSvfP9YvREraiB3S8j7iX4'
@@ -110,6 +122,7 @@ const Footer = () => {
               <SignalLogo width={99} height={27} />
             </a>
             <a
+              onClick={() => onClick('telegram')}
               rel='noreferrer'
               target='_blank'
               href='https://t.me/marcinczenko'
@@ -117,6 +130,7 @@ const Footer = () => {
               <TelegramLogo width={128} height={28} />
             </a>
             <a
+              onClick={() => onClick('whatsapp')}
               rel='noreferrer'
               target='_blank'
               href='https://wa.me/message/WRGJMP2QSRXYA1'
