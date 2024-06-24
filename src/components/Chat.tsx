@@ -1,17 +1,58 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import ChatIcon from '~/assets/chat.svg?react'
 import SignalLogo from '~/assets/signal-logo-black.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-black.svg?react'
 import TelegramLogo from '~/assets/telegram-logo-black.svg?react'
+import { useRecoilValue } from 'recoil'
+import { appState } from '~/app-state'
 
 const Chat = () => {
   const [open, setOpen] = useState<boolean>(false)
+  const [hideChat, setHideChat] = useState(false)
+  const { contactHeight } = useRecoilValue(appState)
+  const timerId = useRef<NodeJS.Timeout | null>(null)
 
   const showContactOptions = () => {
     setOpen((prev) => {
       return !prev
     })
   }
+
+  const scrollAndResizeHandler = useCallback(() => {
+    if (timerId.current) {
+      clearTimeout(timerId.current)
+    }
+    timerId.current = setTimeout(() => {
+      const clientHeight = document.body.clientHeight
+      const viewHeight = window.innerHeight
+      if (window.scrollY >= clientHeight - viewHeight - contactHeight) {
+        setHideChat(true)
+      } else {
+        setHideChat(false)
+      }
+    }, 500)
+  }, [contactHeight])
+
+  // SAFARI does not support "scrollend" event
+  useEffect(() => {
+    document.addEventListener('scroll', scrollAndResizeHandler)
+    return () => {
+      if (timerId.current) {
+        clearTimeout(timerId.current)
+      }
+      document.removeEventListener('scroll', scrollAndResizeHandler)
+    }
+  }, [scrollAndResizeHandler])
+
+  useEffect(() => {
+    window.addEventListener('resize', scrollAndResizeHandler)
+    return () => {
+      if (timerId.current) {
+        clearTimeout(timerId.current)
+      }
+      window.removeEventListener('resize', scrollAndResizeHandler)
+    }
+  }, [scrollAndResizeHandler])
 
   const renderButtons = () => {
     return (
@@ -44,6 +85,10 @@ const Chat = () => {
     )
   }
 
+  if (hideChat) {
+    return null
+  }
+
   return (
     <div
       className={`fixed bottom-4 right-4 z-10 flex h-[280px] flex-col items-end justify-end gap-4`}
@@ -55,7 +100,7 @@ const Chat = () => {
       </div>
       <button
         onClick={showContactOptions}
-        className='flex h-[60px] w-[60px] items-center justify-center self-end rounded-3xl border-2 border-white bg-theme-yellow shadow-xl'
+        className='flex h-[60px] w-[60px] animate-appearance-in items-center justify-center self-end rounded-3xl border-2 border-white bg-theme-yellow shadow-xl'
       >
         {open ? <div className='text-3xl'>X</div> : <ChatIcon width='70%' />}
       </button>

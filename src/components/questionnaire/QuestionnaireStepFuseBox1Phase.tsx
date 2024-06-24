@@ -47,7 +47,6 @@ const QuestionnaireStepFuseBox1Phase = ({
   useEffect(() => {
     const timerId = setTimeout(() => {
       if (!disableScrollIntoView && ref.current) {
-        console.log('SCROLLLLL')
         ref.current.scrollIntoView({
           behavior: 'smooth'
         })

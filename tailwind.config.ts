@@ -37,7 +37,19 @@ export default {
   plugins: [
     containerQueries,
     nextui(),
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities, addComponents }) {
+      addComponents({
+        '.link': {
+          '@apply text-theme-dark-blue underline hover:opacity-70': {}
+        },
+        '.link2': {
+          color: '#25496D',
+          textDecoration: 'underline',
+          '&:hover': {
+            opacity: '70%'
+          }
+        }
+      })
       addUtilities({
         '.scrollbar-theme': {
           '@supports (scrollbar-width: auto)': {
