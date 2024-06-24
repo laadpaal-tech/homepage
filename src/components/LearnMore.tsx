@@ -43,7 +43,7 @@ const LearnMore = () => (
       </p>
     </section>
     <div className='my-6 flex w-full items-center justify-center'>
-      <MakeAppointmentButton variant='yellow' />
+      <MakeAppointmentButton variant='yellow' sourceId='zelf-installeren' />
     </div>
   </div>
 )

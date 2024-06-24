@@ -1,5 +1,21 @@
-import { StepByStep } from '~/components/StepByStep'
+// import { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 
-const DIY = () => <StepByStep />
+import { StepByStep } from '~/components/StepByStep'
+// import { PageViews } from '@piwikpro/react-piwik-pro'
+
+const DIY = () => {
+  // useEffect(() => {
+  //   PageViews.trackPageView('StepByStep')
+  // }, [])
+  return (
+    <>
+      <Helmet>
+        <title>laadpaal.tech - Stap-voor-Stap</title>
+      </Helmet>
+      <StepByStep />
+    </>
+  )
+}
 
 export { DIY }

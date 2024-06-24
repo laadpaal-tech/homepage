@@ -24,10 +24,7 @@ const Steps = () => {
       <h2 className='mt-12 w-[340px] text-center text-4xl font-bold @3xl:w-auto'>
         Jouw eigen laadpaal thuis in 3 stappen:
       </h2>
-      <ol
-        className='flex flex-col items-center justify-start *:mt-8 *:flex *:flex-col *:items-center @5xl:min-w-min *:@5xl:w-full *:@5xl:flex-row
-    '
-      >
+      <ol className='flex flex-col items-center justify-start *:mt-8 *:flex *:flex-col *:items-center @5xl:min-w-min *:@5xl:w-full *:@5xl:flex-row'>
         <li>
           <CircledNumber value='1' />
           <p className='mt-3 w-[340px] text-center text-3xl @5xl:ml-4 @5xl:mt-0 @5xl:w-auto'>
@@ -48,7 +45,7 @@ const Steps = () => {
         </li>
       </ol>
       <div className='my-6 @5xl:mr-16 @5xl:self-end'>
-        <MakeAppointmentButton variant='black' />
+        <MakeAppointmentButton variant='black' sourceId='Steps' />
       </div>
     </div>
   )
