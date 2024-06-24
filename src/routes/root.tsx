@@ -12,20 +12,7 @@ const Root = () => {
   const navigate = useNavigate()
 
   const initTracking = async () => {
-    console.log('PIWIK_CONTAINER_ID=', import.meta.env.VITE_PIWIK_CONTAINER_ID)
-    console.log(
-      'PIWIK_CONTAINER_URL=',
-      import.meta.env.VITE_PIWIK_CONTAINER_URL
-    )
     if (import.meta.env.PROD) {
-      console.log(
-        'PIWIK_CONTAINER_ID[PROD]=',
-        import.meta.env.VITE_PIWIK_CONTAINER_ID
-      )
-      console.log(
-        'PIWIK_CONTAINER_URL[PROD]=',
-        import.meta.env.VITE_PIWIK_CONTAINER_URL
-      )
       const PiwikPro = (await import('@piwikpro/react-piwik-pro')).default
       PiwikPro.initialize(
         import.meta.env.VITE_PIWIK_CONTAINER_ID,
