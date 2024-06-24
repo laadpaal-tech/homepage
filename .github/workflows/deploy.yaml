@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: PRODUCTION
     env:
       CI: true
 
@@ -27,6 +27,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Build
+        env:
+          PIWIK_CONTAINER_ID: ${{ secrets.PIWIK_CONTAINER_ID }}
+          PIWIK_CONTAINER_URL: ${{ secrets.PIWIK_CONTAINER_URL }}
         run: yarn build
       - name: Update Known Hosts
         run: |
