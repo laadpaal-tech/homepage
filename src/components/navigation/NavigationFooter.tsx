@@ -14,6 +14,18 @@ const NavigationFooter = () => (
         <a
           rel='noreferrer'
           target='_blank'
+          href='https://cal.com/laadpaal.tech'
+        >
+          <div className='h-[30px] w-[30px] sm:hidden'>
+            <Calendar height='100%' width='100%' />
+          </div>
+          <div className='hidden h-[28px] w-[117px] sm:block'>
+            <CalendarInline height='100%' width='100%' />
+          </div>
+        </a>
+        <a
+          rel='noreferrer'
+          target='_blank'
           href='https://signal.me/#eu/ejxg_PgqvcokkxdOrdTHl0JTcdM-kaJkzBLKEjgTbRPSvfP9YvREraiB3S8j7iX4'
         >
           <div className='h-[30px] w-[30px] sm:hidden'>
@@ -41,18 +53,6 @@ const NavigationFooter = () => (
           </div>
           <div className='hidden h-[28px] w-[120px] sm:block'>
             <WhatsAppLogoInline height='100%' width='100%' />
-          </div>
-        </a>
-        <a
-          rel='noreferrer'
-          target='_blank'
-          href='https://cal.com/laadpaal.tech'
-        >
-          <div className='h-[30px] w-[30px] sm:hidden'>
-            <Calendar height='100%' width='100%' />
-          </div>
-          <div className='hidden h-[28px] w-[117px] sm:block'>
-            <CalendarInline height='100%' width='100%' />
           </div>
         </a>
       </section>

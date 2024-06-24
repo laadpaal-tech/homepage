@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useRecoilValue } from 'recoil'
 import {
   Navbar,
   NavbarBrand,
@@ -8,19 +7,17 @@ import {
   NavbarMenuToggle
 } from '@nextui-org/react'
 import Logo from '~/assets/logo-white.svg?react'
-import { scrollToFooter } from '~/app-state'
 import { Link, useLocation } from 'react-router-dom'
 import { NavigationMenu } from './NavigationMenu'
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { elementToShow } = useRecoilValue(scrollToFooter)
   const [showScrollToTop, setShowScrollToTop] = useState(false)
   const { pathname } = useLocation()
 
-  const onContact = () => {
+  const onCloseMenu = () => {
     setIsMenuOpen(false)
-    elementToShow?.scrollIntoView({ behavior: 'smooth' })
+    // elementToShow?.scrollIntoView({ behavior: 'smooth' })
   }
   const onScrollTop = () => {
     window.scrollTo({
@@ -125,7 +122,7 @@ const NavigationBar = () => {
           // className='sm:hidden'
         />
       </NavbarContent>
-      <NavigationMenu />
+      <NavigationMenu onClose={onCloseMenu} />
     </Navbar>
   )
 }

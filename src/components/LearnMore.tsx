@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 
-const MeerWeten = () => (
-  <div className='flex w-full flex-col items-center bg-theme-dark-blue'>
-    <section className='w-full max-w-5xl bg-theme-dark-blue p-6 text-lg text-white'>
+const LearnMore = () => (
+  <div className='flex w-full flex-col items-center bg-theme-very-light-yellow'>
+    <section className='w-full max-w-5xl p-6 text-lg text-black'>
       <h2 className='my-6 text-center text-4xl font-bold'>
         Jouw laadpaal zelf installeren?
       </h2>
@@ -23,7 +24,7 @@ const MeerWeten = () => (
         ervaring krijg je jouw laadpaal werkend maar toch een onveilige
         installatie.
       </p>
-      <p className='mt-2 bg-theme-blue p-2 italic'>
+      <p className='mt-2 bg-theme-light-yellow p-2 italic'>
         Veel laadpaalfabrikanten weigeren jouw garantierechten als je de
         laadpaal zelf installeert. Om de installatiekosten te verlagen kan je
         soms sommige werkzaamheden zelf uitvoeren maar het is verstandig om dit
@@ -32,11 +33,19 @@ const MeerWeten = () => (
         installatiekosten te beperken, dan adviseer ik je graag. Plan nu online
         een afspraak en leer meer over de mogelijkheden.
       </p>
-      <div className='mt-6 flex w-full items-center justify-center'>
-        <MakeAppointmentButton variant='yellow' />
-      </div>
+      <p className='mt-2'>
+        Lees onze{' '}
+        <Link className='link' to='/step-by-step'>
+          stap-voor-stap handleiding
+        </Link>{' '}
+        voor laadpaalinstallatie om beter inzicht te krijgen in de
+        aandachtspunten bij het installeren van een laadpaal.
+      </p>
     </section>
+    <div className='my-6 flex w-full items-center justify-center'>
+      <MakeAppointmentButton variant='yellow' />
+    </div>
   </div>
 )
 
-export { MeerWeten }
+export { LearnMore }

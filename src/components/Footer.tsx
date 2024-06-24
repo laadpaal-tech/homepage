@@ -1,6 +1,7 @@
 import SignalLogo from '~/assets/signal-logo-white-inline.svg?react'
 import WhatsAppLogo from '~/assets/whatsapp-logo-white-inline.svg?react'
 import TelegramLogo from '~/assets/telegram-logo-white-inline.svg?react'
+import CalendarInline from '~/assets/calendar-white-inline.svg?react'
 import { useSetRecoilState } from 'recoil'
 import { appState, scrollToFooter } from '~/app-state'
 import { useEffect, useRef } from 'react'
@@ -94,6 +95,13 @@ const Footer = () => {
         <section className='flex flex-col' ref={contactRef}>
           <h3 className='mb-0 text-3xl font-bold'>Contact</h3>
           <section className='mb-2 flex flex-wrap gap-8 py-4'>
+            <a
+              rel='noreferrer'
+              target='_blank'
+              href='https://wa.me/message/WRGJMP2QSRXYA1'
+            >
+              <CalendarInline height={28} width={117} />
+            </a>
             <a
               rel='noreferrer'
               target='_blank'
