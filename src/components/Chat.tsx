@@ -128,6 +128,7 @@ const Chat = () => {
         {renderButtons()}
       </div>
       <button
+        aria-label='show chat options'
         onClick={showContactOptions}
         className='flex h-[60px] w-[60px] animate-appearance-in items-center justify-center self-end rounded-3xl border-2 border-white bg-theme-yellow shadow-xl'
       >

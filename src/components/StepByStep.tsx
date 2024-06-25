@@ -81,7 +81,7 @@ const StepByStep = () => (
       <p id='RCD-DC-TypeB' className='mt-2'>
         Onderstaande afbeelding toont een voorbeeld van een 3-fase installatie
         met een 3x25A aansluiting:
-        <img src='/img/installatie.svg' />
+        <img alt='example installation scheme' src='/img/installatie.svg' />
         Na de slimme meter (1) hebben we een hoofdschakelaar (2), waarna we onze
         reguliere groepen (3) laten beveiligen door een aardlekschakelaar van
         Type A (weergegeven op een grijze achtergrond). Dan zien we twee
@@ -152,7 +152,11 @@ const StepByStep = () => (
           <MakeAppointmentButton variant='yellow' sourceId='StepByStep' />
         </div>
         <div className='absolute bottom-8 @xl:bottom-0'>
-          <img width='600px' src='/img/me-with-text.jpg' />
+          <img
+            alt='picture of the author'
+            width='600px'
+            src='/img/me-with-text.jpg'
+          />
           {/* <p className='absolute left-10 top-[80px] border border-red-800 text-xl font-extrabold text-theme-blue @lg:top-[100px] @xl:top-[110px] @xl:text-2xl @3xl:text-3xl'>
           Dit is veel om te leren...
           <br />

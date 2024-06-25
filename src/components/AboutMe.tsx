@@ -5,7 +5,11 @@ const AboutMe = () => (
         Iets over mij...
       </h2>
       <div className='flex flex-col flex-nowrap items-center @5xl:flex-row @5xl:items-start @5xl:justify-start'>
-        <img className='mt-6 w-11/12 @5xl:hidden' src='/img/me-mobile.jpg' />
+        <img
+          alt='picture of the author'
+          className='mt-6 w-11/12 @5xl:hidden'
+          src='/img/me-mobile.jpg'
+        />
         <section className='mt-6 w-11/12 text-lg @5xl:mr-8 @5xl:w-auto @5xl:flex-[3_0_0] @5xl:pl-2'>
           <p>
             Jarenlang ben ik bezig met het onderzoeken van gedecentraliseerde
@@ -44,7 +48,11 @@ const AboutMe = () => (
           </p>
         </section>
         <div className='hidden @5xl:block @5xl:flex-[1_0_100px]'>
-          <img width='100%' src='/img/me-desktop.jpg' />
+          <img
+            alt='picture of the author'
+            width='100%'
+            src='/img/me-desktop.jpg'
+          />
         </div>
       </div>
     </section>

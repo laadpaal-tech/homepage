@@ -24,6 +24,7 @@ const ReadMoreButton = () => {
 
   return (
     <button
+      aria-label='read more'
       onClick={readMore}
       className='flex flex-col items-center font-roboto-mono text-xl text-white opacity-60'
     >

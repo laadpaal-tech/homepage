@@ -20,14 +20,17 @@ const ServicePersonal = () => (
       </section>
       <div className='absolute right-[1px] top-0 z-[8] h-full @3xl:h-[90%]'>
         <img
+          alt='image of an electric car'
           className='hidden max-h-full @5xl:block'
           src='/img/img-service-1a.jpg'
         />
         <img
+          alt='image of an electric car'
           className='max-h-full @xl:hidden @3xl:block @5xl:hidden'
           src='/img/img-service-1b.jpg'
         />
         <img
+          alt='image of an electric car'
           className='hidden max-h-full @xl:block @3xl:hidden'
           src='/img/img-service-1c.jpg'
         />

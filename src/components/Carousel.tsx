@@ -89,6 +89,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
       <div className='relative'>
         <div className='absolute left-1 top-0 z-50 flex h-full w-[48px] items-center @3xl:w-[56px] @5xl:-left-20'>
           <button
+            aria-label='previous'
             className={`${currentIndex === 0 ? 'hidden' : 'block'} w-full -translate-y-[84px] opacity-50 disabled:cursor-not-allowed disabled:opacity-25 @5xl:-translate-y-[11px]`}
             disabled={currentIndex === 0}
             onClick={onPrev}
@@ -98,6 +99,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
         </div>
         <div className='absolute right-1 top-0 z-50 flex h-full w-[48px] items-center @3xl:w-[56px] @5xl:-right-20'>
           <button
+            aria-label='next'
             disabled={currentIndex === numOfItems - 1}
             className={`${currentIndex === numOfItems - 1 ? 'hidden' : 'block'} w-full -translate-y-[84px] opacity-50 disabled:cursor-not-allowed disabled:opacity-25 @5xl:-translate-y-[11px]`}
             onClick={onNext}
@@ -115,7 +117,11 @@ const Carousel = ({ children }: { children: ReactNode }) => {
       </div>
       <div className='mt-6 flex items-center justify-center gap-8'>
         {new Array(numOfItems).fill(0).map((_, index) => (
-          <button key={index} onClick={() => goTo(index)}>
+          <button
+            aria-label={`slide number ${index}`}
+            key={index}
+            onClick={() => goTo(index)}
+          >
             <NavigationDot active={currentIndex === index} />
           </button>
         ))}
@@ -125,7 +131,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
 }
 
 const CarouselItem = ({ children }: { children: ReactNode }) => (
-  <div className='flex min-h-[200px] w-full items-center justify-center bg-theme-blue '>
+  <div className='flex min-h-[200px] w-full items-center justify-center bg-theme-blue'>
     {children}
   </div>
 )

@@ -41,7 +41,7 @@ const QuestionnaireStepInfo = ({
   return (
     <div
       ref={ref}
-      className='animate-fadeIn flex w-2/3 scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
+      className='flex w-2/3 animate-fadeIn scroll-mt-6 flex-col rounded-xl border border-theme-blue p-6'
     >
       {HeaderComponent ? (
         <HeaderComponent activeQuestionnaireData={activeQuestionnaireData} />
@@ -51,6 +51,7 @@ const QuestionnaireStepInfo = ({
         </h3>
       )}
       <Button
+        aria-label='confirmation button'
         className='max-w-max self-center'
         onClick={onClick}
         color='warning'

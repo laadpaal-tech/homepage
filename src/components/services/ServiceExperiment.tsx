@@ -1,9 +1,12 @@
 const ServiceExperiment = () => (
   <div className='flex w-full items-center justify-center'>
-    <div className='relative flex w-full flex-col gap-6 bg-theme-blue p-6 @3xl:h-[500px] @3xl:flex-row @5xl:h-[450px] '>
+    <div className='relative flex w-full flex-col gap-6 bg-theme-blue p-6 @3xl:h-[500px] @3xl:flex-row @5xl:h-[450px]'>
       <div className='mr-4 flex w-full items-center justify-center @3xl:hidden'>
-        {/* <img className='w-[80%]' src='/img/rccbs.jpg' /> */}
-        <img className='w-[50%] @2xl:w-[40%]' src='/img/laadpaal-tools.jpg' />
+        <img
+          alt='image of tools used by chargepoint installation'
+          className='w-[50%] @2xl:w-[40%]'
+          src='/img/laadpaal-tools.jpg'
+        />
       </div>
       <section className='flex-[2_0_0] text-lg font-extralight text-white @3xl:mt-0 @3xl:text-xl'>
         <h2 className='mb-4 text-3xl font-bold @5xl:text-4xl'>
@@ -24,7 +27,11 @@ const ServiceExperiment = () => (
         </p>
       </section>
       <div className='mr-4 hidden flex-[1_0_0] self-center @3xl:block'>
-        <img className='w-full' src='/img/laadpaal-tools.jpg' />
+        <img
+          alt='image of tools used by chargepoint installation'
+          className='w-full'
+          src='/img/laadpaal-tools.jpg'
+        />
       </div>
     </div>
   </div>

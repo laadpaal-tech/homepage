@@ -79,6 +79,7 @@ const NavigationBar = () => {
         {showScrollToTop && (
           <NavbarItem>
             <button
+              aria-label='scroll to top'
               onClick={onScrollTop}
               className='flex flex-col items-center justify-center'
             >

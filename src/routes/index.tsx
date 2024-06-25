@@ -17,20 +17,31 @@ const Index = () => {
     <>
       <Helmet>
         <title>laadpaal.tech</title>
+        <meta
+          name='description'
+          content='Laadpaal installatie en advies.'
+        ></meta>
       </Helmet>
       <div className='absolute -top-10 left-0 z-0 flex w-full items-center justify-center'>
         <div>
           {/* <div className='max-w-5xl'> */}
-          <img className='@md:hidden' src='/img/background-mobile.jpg' />
           <img
+            alt='background image of a distribution box'
+            className='@md:hidden'
+            src='/img/background-mobile.jpg'
+          />
+          <img
+            alt='background image of a distribution box'
             className='hidden @md:block @lg:hidden'
             src='/img/background-desktop.jpg'
           />
           <img
+            alt='background image of a distribution box'
             className='hidden @lg:block @3xl:hidden'
             src='/img/background-desktop-lg.jpg'
           />
           <img
+            alt='background image of a distribution box'
             className='hidden @3xl:block'
             src='/img/background-desktop-xl.jpg'
           />

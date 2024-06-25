@@ -12,6 +12,10 @@ const Price = () => {
     <>
       <Helmet>
         <title>laadpaal.tech - Kosten</title>
+        <meta
+          name='description'
+          content='Laadpaal installatie en advies - installatiekosten'
+        ></meta>
       </Helmet>
       <HowMuchDoesItCostDetails />
     </>
