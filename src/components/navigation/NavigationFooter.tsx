@@ -30,6 +30,7 @@ const NavigationFooter = () => {
       <section className='flex flex-col items-center gap-2'>
         <section className='mb-2 flex flex-wrap justify-center gap-8 py-4'>
           <a
+            aria-label='make appointment using Cal.com'
             onClick={() => onClick('cal.com')}
             rel='noreferrer'
             target='_blank'
@@ -43,6 +44,7 @@ const NavigationFooter = () => {
             </div>
           </a>
           <a
+            aria-label='get in touch using Signal'
             onClick={() => onClick('signal')}
             rel='noreferrer'
             target='_blank'
@@ -56,6 +58,7 @@ const NavigationFooter = () => {
             </div>
           </a>
           <a
+            aria-label='get in touch using Telegram'
             onClick={() => onClick('telegram')}
             rel='noreferrer'
             target='_blank'
@@ -69,6 +72,7 @@ const NavigationFooter = () => {
             </div>
           </a>
           <a
+            aria-label='get in touch using WhatsApp'
             onClick={() => onClick('whatsapp')}
             rel='noreferrer'
             target='_blank'

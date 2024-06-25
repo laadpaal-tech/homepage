@@ -75,6 +75,7 @@ const Chat = () => {
     return (
       <div className='flex flex-col gap-2'>
         <a
+          aria-label='make appointment with cal.com'
           onClick={() => onClick('cal.com')}
           rel='noreferrer'
           target='_blank'
@@ -84,6 +85,7 @@ const Chat = () => {
           <Calendar height='70%' width='70%' />
         </a>
         <a
+          aria-label='get in touch using Signal'
           onClick={() => onClick('signal')}
           rel='noreferrer'
           target='_blank'
@@ -93,6 +95,7 @@ const Chat = () => {
           <SignalLogo width='70%' height='70%' />
         </a>
         <a
+          aria-label='get in touch using Telegram'
           onClick={() => onClick('telegram')}
           rel='noreferrer'
           target='_blank'
@@ -102,6 +105,7 @@ const Chat = () => {
           <TelegramLogo width='70%' height='70%' className='text-black' />
         </a>
         <a
+          aria-label='get in touch using WhatsApp'
           onClick={() => onClick('whatsapp')}
           rel='noreferrer'
           target='_blank'

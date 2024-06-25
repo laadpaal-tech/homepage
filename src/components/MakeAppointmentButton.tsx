@@ -20,6 +20,7 @@ const MakeAppointmentButton = ({
   }
   return (
     <a
+      aria-label='make appointment using Cal.com'
       onClick={onclick}
       href='https://cal.com/laadpaal.tech'
       rel='noreferrer'

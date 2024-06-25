@@ -113,6 +113,7 @@ const Footer = () => {
           <h3 className='mb-0 text-3xl font-bold'>Contact</h3>
           <section className='mb-2 flex flex-wrap gap-8 py-4'>
             <a
+              aria-label='plan appointment using Cal.com'
               onClick={() => onClick('cal.com')}
               rel='noreferrer'
               target='_blank'
@@ -121,6 +122,7 @@ const Footer = () => {
               <CalendarInline height={28} width={117} />
             </a>
             <a
+              aria-label='get in touch using Signal'
               onClick={() => onClick('signal')}
               rel='noreferrer'
               target='_blank'
@@ -129,6 +131,7 @@ const Footer = () => {
               <SignalLogo width={99} height={27} />
             </a>
             <a
+              aria-label='get in touch using Telegram'
               onClick={() => onClick('telegram')}
               rel='noreferrer'
               target='_blank'
@@ -137,6 +140,7 @@ const Footer = () => {
               <TelegramLogo width={128} height={28} />
             </a>
             <a
+              aria-label='get in touch using WhatsApp'
               onClick={() => onClick('whatsapp')}
               rel='noreferrer'
               target='_blank'
