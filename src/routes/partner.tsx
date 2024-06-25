@@ -10,12 +10,12 @@ const Partner = () => {
   // }, [])
   return (
     <div className='flex w-full flex-col items-center bg-theme-very-light-yellow'>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <title>laadpaal.tech - Partner</title>
         <meta
           name='description'
           content='Laadpaal installatie en advies - partner worden?'
-        ></meta>
+        />
       </Helmet>
       <section className='w-full max-w-5xl bg-theme-very-light-yellow p-6 text-lg'>
         <h2 className='my-6 text-center text-4xl font-bold'>Partner worden?</h2>

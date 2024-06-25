@@ -15,12 +15,9 @@ const Index = () => {
 
   return (
     <>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <title>laadpaal.tech</title>
-        <meta
-          name='description'
-          content='Laadpaal installatie en advies.'
-        ></meta>
+        <meta name='description' content='Laadpaal installatie en advies.' />
       </Helmet>
       <div className='absolute -top-10 left-0 z-0 flex w-full items-center justify-center'>
         <div>

@@ -11,12 +11,12 @@ const About = () => {
   // }, [])
   return (
     <>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <title>laadpaal.tech - Over mij</title>
         <meta
           name='description'
           content='Laadpaal installatie en advies - over mij.'
-        ></meta>
+        />
       </Helmet>
       <AboutMe />
       <div className='mt-6 flex w-full items-center justify-center'>

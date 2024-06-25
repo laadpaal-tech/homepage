@@ -10,12 +10,12 @@ const DIY = () => {
   // }, [])
   return (
     <>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <title>laadpaal.tech - Stap-voor-Stap</title>
         <meta
           name='description'
           content='Laadpaal installatie en advies - stap-voor-stap installatie.'
-        ></meta>
+        />
       </Helmet>
       <StepByStep />
     </>
