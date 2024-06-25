@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { MakeAppointmentButton } from './MakeAppointmentButton'
 import { SmallConfigurator } from './small-configurator/SmallConfigurator'
 
@@ -112,13 +113,14 @@ const HowMuchDoesItCostDetails = () => (
         markt hebben dat wel). Als dit niet het geval is, moet je voor jouw
         laadpaal groep een aardlekschakelaar <i>Type B</i> gebruiken (meer
         hierover kan je{' '}
-        <a
+        <Link
+          target='_blank'
           aria-label='Read more about using RCD Type B'
-          href='#RCD-DC-TypeB'
-          className='text-theme-dark-blue underline'
+          to='/step-by-step#RCD-DC-TypeB'
+          className='link'
         >
           hier
-        </a>{' '}
+        </Link>{' '}
         verderop op de pagina lezen), die aanzienlijk duurder is dan een
         aardlekschakelaar <i>Type A</i>: in dit geval moet je ongeveer{' '}
         <strong>€100,-</strong> toevoegen op de bovengenoemde prijzen. Ga je
@@ -143,13 +145,13 @@ const HowMuchDoesItCostDetails = () => (
         redelijk om aan te nemen dat de prijs van een laadpaal samen met
         benodigde energiemeter voor de load-balancing rond{' '}
         <strong>€1100,-</strong> ligt (lees meer over load-balancing{' '}
-        <a
+        <Link
           aria-label='Read more about load balancing'
-          href='#load-balancing'
-          className='text-theme-dark-blue underline'
+          to='/step-by-step#load-balancing'
+          className='link'
         >
           hieronder
-        </a>
+        </Link>
         ). Er zijn minder bekende, maar ook zeer betrouwbare oplossingen waarmee
         jij deze kosten met minstens 50% kan verlagen. Neem contact op voor meer
         informatie.
