@@ -40,7 +40,8 @@ export default {
     plugin(function ({ addUtilities, addComponents }) {
       addComponents({
         '.link': {
-          '@apply text-theme-blue underline italic hover:opacity-70': {}
+          '@apply text-theme-blue underline italic hover:text-theme-dark-blue':
+            {}
         },
         '.link2': {
           color: '#25496D',

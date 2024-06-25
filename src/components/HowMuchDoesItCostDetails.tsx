@@ -112,24 +112,23 @@ const HowMuchDoesItCostDetails = () => (
         ingebouwde bescherming tegen DC-lekken biedt (de meeste laadpunten op de
         markt hebben dat wel). Als dit niet het geval is, moet je voor jouw
         laadpaal groep een aardlekschakelaar <i>Type B</i> gebruiken (meer
-        hierover kan je{' '}
+        hierover kan je op pagina{' '}
         <Link
           target='_blank'
           aria-label='Read more about using RCD Type B'
           to='/step-by-step#RCD-DC-TypeB'
           className='link'
         >
-          hier
+          Laadpaal installatie stap voor stap
         </Link>{' '}
-        verderop op de pagina lezen), die aanzienlijk duurder is dan een
-        aardlekschakelaar <i>Type A</i>: in dit geval moet je ongeveer{' '}
-        <strong>€100,-</strong> toevoegen op de bovengenoemde prijzen. Ga je
-        voor A-merk componenten, zoals Schneider Electric, zullen de prijzen
-        zelfs hoger zijn: een Schneider Electric groepenkast voor de
-        bovenstaande configuratie kost ongeveer <strong>€920,-</strong> voor de
-        optie met aardlekschakelaars en installatieautomaten en (verrassend
-        genoeg) <i>slechts</i> <strong>€900,-</strong> voor de optie met
-        aardlekautomaten.
+        lezen), die aanzienlijk duurder is dan een aardlekschakelaar{' '}
+        <i>Type A</i>: in dit geval moet je ongeveer <strong>€100,-</strong>{' '}
+        toevoegen op de bovengenoemde prijzen. Ga je voor A-merk componenten,
+        zoals Schneider Electric, zullen de prijzen zelfs hoger zijn: een
+        Schneider Electric groepenkast voor de bovenstaande configuratie kost
+        ongeveer <strong>€920,-</strong> voor de optie met aardlekschakelaars en
+        installatieautomaten en (verrassend genoeg) <i>slechts</i>{' '}
+        <strong>€900,-</strong> voor de optie met aardlekautomaten.
       </p>
       <p className='mt-2'>
         De installatiekosten voor het vervangen van de gehele groepenkast
@@ -143,14 +142,15 @@ const HowMuchDoesItCostDetails = () => (
       <p className='mt-2'>
         De kosten van een laadpaal kunnen per merk altijd variëren, maar het is
         redelijk om aan te nemen dat de prijs van een laadpaal samen met
-        benodigde energiemeter voor de load-balancing rond{' '}
-        <strong>€1100,-</strong> ligt (lees meer over load-balancing{' '}
+        benodigde energiemeter voor de load balancing rond{' '}
+        <strong>€1100,-</strong> ligt (lees meer over load balancing op pagina{' '}
         <Link
+          target='_blank'
           aria-label='Read more about load balancing'
           to='/step-by-step#load-balancing'
           className='link'
         >
-          hieronder
+          Laadpaal installatie stap voor stap
         </Link>
         ). Er zijn minder bekende, maar ook zeer betrouwbare oplossingen waarmee
         jij deze kosten met minstens 50% kan verlagen. Neem contact op voor meer
