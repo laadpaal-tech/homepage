@@ -47,8 +47,8 @@ const HowMuchDoesItCostDetails = () => (
       </p>
       <p className='mt-2 bg-theme-light-yellow p-2 italic'>
         Er zijn meer mogelijkheden en je kunt makkelijk verdwalen. Daarom werk
-        ik aan een staap-voor-staap configurator die je door het proces gaat
-        begeleiden. Stay tunned!
+        ik aan een stap-voor-stap configurator die je door het proces gaat
+        begeleiden. Stay tuned!
       </p>
       <p className='mt-2'>
         Waarom niet direct upgraden naar <i>3x35A</i> of meer? Hoewel de
