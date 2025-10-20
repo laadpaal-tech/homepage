@@ -92,9 +92,9 @@ const Footer = () => {
         <section className='flex flex-col'>
           <h3 className='mb-4 text-3xl font-bold'>laadpaal.tech</h3>
           <p className='mb-6'>
-            KVK: 51982277
+            KVK: 97639958
             <br />
-            BTW: NL002447038B96
+            BTW: NL868151737B01
             <br />
             Koningskinderen 29
             <br />
